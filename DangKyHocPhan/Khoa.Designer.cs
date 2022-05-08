@@ -111,17 +111,17 @@ namespace DangKyHocPhan
             this.groupBox1.Controls.Add(this.lblTenKhoa);
             this.groupBox1.Controls.Add(this.btnThemKhoa);
             this.groupBox1.Controls.Add(this.txtTenKhoa);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(526, 312);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(244, 129);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Quản lý khoa";
+            this.groupBox1.Text = "Thông tin khoa";
             // 
             // lvDSKhoa
             // 
             this.lvDSKhoa.HideSelection = false;
-            this.lvDSKhoa.Location = new System.Drawing.Point(262, 12);
+            this.lvDSKhoa.Location = new System.Drawing.Point(12, 12);
             this.lvDSKhoa.Name = "lvDSKhoa";
             this.lvDSKhoa.Size = new System.Drawing.Size(508, 429);
             this.lvDSKhoa.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace DangKyHocPhan
             this.Controls.Add(this.lvDSKhoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "Khoa";
-            this.Text = "KhoaNganh";
+            this.Text = "Quản lý khoa";
             this.Load += new System.EventHandler(this.Khoa_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
