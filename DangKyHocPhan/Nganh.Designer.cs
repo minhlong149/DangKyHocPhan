@@ -29,40 +29,40 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvDSNganh = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboThuocKhoa = new System.Windows.Forms.ComboBox();
             this.lblThuocKhoa = new System.Windows.Forms.Label();
-            this.txtMaKhoa = new System.Windows.Forms.TextBox();
+            this.txtMaNganh = new System.Windows.Forms.TextBox();
             this.btnThemNganh = new System.Windows.Forms.Button();
             this.lblMaNganh = new System.Windows.Forms.Label();
             this.btnSuaNganh = new System.Windows.Forms.Button();
             this.lblTenNganh = new System.Windows.Forms.Label();
             this.btnXoaNganh = new System.Windows.Forms.Button();
-            this.txtTenKhoa = new System.Windows.Forms.TextBox();
+            this.txtTenNganh = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // lvDSNganh
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(484, 426);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvDSNganh.HideSelection = false;
+            this.lvDSNganh.Location = new System.Drawing.Point(12, 12);
+            this.lvDSNganh.Name = "lvDSNganh";
+            this.lvDSNganh.Size = new System.Drawing.Size(484, 426);
+            this.lvDSNganh.TabIndex = 0;
+            this.lvDSNganh.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboThuocKhoa);
             this.groupBox1.Controls.Add(this.lblThuocKhoa);
-            this.groupBox1.Controls.Add(this.txtMaKhoa);
+            this.groupBox1.Controls.Add(this.txtMaNganh);
             this.groupBox1.Controls.Add(this.btnThemNganh);
             this.groupBox1.Controls.Add(this.lblMaNganh);
             this.groupBox1.Controls.Add(this.btnSuaNganh);
             this.groupBox1.Controls.Add(this.lblTenNganh);
             this.groupBox1.Controls.Add(this.btnXoaNganh);
-            this.groupBox1.Controls.Add(this.txtTenKhoa);
+            this.groupBox1.Controls.Add(this.txtTenNganh);
             this.groupBox1.Location = new System.Drawing.Point(502, 277);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(286, 161);
@@ -87,12 +87,12 @@ namespace DangKyHocPhan
             this.lblThuocKhoa.TabIndex = 10;
             this.lblThuocKhoa.Text = "Thuộc khoa:";
             // 
-            // txtMaKhoa
+            // txtMaNganh
             // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(103, 30);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(177, 22);
-            this.txtMaKhoa.TabIndex = 2;
+            this.txtMaNganh.Location = new System.Drawing.Point(103, 30);
+            this.txtMaNganh.Name = "txtMaNganh";
+            this.txtMaNganh.Size = new System.Drawing.Size(177, 22);
+            this.txtMaNganh.TabIndex = 2;
             // 
             // btnThemNganh
             // 
@@ -139,12 +139,12 @@ namespace DangKyHocPhan
             this.btnXoaNganh.Text = "Xóa";
             this.btnXoaNganh.UseVisualStyleBackColor = true;
             // 
-            // txtTenKhoa
+            // txtTenNganh
             // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(103, 58);
-            this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(177, 22);
-            this.txtTenKhoa.TabIndex = 3;
+            this.txtTenNganh.Location = new System.Drawing.Point(103, 58);
+            this.txtTenNganh.Name = "txtTenNganh";
+            this.txtTenNganh.Size = new System.Drawing.Size(177, 22);
+            this.txtTenNganh.TabIndex = 3;
             // 
             // Nganh
             // 
@@ -152,7 +152,7 @@ namespace DangKyHocPhan
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvDSNganh);
             this.Name = "Nganh";
             this.Text = "Quản lý ngành đào tạo";
             this.groupBox1.ResumeLayout(false);
@@ -163,16 +163,16 @@ namespace DangKyHocPhan
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvDSNganh;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboThuocKhoa;
         private System.Windows.Forms.Label lblThuocKhoa;
-        private System.Windows.Forms.TextBox txtMaKhoa;
+        private System.Windows.Forms.TextBox txtMaNganh;
         private System.Windows.Forms.Button btnThemNganh;
         private System.Windows.Forms.Label lblMaNganh;
         private System.Windows.Forms.Button btnSuaNganh;
         private System.Windows.Forms.Label lblTenNganh;
         private System.Windows.Forms.Button btnXoaNganh;
-        private System.Windows.Forms.TextBox txtTenKhoa;
+        private System.Windows.Forms.TextBox txtTenNganh;
     }
 }
