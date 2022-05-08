@@ -31,15 +31,15 @@ namespace DangKyHocPhan
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboThuocKhoa = new System.Windows.Forms.ComboBox();
+            this.lblThuocKhoa = new System.Windows.Forms.Label();
             this.txtMaKhoa = new System.Windows.Forms.TextBox();
-            this.btnThemKhoa = new System.Windows.Forms.Button();
-            this.lblMaKhoa = new System.Windows.Forms.Label();
-            this.btnSuaKhoa = new System.Windows.Forms.Button();
-            this.lblTenKhoa = new System.Windows.Forms.Label();
-            this.btnXoaKhoa = new System.Windows.Forms.Button();
+            this.btnThemNganh = new System.Windows.Forms.Button();
+            this.lblMaNganh = new System.Windows.Forms.Label();
+            this.btnSuaNganh = new System.Windows.Forms.Button();
+            this.lblTenNganh = new System.Windows.Forms.Label();
+            this.btnXoaNganh = new System.Windows.Forms.Button();
             this.txtTenKhoa = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@ namespace DangKyHocPhan
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cboThuocKhoa);
+            this.groupBox1.Controls.Add(this.lblThuocKhoa);
             this.groupBox1.Controls.Add(this.txtMaKhoa);
-            this.groupBox1.Controls.Add(this.btnThemKhoa);
-            this.groupBox1.Controls.Add(this.lblMaKhoa);
-            this.groupBox1.Controls.Add(this.btnSuaKhoa);
-            this.groupBox1.Controls.Add(this.lblTenKhoa);
-            this.groupBox1.Controls.Add(this.btnXoaKhoa);
+            this.groupBox1.Controls.Add(this.btnThemNganh);
+            this.groupBox1.Controls.Add(this.lblMaNganh);
+            this.groupBox1.Controls.Add(this.btnSuaNganh);
+            this.groupBox1.Controls.Add(this.lblTenNganh);
+            this.groupBox1.Controls.Add(this.btnXoaNganh);
             this.groupBox1.Controls.Add(this.txtTenKhoa);
             this.groupBox1.Location = new System.Drawing.Point(502, 277);
             this.groupBox1.Name = "groupBox1";
@@ -70,6 +70,23 @@ namespace DangKyHocPhan
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin ngành đào tạo";
             // 
+            // cboThuocKhoa
+            // 
+            this.cboThuocKhoa.FormattingEnabled = true;
+            this.cboThuocKhoa.Location = new System.Drawing.Point(103, 86);
+            this.cboThuocKhoa.Name = "cboThuocKhoa";
+            this.cboThuocKhoa.Size = new System.Drawing.Size(177, 24);
+            this.cboThuocKhoa.TabIndex = 4;
+            // 
+            // lblThuocKhoa
+            // 
+            this.lblThuocKhoa.AutoSize = true;
+            this.lblThuocKhoa.Location = new System.Drawing.Point(10, 89);
+            this.lblThuocKhoa.Name = "lblThuocKhoa";
+            this.lblThuocKhoa.Size = new System.Drawing.Size(87, 17);
+            this.lblThuocKhoa.TabIndex = 10;
+            this.lblThuocKhoa.Text = "Thuộc khoa:";
+            // 
             // txtMaKhoa
             // 
             this.txtMaKhoa.Location = new System.Drawing.Point(103, 30);
@@ -77,50 +94,50 @@ namespace DangKyHocPhan
             this.txtMaKhoa.Size = new System.Drawing.Size(177, 22);
             this.txtMaKhoa.TabIndex = 2;
             // 
-            // btnThemKhoa
+            // btnThemNganh
             // 
-            this.btnThemKhoa.Location = new System.Drawing.Point(211, 123);
-            this.btnThemKhoa.Name = "btnThemKhoa";
-            this.btnThemKhoa.Size = new System.Drawing.Size(69, 23);
-            this.btnThemKhoa.TabIndex = 5;
-            this.btnThemKhoa.Text = "Thêm";
-            this.btnThemKhoa.UseVisualStyleBackColor = true;
+            this.btnThemNganh.Location = new System.Drawing.Point(211, 123);
+            this.btnThemNganh.Name = "btnThemNganh";
+            this.btnThemNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnThemNganh.TabIndex = 5;
+            this.btnThemNganh.Text = "Thêm";
+            this.btnThemNganh.UseVisualStyleBackColor = true;
             // 
-            // lblMaKhoa
+            // lblMaNganh
             // 
-            this.lblMaKhoa.AutoSize = true;
-            this.lblMaKhoa.Location = new System.Drawing.Point(10, 33);
-            this.lblMaKhoa.Name = "lblMaKhoa";
-            this.lblMaKhoa.Size = new System.Drawing.Size(75, 17);
-            this.lblMaKhoa.TabIndex = 1;
-            this.lblMaKhoa.Text = "Mã ngành:";
+            this.lblMaNganh.AutoSize = true;
+            this.lblMaNganh.Location = new System.Drawing.Point(10, 33);
+            this.lblMaNganh.Name = "lblMaNganh";
+            this.lblMaNganh.Size = new System.Drawing.Size(75, 17);
+            this.lblMaNganh.TabIndex = 1;
+            this.lblMaNganh.Text = "Mã ngành:";
             // 
-            // btnSuaKhoa
+            // btnSuaNganh
             // 
-            this.btnSuaKhoa.Location = new System.Drawing.Point(136, 123);
-            this.btnSuaKhoa.Name = "btnSuaKhoa";
-            this.btnSuaKhoa.Size = new System.Drawing.Size(69, 23);
-            this.btnSuaKhoa.TabIndex = 6;
-            this.btnSuaKhoa.Text = "Sửa";
-            this.btnSuaKhoa.UseVisualStyleBackColor = true;
+            this.btnSuaNganh.Location = new System.Drawing.Point(136, 123);
+            this.btnSuaNganh.Name = "btnSuaNganh";
+            this.btnSuaNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnSuaNganh.TabIndex = 6;
+            this.btnSuaNganh.Text = "Sửa";
+            this.btnSuaNganh.UseVisualStyleBackColor = true;
             // 
-            // lblTenKhoa
+            // lblTenNganh
             // 
-            this.lblTenKhoa.AutoSize = true;
-            this.lblTenKhoa.Location = new System.Drawing.Point(10, 61);
-            this.lblTenKhoa.Name = "lblTenKhoa";
-            this.lblTenKhoa.Size = new System.Drawing.Size(81, 17);
-            this.lblTenKhoa.TabIndex = 3;
-            this.lblTenKhoa.Text = "Tên ngành:";
+            this.lblTenNganh.AutoSize = true;
+            this.lblTenNganh.Location = new System.Drawing.Point(10, 61);
+            this.lblTenNganh.Name = "lblTenNganh";
+            this.lblTenNganh.Size = new System.Drawing.Size(81, 17);
+            this.lblTenNganh.TabIndex = 3;
+            this.lblTenNganh.Text = "Tên ngành:";
             // 
-            // btnXoaKhoa
+            // btnXoaNganh
             // 
-            this.btnXoaKhoa.Location = new System.Drawing.Point(61, 123);
-            this.btnXoaKhoa.Name = "btnXoaKhoa";
-            this.btnXoaKhoa.Size = new System.Drawing.Size(69, 23);
-            this.btnXoaKhoa.TabIndex = 7;
-            this.btnXoaKhoa.Text = "Xóa";
-            this.btnXoaKhoa.UseVisualStyleBackColor = true;
+            this.btnXoaNganh.Location = new System.Drawing.Point(61, 123);
+            this.btnXoaNganh.Name = "btnXoaNganh";
+            this.btnXoaNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnXoaNganh.TabIndex = 7;
+            this.btnXoaNganh.Text = "Xóa";
+            this.btnXoaNganh.UseVisualStyleBackColor = true;
             // 
             // txtTenKhoa
             // 
@@ -128,23 +145,6 @@ namespace DangKyHocPhan
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(177, 22);
             this.txtTenKhoa.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Thuộc khoa:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(103, 86);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 4;
             // 
             // Nganh
             // 
@@ -165,14 +165,14 @@ namespace DangKyHocPhan
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboThuocKhoa;
+        private System.Windows.Forms.Label lblThuocKhoa;
         private System.Windows.Forms.TextBox txtMaKhoa;
-        private System.Windows.Forms.Button btnThemKhoa;
-        private System.Windows.Forms.Label lblMaKhoa;
-        private System.Windows.Forms.Button btnSuaKhoa;
-        private System.Windows.Forms.Label lblTenKhoa;
-        private System.Windows.Forms.Button btnXoaKhoa;
+        private System.Windows.Forms.Button btnThemNganh;
+        private System.Windows.Forms.Label lblMaNganh;
+        private System.Windows.Forms.Button btnSuaNganh;
+        private System.Windows.Forms.Label lblTenNganh;
+        private System.Windows.Forms.Button btnXoaNganh;
         private System.Windows.Forms.TextBox txtTenKhoa;
     }
 }
