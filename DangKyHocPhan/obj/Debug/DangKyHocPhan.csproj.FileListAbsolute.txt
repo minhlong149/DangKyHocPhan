@@ -1,0 +1,10 @@
+D:\Projects\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe.config
+D:\Projects\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe
+D:\Projects\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.pdb
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.AssemblyReference.cache
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Khoa.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Properties.Resources.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateResource.cache
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
