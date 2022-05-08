@@ -44,7 +44,7 @@ namespace DangKyHocPhan
             // lblMaKhoa
             // 
             this.lblMaKhoa.AutoSize = true;
-            this.lblMaKhoa.Location = new System.Drawing.Point(7, 29);
+            this.lblMaKhoa.Location = new System.Drawing.Point(9, 31);
             this.lblMaKhoa.Name = "lblMaKhoa";
             this.lblMaKhoa.Size = new System.Drawing.Size(66, 17);
             this.lblMaKhoa.TabIndex = 1;
@@ -52,23 +52,23 @@ namespace DangKyHocPhan
             // 
             // txtMaKhoa
             // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(79, 29);
+            this.txtMaKhoa.Location = new System.Drawing.Point(87, 28);
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(156, 22);
+            this.txtMaKhoa.Size = new System.Drawing.Size(192, 22);
             this.txtMaKhoa.TabIndex = 2;
             this.txtMaKhoa.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // txtTenKhoa
             // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(79, 57);
+            this.txtTenKhoa.Location = new System.Drawing.Point(87, 56);
             this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(156, 22);
+            this.txtTenKhoa.Size = new System.Drawing.Size(192, 22);
             this.txtTenKhoa.TabIndex = 4;
             // 
             // lblTenKhoa
             // 
             this.lblTenKhoa.AutoSize = true;
-            this.lblTenKhoa.Location = new System.Drawing.Point(7, 57);
+            this.lblTenKhoa.Location = new System.Drawing.Point(9, 59);
             this.lblTenKhoa.Name = "lblTenKhoa";
             this.lblTenKhoa.Size = new System.Drawing.Size(72, 17);
             this.lblTenKhoa.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace DangKyHocPhan
             // 
             // btnThemKhoa
             // 
-            this.btnThemKhoa.Location = new System.Drawing.Point(166, 95);
+            this.btnThemKhoa.Location = new System.Drawing.Point(210, 91);
             this.btnThemKhoa.Name = "btnThemKhoa";
             this.btnThemKhoa.Size = new System.Drawing.Size(69, 23);
             this.btnThemKhoa.TabIndex = 5;
@@ -86,7 +86,7 @@ namespace DangKyHocPhan
             // 
             // btnSuaKhoa
             // 
-            this.btnSuaKhoa.Location = new System.Drawing.Point(91, 95);
+            this.btnSuaKhoa.Location = new System.Drawing.Point(135, 91);
             this.btnSuaKhoa.Name = "btnSuaKhoa";
             this.btnSuaKhoa.Size = new System.Drawing.Size(69, 23);
             this.btnSuaKhoa.TabIndex = 6;
@@ -95,7 +95,7 @@ namespace DangKyHocPhan
             // 
             // btnXoaKhoa
             // 
-            this.btnXoaKhoa.Location = new System.Drawing.Point(16, 95);
+            this.btnXoaKhoa.Location = new System.Drawing.Point(60, 91);
             this.btnXoaKhoa.Name = "btnXoaKhoa";
             this.btnXoaKhoa.Size = new System.Drawing.Size(69, 23);
             this.btnXoaKhoa.TabIndex = 7;
@@ -105,25 +105,25 @@ namespace DangKyHocPhan
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtMaKhoa);
-            this.groupBox1.Controls.Add(this.btnSuaKhoa);
-            this.groupBox1.Controls.Add(this.btnXoaKhoa);
-            this.groupBox1.Controls.Add(this.lblMaKhoa);
-            this.groupBox1.Controls.Add(this.lblTenKhoa);
             this.groupBox1.Controls.Add(this.btnThemKhoa);
+            this.groupBox1.Controls.Add(this.lblMaKhoa);
+            this.groupBox1.Controls.Add(this.btnSuaKhoa);
+            this.groupBox1.Controls.Add(this.lblTenKhoa);
+            this.groupBox1.Controls.Add(this.btnXoaKhoa);
             this.groupBox1.Controls.Add(this.txtTenKhoa);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(502, 309);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(244, 129);
+            this.groupBox1.Size = new System.Drawing.Size(286, 129);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Quản lý khoa";
+            this.groupBox1.Text = "Thông tin khoa";
             // 
             // lvDSKhoa
             // 
             this.lvDSKhoa.HideSelection = false;
-            this.lvDSKhoa.Location = new System.Drawing.Point(262, 12);
+            this.lvDSKhoa.Location = new System.Drawing.Point(12, 12);
             this.lvDSKhoa.Name = "lvDSKhoa";
-            this.lvDSKhoa.Size = new System.Drawing.Size(508, 429);
+            this.lvDSKhoa.Size = new System.Drawing.Size(484, 426);
             this.lvDSKhoa.TabIndex = 8;
             this.lvDSKhoa.UseCompatibleStateImageBehavior = false;
             // 
@@ -131,11 +131,11 @@ namespace DangKyHocPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lvDSKhoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "Khoa";
-            this.Text = "KhoaNganh";
+            this.Text = "Quản lý khoa";
             this.Load += new System.EventHandler(this.Khoa_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
