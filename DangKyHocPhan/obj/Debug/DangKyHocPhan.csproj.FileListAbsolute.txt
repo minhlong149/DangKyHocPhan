@@ -8,3 +8,4 @@ D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateR
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Nganh.resources

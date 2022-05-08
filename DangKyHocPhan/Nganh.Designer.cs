@@ -127,7 +127,7 @@ namespace DangKyHocPhan
             this.txtTenKhoa.Location = new System.Drawing.Point(103, 58);
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(177, 22);
-            this.txtTenKhoa.TabIndex = 4;
+            this.txtTenKhoa.TabIndex = 3;
             // 
             // label2
             // 
@@ -144,7 +144,7 @@ namespace DangKyHocPhan
             this.comboBox2.Location = new System.Drawing.Point(103, 86);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabIndex = 4;
             // 
             // Nganh
             // 
