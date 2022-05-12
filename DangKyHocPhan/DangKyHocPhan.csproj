@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="Khoa.Designer.cs">
       <DependentUpon>Khoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="LapHSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapHSSV.Designer.cs">
+      <DependentUpon>LapHSSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nganh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +78,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrangchuPDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangchuPDT.Designer.cs">
+      <DependentUpon>TrangchuPDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrangchuSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangchuSV.Designer.cs">
+      <DependentUpon>TrangchuSV.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Khoa.resx">
       <DependentUpon>Khoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapHSSV.resx">
+      <DependentUpon>LapHSSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nganh.resx">
       <DependentUpon>Nganh.cs</DependentUpon>
@@ -81,6 +111,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TrangchuPDT.resx">
+      <DependentUpon>TrangchuPDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangchuSV.resx">
+      <DependentUpon>TrangchuSV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -46,9 +46,10 @@ namespace DangKyHocPhan
             // lvDSNganh
             // 
             this.lvDSNganh.HideSelection = false;
-            this.lvDSNganh.Location = new System.Drawing.Point(12, 12);
+            this.lvDSNganh.Location = new System.Drawing.Point(8, -14);
+            this.lvDSNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvDSNganh.Name = "lvDSNganh";
-            this.lvDSNganh.Size = new System.Drawing.Size(484, 426);
+            this.lvDSNganh.Size = new System.Drawing.Size(364, 347);
             this.lvDSNganh.TabIndex = 0;
             this.lvDSNganh.UseCompatibleStateImageBehavior = false;
             // 
@@ -63,9 +64,11 @@ namespace DangKyHocPhan
             this.groupBox1.Controls.Add(this.lblTenNganh);
             this.groupBox1.Controls.Add(this.btnXoaNganh);
             this.groupBox1.Controls.Add(this.txtTenNganh);
-            this.groupBox1.Location = new System.Drawing.Point(502, 277);
+            this.groupBox1.Location = new System.Drawing.Point(376, 225);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(286, 161);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(214, 131);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin ngành đào tạo";
@@ -73,32 +76,36 @@ namespace DangKyHocPhan
             // cboThuocKhoa
             // 
             this.cboThuocKhoa.FormattingEnabled = true;
-            this.cboThuocKhoa.Location = new System.Drawing.Point(103, 86);
+            this.cboThuocKhoa.Location = new System.Drawing.Point(77, 70);
+            this.cboThuocKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboThuocKhoa.Name = "cboThuocKhoa";
-            this.cboThuocKhoa.Size = new System.Drawing.Size(177, 24);
+            this.cboThuocKhoa.Size = new System.Drawing.Size(134, 21);
             this.cboThuocKhoa.TabIndex = 4;
             // 
             // lblThuocKhoa
             // 
             this.lblThuocKhoa.AutoSize = true;
-            this.lblThuocKhoa.Location = new System.Drawing.Point(10, 89);
+            this.lblThuocKhoa.Location = new System.Drawing.Point(8, 72);
+            this.lblThuocKhoa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblThuocKhoa.Name = "lblThuocKhoa";
-            this.lblThuocKhoa.Size = new System.Drawing.Size(87, 17);
+            this.lblThuocKhoa.Size = new System.Drawing.Size(68, 13);
             this.lblThuocKhoa.TabIndex = 10;
             this.lblThuocKhoa.Text = "Thuộc khoa:";
             // 
             // txtMaNganh
             // 
-            this.txtMaNganh.Location = new System.Drawing.Point(103, 30);
+            this.txtMaNganh.Location = new System.Drawing.Point(77, 24);
+            this.txtMaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaNganh.Name = "txtMaNganh";
-            this.txtMaNganh.Size = new System.Drawing.Size(177, 22);
+            this.txtMaNganh.Size = new System.Drawing.Size(134, 20);
             this.txtMaNganh.TabIndex = 2;
             // 
             // btnThemNganh
             // 
-            this.btnThemNganh.Location = new System.Drawing.Point(211, 123);
+            this.btnThemNganh.Location = new System.Drawing.Point(158, 100);
+            this.btnThemNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemNganh.Name = "btnThemNganh";
-            this.btnThemNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnThemNganh.Size = new System.Drawing.Size(52, 19);
             this.btnThemNganh.TabIndex = 5;
             this.btnThemNganh.Text = "Thêm";
             this.btnThemNganh.UseVisualStyleBackColor = true;
@@ -106,17 +113,19 @@ namespace DangKyHocPhan
             // lblMaNganh
             // 
             this.lblMaNganh.AutoSize = true;
-            this.lblMaNganh.Location = new System.Drawing.Point(10, 33);
+            this.lblMaNganh.Location = new System.Drawing.Point(8, 27);
+            this.lblMaNganh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaNganh.Name = "lblMaNganh";
-            this.lblMaNganh.Size = new System.Drawing.Size(75, 17);
+            this.lblMaNganh.Size = new System.Drawing.Size(58, 13);
             this.lblMaNganh.TabIndex = 1;
             this.lblMaNganh.Text = "Mã ngành:";
             // 
             // btnSuaNganh
             // 
-            this.btnSuaNganh.Location = new System.Drawing.Point(136, 123);
+            this.btnSuaNganh.Location = new System.Drawing.Point(102, 100);
+            this.btnSuaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuaNganh.Name = "btnSuaNganh";
-            this.btnSuaNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnSuaNganh.Size = new System.Drawing.Size(52, 19);
             this.btnSuaNganh.TabIndex = 6;
             this.btnSuaNganh.Text = "Sửa";
             this.btnSuaNganh.UseVisualStyleBackColor = true;
@@ -124,35 +133,39 @@ namespace DangKyHocPhan
             // lblTenNganh
             // 
             this.lblTenNganh.AutoSize = true;
-            this.lblTenNganh.Location = new System.Drawing.Point(10, 61);
+            this.lblTenNganh.Location = new System.Drawing.Point(8, 50);
+            this.lblTenNganh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenNganh.Name = "lblTenNganh";
-            this.lblTenNganh.Size = new System.Drawing.Size(81, 17);
+            this.lblTenNganh.Size = new System.Drawing.Size(62, 13);
             this.lblTenNganh.TabIndex = 3;
             this.lblTenNganh.Text = "Tên ngành:";
             // 
             // btnXoaNganh
             // 
-            this.btnXoaNganh.Location = new System.Drawing.Point(61, 123);
+            this.btnXoaNganh.Location = new System.Drawing.Point(46, 100);
+            this.btnXoaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaNganh.Name = "btnXoaNganh";
-            this.btnXoaNganh.Size = new System.Drawing.Size(69, 23);
+            this.btnXoaNganh.Size = new System.Drawing.Size(52, 19);
             this.btnXoaNganh.TabIndex = 7;
             this.btnXoaNganh.Text = "Xóa";
             this.btnXoaNganh.UseVisualStyleBackColor = true;
             // 
             // txtTenNganh
             // 
-            this.txtTenNganh.Location = new System.Drawing.Point(103, 58);
+            this.txtTenNganh.Location = new System.Drawing.Point(77, 47);
+            this.txtTenNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenNganh.Name = "txtTenNganh";
-            this.txtTenNganh.Size = new System.Drawing.Size(177, 22);
+            this.txtTenNganh.Size = new System.Drawing.Size(134, 20);
             this.txtTenNganh.TabIndex = 3;
             // 
             // Nganh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lvDSNganh);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Nganh";
             this.Text = "Quản lý ngành đào tạo";
             this.groupBox1.ResumeLayout(false);

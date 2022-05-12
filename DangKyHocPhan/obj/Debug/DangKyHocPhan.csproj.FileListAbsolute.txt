@@ -9,3 +9,18 @@ D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompi
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Nganh.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe.config
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\bin\Debug\DangKyHocPhan.pdb
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.AssemblyReference.cache
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.DangNhap.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.Khoa.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.Nganh.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.Properties.Resources.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateResource.cache
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
+C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
