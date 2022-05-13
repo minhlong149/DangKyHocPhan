@@ -24,3 +24,20 @@ C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
+E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe.config
+E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe
+E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.pdb
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.AssemblyReference.cache
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.SuggestedBindingRedirects.cache
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.DangNhap.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Khoa.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Nganh.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.PhieuThuHocPhi.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.Properties.Resources.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateResource.cache
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
+E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
