@@ -20,5 +20,11 @@ namespace DangKyHocPhan
             LapHSSV lhs = new LapHSSV();
             lhs.Show();
         }
+
+        private void btnNDSMH_Click(object sender, EventArgs e)
+        {
+            PhieuThuHocPhi PhieuThuHP = new PhieuThuHocPhi();
+            PhieuThuHP.Show();
+        }
     }
 }

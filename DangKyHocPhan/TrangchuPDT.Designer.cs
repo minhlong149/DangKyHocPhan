@@ -72,6 +72,7 @@ namespace DangKyHocPhan
             this.btnNDSMH.TabIndex = 12;
             this.btnNDSMH.Text = "Nhập danh sách môn học";
             this.btnNDSMH.UseVisualStyleBackColor = false;
+            this.btnNDSMH.Click += new System.EventHandler(this.btnNDSMH_Click);
             // 
             // btnNCTH
             // 
@@ -119,7 +120,7 @@ namespace DangKyHocPhan
             // 
             // TrangchuPDT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
