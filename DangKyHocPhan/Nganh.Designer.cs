@@ -47,7 +47,7 @@ namespace DangKyHocPhan
             // 
             this.lvDSNganh.HideSelection = false;
             this.lvDSNganh.Location = new System.Drawing.Point(8, -14);
-            this.lvDSNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvDSNganh.Margin = new System.Windows.Forms.Padding(2);
             this.lvDSNganh.Name = "lvDSNganh";
             this.lvDSNganh.Size = new System.Drawing.Size(364, 347);
             this.lvDSNganh.TabIndex = 0;
@@ -65,9 +65,9 @@ namespace DangKyHocPhan
             this.groupBox1.Controls.Add(this.btnXoaNganh);
             this.groupBox1.Controls.Add(this.txtTenNganh);
             this.groupBox1.Location = new System.Drawing.Point(376, 225);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(214, 131);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -77,7 +77,7 @@ namespace DangKyHocPhan
             // 
             this.cboThuocKhoa.FormattingEnabled = true;
             this.cboThuocKhoa.Location = new System.Drawing.Point(77, 70);
-            this.cboThuocKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboThuocKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.cboThuocKhoa.Name = "cboThuocKhoa";
             this.cboThuocKhoa.Size = new System.Drawing.Size(134, 21);
             this.cboThuocKhoa.TabIndex = 4;
@@ -95,15 +95,16 @@ namespace DangKyHocPhan
             // txtMaNganh
             // 
             this.txtMaNganh.Location = new System.Drawing.Point(77, 24);
-            this.txtMaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaNganh.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNganh.Name = "txtMaNganh";
             this.txtMaNganh.Size = new System.Drawing.Size(134, 20);
             this.txtMaNganh.TabIndex = 2;
+            this.txtMaNganh.TextChanged += new System.EventHandler(this.txtMaNganh_TextChanged);
             // 
             // btnThemNganh
             // 
             this.btnThemNganh.Location = new System.Drawing.Point(158, 100);
-            this.btnThemNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemNganh.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemNganh.Name = "btnThemNganh";
             this.btnThemNganh.Size = new System.Drawing.Size(52, 19);
             this.btnThemNganh.TabIndex = 5;
@@ -123,7 +124,7 @@ namespace DangKyHocPhan
             // btnSuaNganh
             // 
             this.btnSuaNganh.Location = new System.Drawing.Point(102, 100);
-            this.btnSuaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaNganh.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaNganh.Name = "btnSuaNganh";
             this.btnSuaNganh.Size = new System.Drawing.Size(52, 19);
             this.btnSuaNganh.TabIndex = 6;
@@ -143,7 +144,7 @@ namespace DangKyHocPhan
             // btnXoaNganh
             // 
             this.btnXoaNganh.Location = new System.Drawing.Point(46, 100);
-            this.btnXoaNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaNganh.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaNganh.Name = "btnXoaNganh";
             this.btnXoaNganh.Size = new System.Drawing.Size(52, 19);
             this.btnXoaNganh.TabIndex = 7;
@@ -153,7 +154,7 @@ namespace DangKyHocPhan
             // txtTenNganh
             // 
             this.txtTenNganh.Location = new System.Drawing.Point(77, 47);
-            this.txtTenNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenNganh.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNganh.Name = "txtTenNganh";
             this.txtTenNganh.Size = new System.Drawing.Size(134, 20);
             this.txtTenNganh.TabIndex = 3;
@@ -165,7 +166,7 @@ namespace DangKyHocPhan
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lvDSNganh);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Nganh";
             this.Text = "Quản lý ngành đào tạo";
             this.groupBox1.ResumeLayout(false);

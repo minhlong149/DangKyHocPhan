@@ -20,5 +20,21 @@ namespace DangKyHocPhan
             LapHSSV lhs = new LapHSSV();
             lhs.Show();
         }
+
+        private void Thoat_PDT_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void TrangchuPDT_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBCSV_Click(object sender, EventArgs e)
+        {
+            ChuaHTHP cthp = new ChuaHTHP();
+            cthp.Show();
+        }
     }
 }

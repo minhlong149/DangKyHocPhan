@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DangKyHocPhan"
+    "\\DangKyHocPhan",
+    "\\DangKyHocPhan\\obj\\Debug",
+    "\\DangKyHocPhan\\obj\\Debug\\TempPE",
+    "\\DangKyHocPhan\\Properties"
   ],
-  "SelectedNode": "\\DangKyHocPhan\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
