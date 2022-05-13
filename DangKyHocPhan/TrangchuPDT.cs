@@ -26,5 +26,11 @@ namespace DangKyHocPhan
             PhieuThuHocPhi PhieuThuHP = new PhieuThuHocPhi();
             PhieuThuHP.Show();
         }
+
+        private void btnBCSV_Click(object sender, EventArgs e)
+        {
+            ChuaHTHP hthp = new ChuaHTHP();
+            hthp.Show();
+        }
     }
 }

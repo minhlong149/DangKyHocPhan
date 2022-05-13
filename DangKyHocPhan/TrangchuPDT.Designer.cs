@@ -106,6 +106,7 @@ namespace DangKyHocPhan
             this.btnBCSV.TabIndex = 15;
             this.btnBCSV.Text = "Báo cáo sinh viên chưa đóng học phí";
             this.btnBCSV.UseVisualStyleBackColor = false;
+            this.btnBCSV.Click += new System.EventHandler(this.btnBCSV_Click);
             // 
             // btnNDSKN
             // 
@@ -120,7 +121,7 @@ namespace DangKyHocPhan
             // 
             // TrangchuPDT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
