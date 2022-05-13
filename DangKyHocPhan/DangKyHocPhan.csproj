@@ -58,11 +58,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+=======
+    <Compile Include="ChuaHTHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuaHTHP.Designer.cs">
+      <DependentUpon>ChuaHTHP.cs</DependentUpon>
+>>>>>>> 94e6906203781bbc23bdf47ec82b711a126893e7
     </Compile>
     <Compile Include="Khoa.cs">
       <SubType>Form</SubType>
@@ -104,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChuaHTHP.resx">
+      <DependentUpon>ChuaHTHP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Khoa.resx">
       <DependentUpon>Khoa.cs</DependentUpon>

@@ -21,5 +21,10 @@ namespace DangKyHocPhan
         {
 
         }
+
+        private void txtMaNganh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,10 +21,27 @@ namespace DangKyHocPhan
             lhs.Show();
         }
 
+<<<<<<< HEAD
         private void btnNDSMH_Click(object sender, EventArgs e)
         {
             PhieuThuHocPhi PhieuThuHP = new PhieuThuHocPhi();
             PhieuThuHP.Show();
+=======
+        private void Thoat_PDT_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void TrangchuPDT_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBCSV_Click(object sender, EventArgs e)
+        {
+            ChuaHTHP cthp = new ChuaHTHP();
+            cthp.Show();
+>>>>>>> 94e6906203781bbc23bdf47ec82b711a126893e7
         }
     }
 }

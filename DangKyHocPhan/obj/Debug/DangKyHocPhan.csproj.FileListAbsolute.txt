@@ -24,6 +24,7 @@ C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
 C:\Users\LêTấnLộc\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\DangKyHocPhan-main\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
+<<<<<<< HEAD
 E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe.config
 E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe
 E:\DangKyHocPhan\DangKyHocPhan\bin\Debug\DangKyHocPhan.pdb
@@ -41,3 +42,22 @@ E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateResource.c
 E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
 E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
 E:\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
+=======
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe.config
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\bin\Debug\DangKyHocPhan.exe
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\bin\Debug\DangKyHocPhan.pdb
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.AssemblyReference.cache
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.SuggestedBindingRedirects.cache
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.DangNhap.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.Khoa.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.Nganh.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.Properties.Resources.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.GenerateResource.cache
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
+D:\Learning Documents\Tài liệu các môn học\Co So Nganh\Nhập môn CNPM\Đồ Án\DangKyHocPhan\obj\Debug\DangKyHocPhan.ChuaHTHP.resources
+>>>>>>> 94e6906203781bbc23bdf47ec82b711a126893e7

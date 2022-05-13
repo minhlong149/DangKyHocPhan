@@ -49,6 +49,7 @@ namespace DangKyHocPhan
             this.Thoat_PDT.TabIndex = 7;
             this.Thoat_PDT.Text = "Thoát";
             this.Thoat_PDT.UseVisualStyleBackColor = false;
+            this.Thoat_PDT.Click += new System.EventHandler(this.Thoat_PDT_Click);
             // 
             // btnLHSSV
             // 
@@ -106,6 +107,7 @@ namespace DangKyHocPhan
             this.btnBCSV.TabIndex = 15;
             this.btnBCSV.Text = "Báo cáo sinh viên chưa đóng học phí";
             this.btnBCSV.UseVisualStyleBackColor = false;
+            this.btnBCSV.Click += new System.EventHandler(this.btnBCSV_Click);
             // 
             // btnNDSKN
             // 
@@ -135,6 +137,7 @@ namespace DangKyHocPhan
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TrangchuPDT";
             this.Text = "Trang Chủ Phòng Đào Tạo";
+            this.Load += new System.EventHandler(this.TrangchuPDT_Load);
             this.ResumeLayout(false);
 
         }
