@@ -58,3 +58,9 @@ D:\Document\temp_do_an\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.cspro
 D:\Document\temp_do_an\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.csproj.CoreCompileInputs.cache
 D:\Document\temp_do_an\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.exe
 D:\Document\temp_do_an\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.pdb
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.DangNhap.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.DKHP.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.PhieuThuHocPhi.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources

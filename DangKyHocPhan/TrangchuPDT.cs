@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DangKyHocPhan
 {
-    public partial class TrangchuPDT : DangKyHocPhan.Form1
+    public partial class TrangchuPDT : Form
     {
         public TrangchuPDT()
         {

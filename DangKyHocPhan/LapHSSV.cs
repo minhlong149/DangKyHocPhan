@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DangKyHocPhan
 {
-    public partial class LapHSSV : DangKyHocPhan.Form1
+    public partial class LapHSSV : Form
     {
         public LapHSSV()
         {
