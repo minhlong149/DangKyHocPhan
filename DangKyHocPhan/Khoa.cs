@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DangKyHocPhan
 {
@@ -19,9 +20,17 @@ namespace DangKyHocPhan
 
         private void Khoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dKHPDataSet.KHOA' table. You can move, or remove it, as needed.
-            this.kHOATableAdapter.Fill(this.dKHPDataSet.KHOA);
+            string query = "SELECT * FROM dbo.KHOA";
 
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection connection = new SqlConnection(connectionString);           
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+
+            dgvDSKhoa.DataSource = dataTable;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -40,6 +49,27 @@ namespace DangKyHocPhan
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenKhoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDSKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvDSKhoa.Rows[e.RowIndex];
+            txtMaKhoa.Text = row.Cells[0].Value.ToString();
+            txtTenKhoa.Text = row.Cells[1].Value.ToString();
+        }
+
+        private void dgvDSKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

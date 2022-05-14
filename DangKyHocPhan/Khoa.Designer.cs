@@ -38,16 +38,14 @@ namespace DangKyHocPhan
             this.btnSuaKhoa = new System.Windows.Forms.Button();
             this.btnXoaKhoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
+            this.dgvDSKhoa = new System.Windows.Forms.DataGridView();
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.kHOATableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.KHOATableAdapter();
-            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaKhoa
@@ -73,6 +71,7 @@ namespace DangKyHocPhan
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(192, 22);
             this.txtTenKhoa.TabIndex = 4;
+            this.txtTenKhoa.TextChanged += new System.EventHandler(this.txtTenKhoa_TextChanged);
             // 
             // lblTenKhoa
             // 
@@ -127,66 +126,51 @@ namespace DangKyHocPhan
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khoa";
             // 
-            // dataGridView1
+            // dgvDSKhoa
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maKhoaDataGridViewTextBoxColumn,
-            this.tenKhoaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.kHOABindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(484, 426);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // dKHPDataSet
-            // 
-            this.dKHPDataSet.DataSetName = "DKHPDataSet";
-            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dgvDSKhoa.AllowUserToAddRows = false;
+            this.dgvDSKhoa.AllowUserToDeleteRows = false;
+            this.dgvDSKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSKhoa.Location = new System.Drawing.Point(12, 12);
+            this.dgvDSKhoa.Name = "dgvDSKhoa";
+            this.dgvDSKhoa.ReadOnly = true;
+            this.dgvDSKhoa.RowHeadersWidth = 51;
+            this.dgvDSKhoa.RowTemplate.Height = 24;
+            this.dgvDSKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDSKhoa.Size = new System.Drawing.Size(484, 426);
+            this.dgvDSKhoa.TabIndex = 9;
+            this.dgvDSKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellClick);
+            this.dgvDSKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellContentClick);
             // 
             // kHOABindingSource
             // 
             this.kHOABindingSource.DataMember = "KHOA";
             this.kHOABindingSource.DataSource = this.dKHPDataSet;
             // 
+            // dKHPDataSet
+            // 
+            this.dKHPDataSet.DataSetName = "DKHPDataSet";
+            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // kHOATableAdapter
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
-            // 
-            // maKhoaDataGridViewTextBoxColumn
-            // 
-            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
-            this.maKhoaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tenKhoaDataGridViewTextBoxColumn
-            // 
-            this.tenKhoaDataGridViewTextBoxColumn.DataPropertyName = "TenKhoa";
-            this.tenKhoaDataGridViewTextBoxColumn.HeaderText = "TenKhoa";
-            this.tenKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenKhoaDataGridViewTextBoxColumn.Name = "tenKhoaDataGridViewTextBoxColumn";
-            this.tenKhoaDataGridViewTextBoxColumn.Width = 125;
             // 
             // Khoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDSKhoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "Khoa";
             this.Text = "Quản lý khoa";
             this.Load += new System.EventHandler(this.Khoa_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,11 +184,9 @@ namespace DangKyHocPhan
         private System.Windows.Forms.Button btnSuaKhoa;
         private System.Windows.Forms.Button btnXoaKhoa;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDSKhoa;
         private DKHPDataSet dKHPDataSet;
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private DKHPDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenKhoaDataGridViewTextBoxColumn;
     }
 }
