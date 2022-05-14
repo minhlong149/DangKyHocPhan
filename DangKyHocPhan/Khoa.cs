@@ -19,6 +19,8 @@ namespace DangKyHocPhan
 
         private void Khoa_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dKHPDataSet.KHOA' table. You can move, or remove it, as needed.
+            this.kHOATableAdapter.Fill(this.dKHPDataSet.KHOA);
 
         }
 

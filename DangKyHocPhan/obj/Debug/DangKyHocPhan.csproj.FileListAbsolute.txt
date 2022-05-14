@@ -64,3 +64,5 @@ D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.LapHSSV.resource
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.PhieuThuHocPhi.resources
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuPDT.resources
 D:\Projects\DangKyHocPhan\DangKyHocPhan\obj\Debug\DangKyHocPhan.TrangchuSV.resources
+D:\Projects\DangKyHocPhan\DangKyHocPhan\bin\Debug\DKHP.mdf
+D:\Projects\DangKyHocPhan\DangKyHocPhan\bin\Debug\DKHP_log.ldf
