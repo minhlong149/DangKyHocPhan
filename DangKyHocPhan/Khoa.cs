@@ -23,7 +23,7 @@ namespace DangKyHocPhan
             string query = "SELECT * FROM dbo.KHOA";
 
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection connection = new SqlConnection(connectionString);           
+            SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
             DataTable dataTable = new DataTable();
@@ -50,6 +50,23 @@ namespace DangKyHocPhan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Add
+            string query = "INSERT INTO dbo.KHOA VALUES (@MaKhoa, @TenKhoa)";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
+            command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
+            command.ExecuteNonQuery();
+
+            // Refresh
+            query = "SELECT * FROM dbo.KHOA";
+            command = new SqlCommand(query, connection);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+            dgvDSKhoa.DataSource = dataTable;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

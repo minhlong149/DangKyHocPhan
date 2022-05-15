@@ -181,10 +181,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DKHP.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DKHP_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DKHP.mdf</DependentUpon>
     </Content>
   </ItemGroup>
