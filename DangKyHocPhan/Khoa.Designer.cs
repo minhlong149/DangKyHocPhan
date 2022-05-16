@@ -100,6 +100,7 @@ namespace DangKyHocPhan
             this.btnSuaKhoa.TabIndex = 6;
             this.btnSuaKhoa.Text = "Sửa";
             this.btnSuaKhoa.UseVisualStyleBackColor = true;
+            this.btnSuaKhoa.Click += new System.EventHandler(this.btnSuaKhoa_Click);
             // 
             // btnXoaKhoa
             // 
@@ -109,6 +110,7 @@ namespace DangKyHocPhan
             this.btnXoaKhoa.TabIndex = 7;
             this.btnXoaKhoa.Text = "Xóa";
             this.btnXoaKhoa.UseVisualStyleBackColor = true;
+            this.btnXoaKhoa.Click += new System.EventHandler(this.btnXoaKhoa_Click);
             // 
             // groupBox1
             // 

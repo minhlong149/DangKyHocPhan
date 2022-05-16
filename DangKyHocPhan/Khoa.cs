@@ -99,5 +99,50 @@ namespace DangKyHocPhan
         {
 
         }
+
+        private void btnSuaKhoa_Click(object sender, EventArgs e)
+        {
+            // Add
+            string query = "UPDATE dbo.KHOA SET TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoa";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MaKhoa", dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString());
+            command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
+            command.ExecuteNonQuery();
+
+            // Refresh
+            query = "SELECT * FROM dbo.KHOA";
+            //connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            // connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            command = new SqlCommand(query, connection);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+            dgvDSKhoa.DataSource = dataTable;
+        }
+
+        private void btnXoaKhoa_Click(object sender, EventArgs e)
+        {
+            // Add
+            string query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MaKhoa", dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString());
+            command.ExecuteNonQuery();
+
+            // Refresh
+            query = "SELECT * FROM dbo.KHOA";
+            //connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DKHP.mdf;Integrated Security=True;Connect Timeout=30";
+            // connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            command = new SqlCommand(query, connection);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+            dgvDSKhoa.DataSource = dataTable;
+        }
     }
 }
