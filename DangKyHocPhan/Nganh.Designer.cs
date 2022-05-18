@@ -146,6 +146,7 @@ namespace DangKyHocPhan
             this.btnXoaNganh.TabIndex = 7;
             this.btnXoaNganh.Text = "Xóa";
             this.btnXoaNganh.UseVisualStyleBackColor = true;
+            this.btnXoaNganh.Click += new System.EventHandler(this.btnXoaNganh_Click);
             // 
             // txtTenNganh
             // 
