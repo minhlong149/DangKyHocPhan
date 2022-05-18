@@ -79,5 +79,33 @@ namespace DangKyHocPhan
             connection2.Close();
             dgvDSNganh.DataSource = dataTable;
         }
+
+        private void btnThemNganh_Click(object sender, EventArgs e)
+        {
+            // Add
+            string query = "INSERT INTO dbo.NGANH VALUES (@MaNganh, @TenNganh, @ThuocKhoa)";
+
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MaNganh", txtMaNganh.Text);
+            command.Parameters.AddWithValue("@TenNganh", txtTenNganh.Text);
+            command.Parameters.AddWithValue("@ThuocKhoa", cboThuocKhoa.SelectedValue.ToString());
+            command.ExecuteNonQuery();
+
+            // Refresh
+            query = "SELECT * FROM dbo.NGANH WHERE ThuocKhoa = @Khoa";
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Khoa", cboThuocKhoa.SelectedValue.ToString());
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+            dgvDSNganh.DataSource = dataTable;
+        }
+
+        private void btnSuaNganh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

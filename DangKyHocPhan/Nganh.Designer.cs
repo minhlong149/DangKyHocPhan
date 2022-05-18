@@ -106,6 +106,7 @@ namespace DangKyHocPhan
             this.btnThemNganh.TabIndex = 5;
             this.btnThemNganh.Text = "Thêm";
             this.btnThemNganh.UseVisualStyleBackColor = true;
+            this.btnThemNganh.Click += new System.EventHandler(this.btnThemNganh_Click);
             // 
             // lblMaNganh
             // 
@@ -125,6 +126,7 @@ namespace DangKyHocPhan
             this.btnSuaNganh.TabIndex = 6;
             this.btnSuaNganh.Text = "Sửa";
             this.btnSuaNganh.UseVisualStyleBackColor = true;
+            this.btnSuaNganh.Click += new System.EventHandler(this.btnSuaNganh_Click);
             // 
             // lblTenNganh
             // 
@@ -169,9 +171,12 @@ namespace DangKyHocPhan
             // 
             // dgvDSNganh
             // 
+            this.dgvDSNganh.AllowUserToAddRows = false;
+            this.dgvDSNganh.AllowUserToDeleteRows = false;
             this.dgvDSNganh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSNganh.Location = new System.Drawing.Point(12, 12);
             this.dgvDSNganh.Name = "dgvDSNganh";
+            this.dgvDSNganh.ReadOnly = true;
             this.dgvDSNganh.RowHeadersWidth = 51;
             this.dgvDSNganh.RowTemplate.Height = 24;
             this.dgvDSNganh.Size = new System.Drawing.Size(483, 426);
