@@ -42,6 +42,7 @@ namespace DangKyHocPhan
                 }
             }
 
+
             // Datagrid
             string query2 = "SELECT * FROM dbo.NGANH WHERE ThuocKhoa = @Khoa";
             SqlConnection connection2 = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
@@ -52,6 +53,30 @@ namespace DangKyHocPhan
             dataTable.Load(command.ExecuteReader());
             connection2.Close();
 
+            dgvDSNganh.DataSource = dataTable;
+
+            DataGridViewRow row = dgvDSNganh.CurrentRow;
+            txtMaNganh.Text = row.Cells[0].Value.ToString();
+            txtTenNganh.Text = row.Cells[1].Value.ToString();
+        }
+
+        private void dgvDSNganh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvDSNganh.Rows[e.RowIndex];
+            txtMaNganh.Text = row.Cells[0].Value.ToString();
+            txtTenNganh.Text = row.Cells[1].Value.ToString();
+        }
+
+        private void cboThuocKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string query2 = "SELECT * FROM dbo.NGANH WHERE ThuocKhoa = @Khoa";
+            SqlConnection connection2 = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            connection2.Open();
+            SqlCommand command = new SqlCommand(query2, connection2);
+            command.Parameters.AddWithValue("@Khoa", cboThuocKhoa.SelectedValue.ToString());
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection2.Close();
             dgvDSNganh.DataSource = dataTable;
         }
     }

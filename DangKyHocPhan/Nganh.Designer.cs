@@ -78,6 +78,7 @@ namespace DangKyHocPhan
             this.cboThuocKhoa.Name = "cboThuocKhoa";
             this.cboThuocKhoa.Size = new System.Drawing.Size(177, 24);
             this.cboThuocKhoa.TabIndex = 4;
+            this.cboThuocKhoa.SelectedValueChanged += new System.EventHandler(this.cboThuocKhoa_SelectedIndexChanged);
             // 
             // lblThuocKhoa
             // 
@@ -175,6 +176,7 @@ namespace DangKyHocPhan
             this.dgvDSNganh.RowTemplate.Height = 24;
             this.dgvDSNganh.Size = new System.Drawing.Size(483, 426);
             this.dgvDSNganh.TabIndex = 10;
+            this.dgvDSNganh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSNganh_CellClick);
             // 
             // Nganh
             // 
