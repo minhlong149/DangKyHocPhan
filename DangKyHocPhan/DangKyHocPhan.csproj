@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,6 +98,18 @@
     <Compile Include="LapHSSV.Designer.cs">
       <DependentUpon>LapHSSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonHoc.Designer.cs">
+      <DependentUpon>MonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonHocMo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonHocMo.Designer.cs">
+      <DependentUpon>MonHocMo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nganh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LapHSSV.resx">
       <DependentUpon>LapHSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonHoc.resx">
+      <DependentUpon>MonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonHocMo.resx">
+      <DependentUpon>MonHocMo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nganh.resx">
       <DependentUpon>Nganh.cs</DependentUpon>
