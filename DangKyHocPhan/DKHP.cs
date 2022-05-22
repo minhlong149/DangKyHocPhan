@@ -48,11 +48,17 @@ namespace DangKyHocPhan
                 {
                     DataTable data = new DataTable();
                     adapter.Fill(data);
+                    data.Columns.Add("HienThi", typeof(String));
 
                     foreach (DataRow row in data.Rows)
                     {
-                        cboHocKy.Items.Add("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
+                        row["HienThi"] = ("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
                     }
+                    
+
+                    cboHocKy.DataSource = data;
+                    cboHocKy.ValueMember = "MaHK";
+                    cboHocKy.DisplayMember = "HienThi";
                 }
             }
         }
