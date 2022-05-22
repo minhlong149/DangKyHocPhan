@@ -10,6 +10,9 @@ namespace DangKyHocPhan
 {
     public partial class TrangchuSV : Form
     {
+        // Lưu lại MSSV của SV mỗi khi đăng nhập
+        public static String MSSV;
+
         public TrangchuSV()
         {
             InitializeComponent();

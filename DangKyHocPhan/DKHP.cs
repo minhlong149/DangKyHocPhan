@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DangKyHocPhan
 {
@@ -35,6 +36,25 @@ namespace DangKyHocPhan
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DKHP_Load(object sender, EventArgs e)
+        {
+            // Load cboHocKy
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                string query = "SELECT * FROM dbo.DSHOCKY ORDER BY NamHoc DESC, HocKy DESC";
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    DataTable data = new DataTable();
+                    adapter.Fill(data);
+
+                    foreach (DataRow row in data.Rows)
+                    {
+                        cboHocKy.Items.Add("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
+                    }
+                }
+            }
         }
     }
 }
