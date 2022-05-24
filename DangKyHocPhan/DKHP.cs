@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace DangKyHocPhan
 {
     public partial class DKHP : Form
     {
+        private string _SoPhieu;
         public DKHP()
         {
             InitializeComponent();
@@ -61,6 +63,64 @@ namespace DangKyHocPhan
                     cboHocKy.DisplayMember = "HienThi";
                 }
             }
+        }
+
+        private void cboHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboHocKy_DropDownClosed(object sender, EventArgs e)
+        {
+            // Kiểm tra SV đã có phiếu DK của học kỳ này chưa
+            string query = "SELECT * FROM dbo.PHIEUDK WHERE MaSV = @MSSV AND MaHK = @HocKy";
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@MSSV", TrangchuSV.MSSV.ToString());
+            command.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
+            SqlDataReader Exist = command.ExecuteReader();
+            bool coPhieu = Exist.HasRows;
+            connection.Close();
+
+            _SoPhieu = TrangchuSV.MSSV.ToString() + cboHocKy.SelectedValue.ToString();
+
+            if (!coPhieu)
+            {
+                // Tạo phiếu đăng ký nếu chưa có
+                query = "INSERT INTO dbo.PHIEUDK VALUES (@SoPhieu, @MaSV, @MaHK, GETDATE())";
+                command = new SqlCommand(query, connection);
+                connection.Open();
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                command.Parameters.AddWithValue("@MaSV", TrangchuSV.MSSV.ToString());
+                command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            // Hiện thị danh sách môn học mở trong kỳ
+            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.MONHOCMO JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.MONHOCMO.MonHoc WHERE MaHK = @MaHK AND NOT EXISTS (SELECT * FROM dbo.DKHocPhan WHERE SoPhieu = @SoPhieu)";
+            command = new SqlCommand(query, connection);
+            connection.Open();
+            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+            DataTable dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            dgvDSMonHocMo.DataSource = dataTable;
+            connection.Close();
+            
+            // Hiện thị danh sách môn học đã đăng ký
+            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc WHERE SoPhieu = @SoPhieu";
+            command = new SqlCommand(query, connection);
+            connection.Open();
+            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+            dataTable = new DataTable();
+            dataTable.Load(command.ExecuteReader());
+            connection.Close();
+            dgvDSMonDK.DataSource = dataTable;
+            connection.Close();
+            
         }
     }
 }

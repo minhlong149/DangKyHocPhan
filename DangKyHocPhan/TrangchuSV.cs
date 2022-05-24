@@ -11,7 +11,7 @@ namespace DangKyHocPhan
     public partial class TrangchuSV : Form
     {
         // Lưu lại MSSV của SV mỗi khi đăng nhập
-        public static String MSSV;
+        public static String MSSV = "0001";
 
         public TrangchuSV()
         {

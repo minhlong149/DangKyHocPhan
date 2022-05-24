@@ -30,23 +30,23 @@ namespace DangKyHocPhan
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvDSMonDK = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnThemMon = new System.Windows.Forms.Button();
-            this.btnXoaMon = new System.Windows.Forms.Button();
+            this.dgvDSMonHocMo = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cboHocKy = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnThemMon = new System.Windows.Forms.Button();
+            this.btnXoaMon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMonDK)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMonHocMo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Controls.Add(this.dgvDSMonDK);
             this.groupBox1.Location = new System.Drawing.Point(12, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(396, 324);
@@ -54,19 +54,19 @@ namespace DangKyHocPhan
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Môn học đã đăng ký";
             // 
-            // dataGridView2
+            // dgvDSMonDK
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(384, 297);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvDSMonDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMonDK.Location = new System.Drawing.Point(6, 21);
+            this.dgvDSMonDK.Name = "dgvDSMonDK";
+            this.dgvDSMonDK.RowHeadersWidth = 51;
+            this.dgvDSMonDK.RowTemplate.Height = 24;
+            this.dgvDSMonDK.Size = new System.Drawing.Size(384, 297);
+            this.dgvDSMonDK.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvDSMonHocMo);
             this.groupBox2.Location = new System.Drawing.Point(414, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(374, 426);
@@ -74,35 +74,15 @@ namespace DangKyHocPhan
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách môn học mở";
             // 
-            // dataGridView1
+            // dgvDSMonHocMo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(362, 399);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btnThemMon
-            // 
-            this.btnThemMon.Location = new System.Drawing.Point(322, 399);
-            this.btnThemMon.Name = "btnThemMon";
-            this.btnThemMon.Size = new System.Drawing.Size(86, 39);
-            this.btnThemMon.TabIndex = 2;
-            this.btnThemMon.Text = "Thêm môn";
-            this.btnThemMon.UseVisualStyleBackColor = true;
-            this.btnThemMon.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnXoaMon
-            // 
-            this.btnXoaMon.Location = new System.Drawing.Point(236, 399);
-            this.btnXoaMon.Name = "btnXoaMon";
-            this.btnXoaMon.Size = new System.Drawing.Size(80, 39);
-            this.btnXoaMon.TabIndex = 0;
-            this.btnXoaMon.Text = "Xóa môn";
-            this.btnXoaMon.UseVisualStyleBackColor = true;
-            this.btnXoaMon.Click += new System.EventHandler(this.button2_Click);
+            this.dgvDSMonHocMo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMonHocMo.Location = new System.Drawing.Point(6, 21);
+            this.dgvDSMonHocMo.Name = "dgvDSMonHocMo";
+            this.dgvDSMonHocMo.RowHeadersWidth = 51;
+            this.dgvDSMonHocMo.RowTemplate.Height = 24;
+            this.dgvDSMonHocMo.Size = new System.Drawing.Size(362, 399);
+            this.dgvDSMonHocMo.TabIndex = 0;
             // 
             // label1
             // 
@@ -121,6 +101,8 @@ namespace DangKyHocPhan
             this.cboHocKy.Name = "cboHocKy";
             this.cboHocKy.Size = new System.Drawing.Size(326, 24);
             this.cboHocKy.TabIndex = 3;
+            this.cboHocKy.SelectedIndexChanged += new System.EventHandler(this.cboHocKy_SelectedIndexChanged);
+            this.cboHocKy.DropDownClosed += new System.EventHandler(this.cboHocKy_DropDownClosed);
             // 
             // label2
             // 
@@ -133,25 +115,43 @@ namespace DangKyHocPhan
             this.label2.Text = "ĐĂNG KÝ HỌC PHẦN";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // btnThemMon
+            // 
+            this.btnThemMon.Location = new System.Drawing.Point(314, 399);
+            this.btnThemMon.Name = "btnThemMon";
+            this.btnThemMon.Size = new System.Drawing.Size(88, 39);
+            this.btnThemMon.TabIndex = 5;
+            this.btnThemMon.Text = "Thêm môn";
+            this.btnThemMon.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaMon
+            // 
+            this.btnXoaMon.Location = new System.Drawing.Point(220, 399);
+            this.btnXoaMon.Name = "btnXoaMon";
+            this.btnXoaMon.Size = new System.Drawing.Size(88, 39);
+            this.btnXoaMon.TabIndex = 6;
+            this.btnXoaMon.Text = "Xóa môn";
+            this.btnXoaMon.UseVisualStyleBackColor = true;
+            // 
             // DKHP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnXoaMon);
+            this.Controls.Add(this.btnThemMon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboHocKy);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnThemMon);
-            this.Controls.Add(this.btnXoaMon);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "DKHP";
             this.Text = "DKHP";
             this.Load += new System.EventHandler(this.DKHP_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMonDK)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMonHocMo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,12 +161,12 @@ namespace DangKyHocPhan
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnThemMon;
-        private System.Windows.Forms.Button btnXoaMon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboHocKy;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDSMonDK;
+        private System.Windows.Forms.DataGridView dgvDSMonHocMo;
+        private System.Windows.Forms.Button btnThemMon;
+        private System.Windows.Forms.Button btnXoaMon;
     }
 }
