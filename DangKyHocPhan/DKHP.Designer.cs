@@ -56,9 +56,12 @@ namespace DangKyHocPhan
             // 
             // dgvDSMonDK
             // 
+            this.dgvDSMonDK.AllowUserToAddRows = false;
+            this.dgvDSMonDK.AllowUserToDeleteRows = false;
             this.dgvDSMonDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSMonDK.Location = new System.Drawing.Point(6, 21);
             this.dgvDSMonDK.Name = "dgvDSMonDK";
+            this.dgvDSMonDK.ReadOnly = true;
             this.dgvDSMonDK.RowHeadersWidth = 51;
             this.dgvDSMonDK.RowTemplate.Height = 24;
             this.dgvDSMonDK.Size = new System.Drawing.Size(384, 297);
@@ -76,9 +79,12 @@ namespace DangKyHocPhan
             // 
             // dgvDSMonHocMo
             // 
+            this.dgvDSMonHocMo.AllowUserToAddRows = false;
+            this.dgvDSMonHocMo.AllowUserToDeleteRows = false;
             this.dgvDSMonHocMo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSMonHocMo.Location = new System.Drawing.Point(6, 21);
             this.dgvDSMonHocMo.Name = "dgvDSMonHocMo";
+            this.dgvDSMonHocMo.ReadOnly = true;
             this.dgvDSMonHocMo.RowHeadersWidth = 51;
             this.dgvDSMonHocMo.RowTemplate.Height = 24;
             this.dgvDSMonHocMo.Size = new System.Drawing.Size(362, 399);
@@ -123,6 +129,7 @@ namespace DangKyHocPhan
             this.btnThemMon.TabIndex = 5;
             this.btnThemMon.Text = "Thêm môn";
             this.btnThemMon.UseVisualStyleBackColor = true;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // btnXoaMon
             // 
@@ -132,6 +139,7 @@ namespace DangKyHocPhan
             this.btnXoaMon.TabIndex = 6;
             this.btnXoaMon.Text = "Xóa môn";
             this.btnXoaMon.UseVisualStyleBackColor = true;
+            this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
             // 
             // DKHP
             // 
