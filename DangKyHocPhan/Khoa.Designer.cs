@@ -43,6 +43,8 @@ namespace DangKyHocPhan
             this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.kHOATableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.KHOATableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNganh = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
@@ -166,15 +168,38 @@ namespace DangKyHocPhan
             this.label1.TabIndex = 10;
             this.label1.Text = "QUẢN LÝ KHOA";
             // 
+            // btnNganh
+            // 
+            this.btnNganh.Location = new System.Drawing.Point(673, 404);
+            this.btnNganh.Name = "btnNganh";
+            this.btnNganh.Size = new System.Drawing.Size(115, 34);
+            this.btnNganh.TabIndex = 11;
+            this.btnNganh.Text = "Quản lý ngành";
+            this.btnNganh.UseVisualStyleBackColor = true;
+            this.btnNganh.Click += new System.EventHandler(this.btnNganh_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(589, 404);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(78, 34);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Quay về";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Khoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnNganh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSKhoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "Khoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khoa";
             this.Load += new System.EventHandler(this.Khoa_Load);
             this.groupBox1.ResumeLayout(false);
@@ -201,5 +226,7 @@ namespace DangKyHocPhan
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private DKHPDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNganh;
+        private System.Windows.Forms.Button btnBack;
     }
 }
