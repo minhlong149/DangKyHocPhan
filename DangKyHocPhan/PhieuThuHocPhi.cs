@@ -76,10 +76,5 @@ namespace DangKyHocPhan
         {
 
         }
-
-        private void button_huy_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

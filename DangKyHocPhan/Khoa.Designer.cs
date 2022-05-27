@@ -42,9 +42,6 @@ namespace DangKyHocPhan
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.kHOATableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.KHOATableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNganh = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
@@ -66,6 +63,7 @@ namespace DangKyHocPhan
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Size = new System.Drawing.Size(192, 22);
             this.txtMaKhoa.TabIndex = 2;
+            this.txtMaKhoa.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // txtTenKhoa
             // 
@@ -73,6 +71,7 @@ namespace DangKyHocPhan
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(192, 22);
             this.txtTenKhoa.TabIndex = 4;
+            this.txtTenKhoa.TextChanged += new System.EventHandler(this.txtTenKhoa_TextChanged);
             // 
             // lblTenKhoa
             // 
@@ -91,7 +90,7 @@ namespace DangKyHocPhan
             this.btnThemKhoa.TabIndex = 5;
             this.btnThemKhoa.Text = "Thêm";
             this.btnThemKhoa.UseVisualStyleBackColor = true;
-            this.btnThemKhoa.Click += new System.EventHandler(this.btnThemKhoa_Click);
+            this.btnThemKhoa.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSuaKhoa
             // 
@@ -122,7 +121,7 @@ namespace DangKyHocPhan
             this.groupBox1.Controls.Add(this.lblTenKhoa);
             this.groupBox1.Controls.Add(this.btnXoaKhoa);
             this.groupBox1.Controls.Add(this.txtTenKhoa);
-            this.groupBox1.Location = new System.Drawing.Point(502, 36);
+            this.groupBox1.Location = new System.Drawing.Point(502, 309);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(286, 129);
             this.groupBox1.TabIndex = 8;
@@ -134,15 +133,16 @@ namespace DangKyHocPhan
             this.dgvDSKhoa.AllowUserToAddRows = false;
             this.dgvDSKhoa.AllowUserToDeleteRows = false;
             this.dgvDSKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSKhoa.Location = new System.Drawing.Point(12, 36);
+            this.dgvDSKhoa.Location = new System.Drawing.Point(12, 12);
             this.dgvDSKhoa.Name = "dgvDSKhoa";
             this.dgvDSKhoa.ReadOnly = true;
             this.dgvDSKhoa.RowHeadersWidth = 51;
             this.dgvDSKhoa.RowTemplate.Height = 24;
             this.dgvDSKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSKhoa.Size = new System.Drawing.Size(484, 402);
+            this.dgvDSKhoa.Size = new System.Drawing.Size(484, 426);
             this.dgvDSKhoa.TabIndex = 9;
             this.dgvDSKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellClick);
+            this.dgvDSKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellContentClick);
             // 
             // kHOABindingSource
             // 
@@ -158,48 +158,14 @@ namespace DangKyHocPhan
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 24);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "QUẢN LÝ KHOA";
-            // 
-            // btnNganh
-            // 
-            this.btnNganh.Location = new System.Drawing.Point(673, 404);
-            this.btnNganh.Name = "btnNganh";
-            this.btnNganh.Size = new System.Drawing.Size(115, 34);
-            this.btnNganh.TabIndex = 11;
-            this.btnNganh.Text = "Quản lý ngành";
-            this.btnNganh.UseVisualStyleBackColor = true;
-            this.btnNganh.Click += new System.EventHandler(this.btnNganh_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(589, 404);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 34);
-            this.btnBack.TabIndex = 12;
-            this.btnBack.Text = "Quay về";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // Khoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnNganh);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSKhoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "Khoa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khoa";
             this.Load += new System.EventHandler(this.Khoa_Load);
             this.groupBox1.ResumeLayout(false);
@@ -208,7 +174,6 @@ namespace DangKyHocPhan
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -225,8 +190,5 @@ namespace DangKyHocPhan
         private DKHPDataSet dKHPDataSet;
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private DKHPDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNganh;
-        private System.Windows.Forms.Button btnBack;
     }
 }
