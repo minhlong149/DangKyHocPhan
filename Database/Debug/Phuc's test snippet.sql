@@ -1,0 +1,19 @@
+-- DELETE DATABASE
+USE master
+GO
+DROP DATABASE DKHP;
+
+-- LIST ALL DATABASE
+SELECT name, database_id, create_date  
+FROM sys.databases;  
+GO 
+
+-- DÙNG DATABASE NHÓM
+use "D:\DANGKYHOCPHAN\DATABASE\DKHP.MDF"
+GO
+
+-- TEST
+USE DKHP
+GO
+
+SELECT * FROM THUHOCPHI
