@@ -33,23 +33,29 @@ namespace DangKyHocPhan
             }
         }
 
+        void LoadThongTin()
+        {
+            DataGridViewRow row = dgvDSKhoa.Rows[dgvDSKhoa.CurrentCell.RowIndex];
+            txtMaKhoa.Text = row.Cells[0].Value.ToString();
+            txtTenKhoa.Text = row.Cells[1].Value.ToString();
+        }
+
         private void Khoa_Load(object sender, EventArgs e)
         {
             LoadDSKhoa();
+            LoadThongTin();
         }
 
         private void dgvDSKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dgvDSKhoa.Rows[e.RowIndex];
-            txtMaKhoa.Text = row.Cells[0].Value.ToString();
-            txtTenKhoa.Text = row.Cells[1].Value.ToString();
+            LoadThongTin();
         }
 
         private void btnThemKhoa_Click(object sender, EventArgs e)
         {
             if (txtMaKhoa.Text == "")
             {
-                MessageBox.Show("Mã khoa không được để trống!");
+                MessageBox.Show("Mã khoa không được để trống!", "Thêm khoa");
             }
             else {
                 string query = "SELECT * FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
@@ -65,7 +71,7 @@ namespace DangKyHocPhan
 
                 if (trungKhoa)
                 {
-                    MessageBox.Show("Bị trùng mã khoa! Vui lòng nhập lại!");
+                    MessageBox.Show("Bị trùng mã khoa! Vui lòng nhập lại!", "Thêm khoa");
                 }
                 else
                 {
@@ -79,6 +85,7 @@ namespace DangKyHocPhan
                         connection.Close();
                     }
                     LoadDSKhoa();
+                    LoadThongTin();
                 }
             }
         }
@@ -95,22 +102,28 @@ namespace DangKyHocPhan
                 command.ExecuteNonQuery();
                 connection.Close();
             }
-
             LoadDSKhoa();
+            LoadThongTin();
         }
 
         private void btnXoaKhoa_Click(object sender, EventArgs e)
         {
-            // Add
-            string query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
-            using (SqlCommand command = new SqlCommand(query, connection))
+            string maKhoa = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
+            string message = "Bạn có muốn xóa khoa " + maKhoa + " không?";
+            DialogResult result = MessageBox.Show(message, "Xóa khoa", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                command.Parameters.AddWithValue("@MaKhoa", dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString());
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                string query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                LoadDSKhoa();
+                LoadThongTin();
             }
-            LoadDSKhoa();
         }
     }
 }
