@@ -98,7 +98,6 @@ namespace DangKyHocPhan
             this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Học kỳ:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cboHocKy
             // 
@@ -107,7 +106,6 @@ namespace DangKyHocPhan
             this.cboHocKy.Name = "cboHocKy";
             this.cboHocKy.Size = new System.Drawing.Size(326, 24);
             this.cboHocKy.TabIndex = 3;
-            this.cboHocKy.SelectedIndexChanged += new System.EventHandler(this.cboHocKy_SelectedIndexChanged);
             this.cboHocKy.DropDownClosed += new System.EventHandler(this.cboHocKy_DropDownClosed);
             // 
             // label2
@@ -119,7 +117,6 @@ namespace DangKyHocPhan
             this.label2.Size = new System.Drawing.Size(214, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "ĐĂNG KÝ HỌC PHẦN";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnThemMon
             // 

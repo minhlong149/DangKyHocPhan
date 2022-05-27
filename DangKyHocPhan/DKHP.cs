@@ -20,26 +20,6 @@ namespace DangKyHocPhan
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DKHP_Load(object sender, EventArgs e)
         {
             // Load cboHocKy
@@ -57,7 +37,6 @@ namespace DangKyHocPhan
                         row["HienThi"] = ("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
                     }
                     
-
                     cboHocKy.DataSource = data;
                     cboHocKy.ValueMember = "MaHK";
                     cboHocKy.DisplayMember = "HienThi";
@@ -65,132 +44,108 @@ namespace DangKyHocPhan
             }
         }
 
-        private void cboHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadDSMonHocMo()
         {
+            string query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.MONHOCMO JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.MONHOCMO.MonHoc WHERE MaHK = @MaHK AND MONHOCMO.MonHoc NOT IN (SELECT MonHoc FROM dbo.DKHocPhan WHERE SoPhieu = @SoPhieu)";
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                DataTable dataTable = new DataTable();
+                connection.Open();
+                dataTable.Load(command.ExecuteReader());
+                connection.Close();
+                dgvDSMonHocMo.DataSource = dataTable;
+            }
+        }
 
+        private void LoadDSMonDangKy()
+        {
+            string query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc WHERE SoPhieu = @SoPhieu";
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                DataTable dataTable = new DataTable();
+                dataTable = new DataTable();
+                connection.Open();
+                dataTable.Load(command.ExecuteReader());
+                connection.Close();
+                dgvDSMonDK.DataSource = dataTable;
+            }
         }
 
         private void cboHocKy_DropDownClosed(object sender, EventArgs e)
         {
             // Kiểm tra SV đã có phiếu DK của học kỳ này chưa
             string query = "SELECT * FROM dbo.PHIEUDK WHERE MaSV = @MSSV AND MaHK = @HocKy";
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@MSSV", TrangchuSV.MSSV.ToString());
-            command.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
-            SqlDataReader Exist = command.ExecuteReader();
-            bool coPhieu = Exist.HasRows;
-            connection.Close();
+            bool coPhieu = false;
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@MSSV", TrangchuSV.MSSV.ToString());
+                command.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
+                connection.Open();
+                SqlDataReader Exist = command.ExecuteReader();
+                coPhieu = Exist.HasRows;
+                connection.Close();
+            }
 
             _SoPhieu = TrangchuSV.MSSV.ToString() + cboHocKy.SelectedValue.ToString();
 
             if (!coPhieu)
             {
-                // Tạo phiếu đăng ký nếu chưa có
                 query = "INSERT INTO dbo.PHIEUDK VALUES (@SoPhieu, @MaSV, @MaHK, GETDATE())";
-                command = new SqlCommand(query, connection);
-                connection.Open();
-                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-                command.Parameters.AddWithValue("@MaSV", TrangchuSV.MSSV.ToString());
-                command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-                command.ExecuteNonQuery();
-                connection.Close();
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                    command.Parameters.AddWithValue("@MaSV", TrangchuSV.MSSV.ToString());
+                    command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
 
-            // Hiện thị danh sách môn học mở trong kỳ
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.MONHOCMO JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.MONHOCMO.MonHoc WHERE MaHK = @MaHK AND MONHOCMO.MonHoc NOT IN (SELECT MonHoc FROM dbo.DKHocPhan WHERE SoPhieu = @SoPhieu)";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            DataTable dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            dgvDSMonHocMo.DataSource = dataTable;
-            connection.Close();
-            
-            // Hiện thị danh sách môn học đã đăng ký
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc WHERE SoPhieu = @SoPhieu";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            connection.Close();
-            dgvDSMonDK.DataSource = dataTable;
-            connection.Close();
-            
+            LoadDSMonHocMo();
+            LoadDSMonDangKy();
         }
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
             string query = "INSERT INTO dbo.DKHOCPHAN VALUES (@SoPhieu, @MonHoc)";
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            command.Parameters.AddWithValue("@MonHoc", dgvDSMonHocMo.Rows[dgvDSMonHocMo.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            command.ExecuteNonQuery();
-            connection.Close();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                command.Parameters.AddWithValue("@MonHoc", dgvDSMonHocMo.Rows[dgvDSMonHocMo.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
 
-            // Hiện thị danh sách môn học mở trong kỳ
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.MONHOCMO JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.MONHOCMO.MonHoc WHERE MaHK = @MaHK AND MONHOCMO.MonHoc NOT IN (SELECT MonHoc FROM dbo.DKHocPhan WHERE SoPhieu = @SoPhieu)";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            DataTable dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            dgvDSMonHocMo.DataSource = dataTable;
-            connection.Close();
-
-            // Hiện thị danh sách môn học đã đăng ký
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc WHERE SoPhieu = @SoPhieu";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            connection.Close();
-            dgvDSMonDK.DataSource = dataTable;
-            connection.Close();
+            LoadDSMonHocMo();
+            LoadDSMonDangKy();
         }
 
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             string query = "DELETE FROM dbo.DKHOCPHAN WHERE SoPhieu = @SoPhieu AND MonHoc = @MonHoc";
-            SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            command.Parameters.AddWithValue("@MonHoc", dgvDSMonDK.Rows[dgvDSMonDK.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            command.ExecuteNonQuery();
-            connection.Close();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                command.Parameters.AddWithValue("@MonHoc", dgvDSMonDK.Rows[dgvDSMonDK.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
 
-            // Hiện thị danh sách môn học mở trong kỳ
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.MONHOCMO JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.MONHOCMO.MonHoc WHERE MaHK = @MaHK AND MONHOCMO.MonHoc NOT IN (SELECT MonHoc FROM dbo.DKHocPhan WHERE SoPhieu = @SoPhieu)";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            DataTable dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            dgvDSMonHocMo.DataSource = dataTable;
-            connection.Close();
-
-            // Hiện thị danh sách môn học đã đăng ký
-            query = "SELECT MaMon, TenMon, LoaiMon, SoTiet FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc WHERE SoPhieu = @SoPhieu";
-            command = new SqlCommand(query, connection);
-            connection.Open();
-            command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
-            command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-            dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
-            connection.Close();
-            dgvDSMonDK.DataSource = dataTable;
-            connection.Close();
+            LoadDSMonHocMo();
+            LoadDSMonDangKy();
         }
     }
 }
