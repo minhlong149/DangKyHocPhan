@@ -147,5 +147,19 @@ namespace DangKyHocPhan
             LoadDSMonHocMo();
             LoadDSMonDangKy();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangchuSV form = new TrangchuSV();
+            form.ShowDialog();
+        }
+
+        private void btnThuPhi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PhieuThuHocPhi form = new PhieuThuHocPhi();
+            form.ShowDialog();
+        }
     }
 }
