@@ -55,11 +55,11 @@
             this.button_them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.button_them.AutoSize = true;
             this.button_them.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button_them.Location = new System.Drawing.Point(596, 5);
+            this.button_them.Location = new System.Drawing.Point(447, 4);
             this.button_them.Margin = new System.Windows.Forms.Padding(0);
-            this.button_them.MinimumSize = new System.Drawing.Size(180, 50);
+            this.button_them.MinimumSize = new System.Drawing.Size(135, 41);
             this.button_them.Name = "button_them";
-            this.button_them.Size = new System.Drawing.Size(180, 63);
+            this.button_them.Size = new System.Drawing.Size(135, 50);
             this.button_them.TabIndex = 1;
             this.button_them.Text = "THÊM";
             this.button_them.UseVisualStyleBackColor = false;
@@ -74,10 +74,11 @@
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.title.Location = new System.Drawing.Point(3, 0);
+            this.title.Location = new System.Drawing.Point(2, 0);
+            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.title.Size = new System.Drawing.Size(794, 77);
+            this.title.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.title.Size = new System.Drawing.Size(596, 62);
             this.title.TabIndex = 0;
             this.title.Text = "PHIẾU THU HỌC PHÍ";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,14 +94,14 @@
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 524);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 426);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
@@ -109,17 +110,17 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.20271F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.7973F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tableLayoutPanel2.Controls.Add(this.button_huy, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_them, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 438);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 356);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 73);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(596, 58);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // button_huy
@@ -128,14 +129,15 @@
             this.button_huy.AutoSize = true;
             this.button_huy.BackColor = System.Drawing.SystemColors.Control;
             this.button_huy.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button_huy.Location = new System.Drawing.Point(393, 5);
+            this.button_huy.Location = new System.Drawing.Point(294, 4);
             this.button_huy.Margin = new System.Windows.Forms.Padding(0);
-            this.button_huy.MinimumSize = new System.Drawing.Size(180, 50);
+            this.button_huy.MinimumSize = new System.Drawing.Size(135, 41);
             this.button_huy.Name = "button_huy";
-            this.button_huy.Size = new System.Drawing.Size(180, 63);
+            this.button_huy.Size = new System.Drawing.Size(135, 50);
             this.button_huy.TabIndex = 2;
             this.button_huy.Text = "HỦY";
             this.button_huy.UseVisualStyleBackColor = false;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
             // 
             // panel1
             // 
@@ -143,20 +145,20 @@
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 79);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 64);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 355);
+            this.panel1.Size = new System.Drawing.Size(596, 288);
             this.panel1.TabIndex = 4;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.text_so_tien_thu);
-            this.groupBox4.Location = new System.Drawing.Point(33, 210);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Location = new System.Drawing.Point(25, 171);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(383, 80);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Size = new System.Drawing.Size(287, 65);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Số tiền thu";
@@ -164,21 +166,21 @@
             // text_so_tien_thu
             // 
             this.text_so_tien_thu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text_so_tien_thu.Location = new System.Drawing.Point(3, 25);
-            this.text_so_tien_thu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.text_so_tien_thu.Location = new System.Drawing.Point(2, 21);
+            this.text_so_tien_thu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.text_so_tien_thu.Multiline = true;
             this.text_so_tien_thu.Name = "text_so_tien_thu";
-            this.text_so_tien_thu.Size = new System.Drawing.Size(377, 53);
+            this.text_so_tien_thu.Size = new System.Drawing.Size(283, 42);
             this.text_so_tien_thu.TabIndex = 1;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.text_mssv);
-            this.groupBox3.Location = new System.Drawing.Point(33, 126);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Location = new System.Drawing.Point(25, 102);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(383, 80);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(287, 65);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mã số sinh viên";
@@ -186,21 +188,21 @@
             // text_mssv
             // 
             this.text_mssv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text_mssv.Location = new System.Drawing.Point(3, 25);
-            this.text_mssv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.text_mssv.Location = new System.Drawing.Point(2, 21);
+            this.text_mssv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.text_mssv.Multiline = true;
             this.text_mssv.Name = "text_mssv";
-            this.text_mssv.Size = new System.Drawing.Size(377, 53);
+            this.text_mssv.Size = new System.Drawing.Size(283, 42);
             this.text_mssv.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.date_picker_ngay_lap);
-            this.groupBox2.Location = new System.Drawing.Point(33, 44);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(25, 36);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(337, 60);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(253, 49);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ngày lập";
@@ -210,10 +212,10 @@
             // 
             this.date_picker_ngay_lap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date_picker_ngay_lap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_picker_ngay_lap.Location = new System.Drawing.Point(3, 25);
-            this.date_picker_ngay_lap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.date_picker_ngay_lap.Location = new System.Drawing.Point(2, 21);
+            this.date_picker_ngay_lap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.date_picker_ngay_lap.Name = "date_picker_ngay_lap";
-            this.date_picker_ngay_lap.Size = new System.Drawing.Size(331, 30);
+            this.date_picker_ngay_lap.Size = new System.Drawing.Size(249, 26);
             this.date_picker_ngay_lap.TabIndex = 2;
             // 
             // contextMenuStrip1
@@ -224,11 +226,11 @@
             // 
             // PhieuThuHocPhi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 524);
+            this.ClientSize = new System.Drawing.Size(600, 426);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PhieuThuHocPhi";
             this.Text = "Phiếu thu học phí";
             this.Load += new System.EventHandler(this.PhieuThuHocPhi_Load);
