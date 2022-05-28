@@ -34,6 +34,10 @@ namespace DangKyHocPhan
             this.dgvDSMH = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThemmoi = new System.Windows.Forms.Button();
+            this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +70,11 @@ namespace DangKyHocPhan
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSMH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaMon,
+            this.TenMon,
+            this.SoTiet,
+            this.LoaiMon});
             this.dgvDSMH.Location = new System.Drawing.Point(-2, 104);
             this.dgvDSMH.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSMH.MultiSelect = false;
@@ -101,6 +110,38 @@ namespace DangKyHocPhan
             this.btnThemmoi.UseVisualStyleBackColor = true;
             this.btnThemmoi.Click += new System.EventHandler(this.btnThemmoi_Click);
             // 
+            // MaMon
+            // 
+            this.MaMon.DataPropertyName = "MaMon";
+            this.MaMon.HeaderText = "Mã môn học";
+            this.MaMon.MinimumWidth = 6;
+            this.MaMon.Name = "MaMon";
+            this.MaMon.ReadOnly = true;
+            // 
+            // TenMon
+            // 
+            this.TenMon.DataPropertyName = "TenMon";
+            this.TenMon.HeaderText = "Tên môn học";
+            this.TenMon.MinimumWidth = 6;
+            this.TenMon.Name = "TenMon";
+            this.TenMon.ReadOnly = true;
+            // 
+            // SoTiet
+            // 
+            this.SoTiet.DataPropertyName = "SoTiet";
+            this.SoTiet.HeaderText = "Số Tiết";
+            this.SoTiet.MinimumWidth = 6;
+            this.SoTiet.Name = "SoTiet";
+            this.SoTiet.ReadOnly = true;
+            // 
+            // LoaiMon
+            // 
+            this.LoaiMon.DataPropertyName = "LoaiMon";
+            this.LoaiMon.HeaderText = "Loại môn";
+            this.LoaiMon.MinimumWidth = 6;
+            this.LoaiMon.Name = "LoaiMon";
+            this.LoaiMon.ReadOnly = true;
+            // 
             // DSMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,5 +168,9 @@ namespace DangKyHocPhan
         private System.Windows.Forms.DataGridView dgvDSMH;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThemmoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiMon;
     }
 }

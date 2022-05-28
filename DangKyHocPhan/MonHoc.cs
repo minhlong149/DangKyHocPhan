@@ -31,8 +31,10 @@ namespace DangKyHocPhan
             {
                 this.Text = "Cập nhật môn học";
                 var r = new Database().Select("exec selectMH '" + mamh + "'");
-                txtMaMon.Text = r["TenMon"].ToString();
+                txtMaMon.Text = r["MaMon"].ToString();
+                txtTenMon.Text = r["TenMon"].ToString();
                 txtSoTiet.Text = r["SoTiet"].ToString();
+                txtLoaiMon.Text = r["LoaiMon"].ToString();
             }
         }
         private void button_them_Click(object sender, EventArgs e)
