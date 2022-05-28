@@ -32,6 +32,7 @@ namespace DangKyHocPhan
                 this.Text = "Cập nhật môn học";
                 var r = new Database().Select("exec selectMH '" + mamh + "'");
                 txtMaMon.Text = r["MaMon"].ToString();
+                txtMaMon.Enabled = false;
                 txtTenMon.Text = r["TenMon"].ToString();
                 txtSoTiet.Text = r["SoTiet"].ToString();
                 txtLoaiMon.Text = r["LoaiMon"].ToString();
@@ -56,10 +57,10 @@ namespace DangKyHocPhan
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtMaMon.Text))
+            if (string.IsNullOrEmpty(txtTenMon.Text))
             {
                 MessageBox.Show("Tên môn học không được để trống");
-                txtMaMon.Select();
+                txtTenMon.Select();
                 return;
             }
 
@@ -72,43 +73,48 @@ namespace DangKyHocPhan
                 sql = "insertMH";
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@NguoiTao",
+                    key = "@nguoitao",
                     value = nguoithuchien
+                });
+                lstPara.Add(new CustomParameter()
+                {
+                    key = "@mamonhoc",
+                    value = txtMaMon.Text
                 });
             }
             else
             {
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@MaMon",
+                    key = "@mamonhoc",
                     value = mamh
                 });
 
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@NguoiCapNhat",
+                    key = "@nguoicapnhat",
                     value = nguoithuchien
                 });
                 sql = "updateMH";
             }
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaMon",
-                value = txtMaMon.Text
-            });
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@TenMon",
+                key = "@tenmonhoc",
                 value = txtTenMon.Text
             });
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@SoTiet",
+                key = "@sotiet",
                 value = txtSoTiet.Text
             });
 
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@loaimon",
+                value = txtLoaiMon.Text
+            });
 
             var rs = new Database().ExeCute(sql, lstPara);
 

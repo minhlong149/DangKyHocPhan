@@ -116,7 +116,7 @@ namespace DangKyHocPhan
             this.button_them.Name = "button_them";
             this.button_them.Size = new System.Drawing.Size(180, 50);
             this.button_them.TabIndex = 11;
-            this.button_them.Text = "THÊM";
+            this.button_them.Text = "LƯU";
             this.button_them.UseVisualStyleBackColor = false;
             this.button_them.Click += new System.EventHandler(this.button_them_Click);
             // 
