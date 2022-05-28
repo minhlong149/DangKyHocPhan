@@ -69,12 +69,14 @@
     <Compile Include="ChuaHTHP.Designer.cs">
       <DependentUpon>ChuaHTHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomParameter.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="DKHP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +87,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DKHPDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSMonHoc.Designer.cs">
+      <DependentUpon>DSMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSMonHocDaDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSMonHocDaDK.Designer.cs">
+      <DependentUpon>DSMonHocDaDK.cs</DependentUpon>
     </Compile>
     <Compile Include="Khoa.cs">
       <SubType>Form</SubType>
@@ -141,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DKHP.resx">
       <DependentUpon>DKHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSMonHoc.resx">
+      <DependentUpon>DSMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSMonHocDaDK.resx">
+      <DependentUpon>DSMonHocDaDK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Khoa.resx">
       <DependentUpon>Khoa.cs</DependentUpon>
