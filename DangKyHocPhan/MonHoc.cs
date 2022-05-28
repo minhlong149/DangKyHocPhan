@@ -31,8 +31,10 @@ namespace DangKyHocPhan
             {
                 this.Text = "Cập nhật môn học";
                 var r = new Database().Select("exec selectMH '" + mamh + "'");
-                txtMaMon.Text = r["TenMon"].ToString();
+                txtMaMon.Text = r["MaMon"].ToString();
+                txtTenMon.Text = r["TenMon"].ToString();
                 txtSoTiet.Text = r["SoTiet"].ToString();
+                txtLoaiMon.Text = r["LoaiMon"].ToString();
             }
         }
         private void button_them_Click(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace DangKyHocPhan
                 sql = "insertMH";
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@NguoiTao",
+                    key = "@nguoitao",
                     value = nguoithuchien
                 });
             }
@@ -78,34 +80,35 @@ namespace DangKyHocPhan
             {
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@MaMon",
-                    value = mamh
+                    key = "@mamonhoc",
+                    value = txtMaMon.Text
                 });
 
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@NguoiCapNhat",
+                    key = "@nguoicapnhat",
                     value = nguoithuchien
                 });
                 sql = "updateMH";
             }
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaMon",
-                value = txtMaMon.Text
-            });
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@TenMon",
+                key = "@tenmonhoc",
                 value = txtTenMon.Text
             });
 
             lstPara.Add(new CustomParameter()
             {
-                key = "@SoTiet",
+                key = "@sotiet",
                 value = txtSoTiet.Text
             });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@loaimon",
+                value = txtLoaiMon.Text
+            });
+
 
 
             var rs = new Database().ExeCute(sql, lstPara);
