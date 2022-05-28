@@ -49,10 +49,10 @@ namespace DangKyHocPhan
         private void DSMonHoc_Load(object sender, EventArgs e)
         {
             LoadDSMH();
-            dgvDSMH.Columns["MaMon"].HeaderText = "Mã môn học";
+            dgvDSMH.Columns["MaMon"].HeaderText = "Mã MH";
             dgvDSMH.Columns["TenMon"].HeaderText = "Tên môn học";
-            dgvDSMH.Columns["SoTiet"].HeaderText = "Số tiết";
-            dgvDSMH.Columns["LoaiMon"].HeaderText = "Loại môn";
+            dgvDSMH.Columns["SoTiet"].HeaderText = "Số Tiết";
+            dgvDSMH.Columns["LoaiMon"].HeaderText = "Loại Môn";
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

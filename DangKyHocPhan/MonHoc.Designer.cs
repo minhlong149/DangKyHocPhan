@@ -36,7 +36,7 @@ namespace DangKyHocPhan
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoTiet = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtLoaiMon = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_them = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -92,17 +92,17 @@ namespace DangKyHocPhan
             this.label3.Size = new System.Drawing.Size(0, 25);
             this.label3.TabIndex = 6;
             // 
-            // txtLoaiMon
+            // comboBox1
             // 
-            this.txtLoaiMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiMon.FormattingEnabled = true;
-            this.txtLoaiMon.Items.AddRange(new object[] {
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
             "LT",
             "TH"});
-            this.txtLoaiMon.Location = new System.Drawing.Point(540, 295);
-            this.txtLoaiMon.Name = "txtLoaiMon";
-            this.txtLoaiMon.Size = new System.Drawing.Size(107, 33);
-            this.txtLoaiMon.TabIndex = 10;
+            this.comboBox1.Location = new System.Drawing.Point(540, 295);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(107, 33);
+            this.comboBox1.TabIndex = 10;
             // 
             // button_them
             // 
@@ -116,7 +116,7 @@ namespace DangKyHocPhan
             this.button_them.Name = "button_them";
             this.button_them.Size = new System.Drawing.Size(180, 50);
             this.button_them.TabIndex = 11;
-            this.button_them.Text = "LƯU";
+            this.button_them.Text = "THÊM";
             this.button_them.UseVisualStyleBackColor = false;
             this.button_them.Click += new System.EventHandler(this.button_them_Click);
             // 
@@ -146,7 +146,7 @@ namespace DangKyHocPhan
             this.ClientSize = new System.Drawing.Size(800, 470);
             this.Controls.Add(this.button_huy);
             this.Controls.Add(this.button_them);
-            this.Controls.Add(this.txtLoaiMon);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtSoTiet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenMon);
@@ -169,7 +169,7 @@ namespace DangKyHocPhan
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSoTiet;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox txtLoaiMon;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button_them;
         private System.Windows.Forms.Button button_huy;
     }
