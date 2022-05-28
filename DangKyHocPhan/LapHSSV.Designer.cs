@@ -29,18 +29,34 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LapHSSV));
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.pickNS = new System.Windows.Forms.DateTimePicker();
             this.CBoxTinh = new System.Windows.Forms.ComboBox();
+            this.tINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dKHPDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.CBoxDT = new System.Windows.Forms.ComboBox();
-            this.CBoxNganh = new System.Windows.Forms.ComboBox();
+            this.dOITUONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLHS = new System.Windows.Forms.Button();
             this.btnThoatLHS = new System.Windows.Forms.Button();
             this.rbtnNam = new System.Windows.Forms.RadioButton();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
             this.CBoxHuyen = new System.Windows.Forms.ComboBox();
+            this.CBoxNganh = new System.Windows.Forms.ComboBox();
+            this.nGANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tINHTableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.TINHTableAdapter();
+            this.dOITUONGTableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.DOITUONGTableAdapter();
+            this.nGANHTableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.NGANHTableAdapter();
+            this.dOITUONGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tINHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dOITUONGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dOITUONGBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMSSV
@@ -73,107 +89,46 @@ namespace DangKyHocPhan
             // 
             // CBoxTinh
             // 
+            this.CBoxTinh.DataSource = this.tINHBindingSource;
+            this.CBoxTinh.DisplayMember = "TenTinh";
             this.CBoxTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxTinh.FormattingEnabled = true;
-            this.CBoxTinh.Items.AddRange(new object[] {
-            "An Giang\t",
-            "Bà Rịa – Vũng Tàu\t",
-            "Bắc Giang\t",
-            "Bắc Kạn",
-            "Bạc Liêu",
-            "Bắc Ninh",
-            "Bến Tre",
-            "Bình Định",
-            "Bình Dương",
-            "Bình Phước",
-            "Bình Thuận",
-            "Cà Mau",
-            "Cần Thơ",
-            "Cao Bằng",
-            "Đà Nẵng",
-            "Đắk Lắk",
-            "Đắk Nông",
-            "Điện Biên",
-            "Đồng Nai",
-            "Đồng Tháp",
-            "Gia Lai",
-            "Hà Giang",
-            "Hà Nam\t",
-            "Hà Nội\t",
-            "Hà Tĩnh\t",
-            "Hải Dương\t",
-            "Hải Phòng\t",
-            "Hậu Giang\t",
-            "Hòa Bình\t",
-            "Hưng Yên",
-            "Khánh Hòa",
-            "Kiên Giang",
-            "Kon Tum\t",
-            "Lai Châu\t",
-            "Lâm Đồng",
-            "Lạng Sơn",
-            "Lào Cai",
-            "Long An",
-            "Nam Định",
-            "Nghệ An",
-            "Ninh Bình",
-            "Ninh Thuận",
-            "Phú Thọ",
-            "Phú Yên",
-            "Quảng Bình",
-            "Quảng Nam",
-            "Quảng Ngãi",
-            "Quảng Ninh",
-            "Quảng Trị",
-            "Sóc Trăng",
-            "Sơn La",
-            "Tây Ninh",
-            "Thái Bình",
-            "Thái Nguyên",
-            "Thanh Hóa",
-            "Thừa Thiên Huế",
-            "Tiền Giang",
-            "TP Hồ Chí Minh",
-            "Trà Vinh",
-            "Tuyên Quang",
-            "Vĩnh Long",
-            "Vĩnh Phúc",
-            "Yên Bái"});
             this.CBoxTinh.Location = new System.Drawing.Point(373, 572);
             this.CBoxTinh.Name = "CBoxTinh";
             this.CBoxTinh.Size = new System.Drawing.Size(138, 28);
             this.CBoxTinh.TabIndex = 11;
+            this.CBoxTinh.SelectedIndexChanged += new System.EventHandler(this.CBoxTinh_SelectedIndexChanged);
+            // 
+            // tINHBindingSource
+            // 
+            this.tINHBindingSource.DataMember = "TINH";
+            this.tINHBindingSource.DataSource = this.dKHPDataSetBindingSource;
+            // 
+            // dKHPDataSetBindingSource
+            // 
+            this.dKHPDataSetBindingSource.DataSource = this.dKHPDataSet;
+            this.dKHPDataSetBindingSource.Position = 0;
+            // 
+            // dKHPDataSet
+            // 
+            this.dKHPDataSet.DataSetName = "DKHPDataSet";
+            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CBoxDT
             // 
+            this.CBoxDT.DataSource = this.dOITUONGBindingSource1;
+            this.CBoxDT.DisplayMember = "TenDT";
             this.CBoxDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxDT.FormattingEnabled = true;
-            this.CBoxDT.Items.AddRange(new object[] {
-            "Con liệt sĩ",
-            "Con thương binh",
-            "Con vùng sâu/vùng xa"});
             this.CBoxDT.Location = new System.Drawing.Point(304, 520);
             this.CBoxDT.Name = "CBoxDT";
             this.CBoxDT.Size = new System.Drawing.Size(207, 28);
             this.CBoxDT.TabIndex = 13;
             // 
-            // CBoxNganh
+            // dOITUONGBindingSource
             // 
-            this.CBoxNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBoxNganh.FormattingEnabled = true;
-            this.CBoxNganh.Items.AddRange(new object[] {
-            "Ngành Công nghệ Thông tin",
-            "Ngành Hệ thống Thông tin",
-            "Ngành Khoa học Máy tính",
-            "Ngành Kỹ thuật Phần mềm",
-            "Ngành Kỹ thuật Máy tính",
-            "Ngành Mạng máy tính & Truyền thông Dữ liệu",
-            "Ngành An toàn Thông tin",
-            "Ngành Thương mại Điện tử"});
-            this.CBoxNganh.Location = new System.Drawing.Point(243, 623);
-            this.CBoxNganh.Name = "CBoxNganh";
-            this.CBoxNganh.Size = new System.Drawing.Size(268, 28);
-            this.CBoxNganh.TabIndex = 14;
+            this.dOITUONGBindingSource.DataMember = "DOITUONG";
+            this.dOITUONGBindingSource.DataSource = this.dKHPDataSetBindingSource;
             // 
             // btnLHS
             // 
@@ -184,6 +139,7 @@ namespace DangKyHocPhan
             this.btnLHS.TabIndex = 17;
             this.btnLHS.Text = "Lưu hồ sơ";
             this.btnLHS.UseVisualStyleBackColor = true;
+            this.btnLHS.Click += new System.EventHandler(this.btnLHS_Click);
             // 
             // btnThoatLHS
             // 
@@ -223,80 +179,50 @@ namespace DangKyHocPhan
             // 
             // CBoxHuyen
             // 
+            this.CBoxHuyen.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tINHBindingSource, "MaTinh", true));
             this.CBoxHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBoxHuyen.FormattingEnabled = true;
             this.CBoxHuyen.Items.AddRange(new object[] {
-            "An Giang\t",
-            "Bà Rịa – Vũng Tàu\t",
-            "Bắc Giang\t",
-            "Bắc Kạn",
-            "Bạc Liêu",
-            "Bắc Ninh",
-            "Bến Tre",
-            "Bình Định",
-            "Bình Dương",
-            "Bình Phước",
-            "Bình Thuận",
-            "Cà Mau",
-            "Cần Thơ",
-            "Cao Bằng",
-            "Đà Nẵng",
-            "Đắk Lắk",
-            "Đắk Nông",
-            "Điện Biên",
-            "Đồng Nai",
-            "Đồng Tháp",
-            "Gia Lai",
-            "Hà Giang",
-            "Hà Nam\t",
-            "Hà Nội\t",
-            "Hà Tĩnh\t",
-            "Hải Dương\t",
-            "Hải Phòng\t",
-            "Hậu Giang\t",
-            "Hòa Bình\t",
-            "Hưng Yên",
-            "Khánh Hòa",
-            "Kiên Giang",
-            "Kon Tum\t",
-            "Lai Châu\t",
-            "Lâm Đồng",
-            "Lạng Sơn",
-            "Lào Cai",
-            "Long An",
-            "Nam Định",
-            "Nghệ An",
-            "Ninh Bình",
-            "Ninh Thuận",
-            "Phú Thọ",
-            "Phú Yên",
-            "Quảng Bình",
-            "Quảng Nam",
-            "Quảng Ngãi",
-            "Quảng Ninh",
-            "Quảng Trị",
-            "Sóc Trăng",
-            "Sơn La",
-            "Tây Ninh",
-            "Thái Bình",
-            "Thái Nguyên",
-            "Thanh Hóa",
-            "Thừa Thiên Huế",
-            "Tiền Giang",
-            "TP Hồ Chí Minh",
-            "Trà Vinh",
-            "Tuyên Quang",
-            "Vĩnh Long",
-            "Vĩnh Phúc",
-            "Yên Bái"});
+            "None"});
             this.CBoxHuyen.Location = new System.Drawing.Point(163, 572);
             this.CBoxHuyen.Name = "CBoxHuyen";
             this.CBoxHuyen.Size = new System.Drawing.Size(138, 28);
             this.CBoxHuyen.TabIndex = 19;
             // 
+            // CBoxNganh
+            // 
+            this.CBoxNganh.DataSource = this.nGANHBindingSource;
+            this.CBoxNganh.DisplayMember = "TenNganh";
+            this.CBoxNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBoxNganh.FormattingEnabled = true;
+            this.CBoxNganh.Location = new System.Drawing.Point(243, 623);
+            this.CBoxNganh.Name = "CBoxNganh";
+            this.CBoxNganh.Size = new System.Drawing.Size(268, 28);
+            this.CBoxNganh.TabIndex = 14;
+            // 
+            // nGANHBindingSource
+            // 
+            this.nGANHBindingSource.DataMember = "NGANH";
+            this.nGANHBindingSource.DataSource = this.dKHPDataSetBindingSource;
+            // 
+            // tINHTableAdapter
+            // 
+            this.tINHTableAdapter.ClearBeforeFill = true;
+            // 
+            // dOITUONGTableAdapter
+            // 
+            this.dOITUONGTableAdapter.ClearBeforeFill = true;
+            // 
+            // nGANHTableAdapter
+            // 
+            this.nGANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // dOITUONGBindingSource1
+            // 
+            this.dOITUONGBindingSource1.DataMember = "DOITUONG";
+            this.dOITUONGBindingSource1.DataSource = this.dKHPDataSetBindingSource;
+            // 
             // LapHSSV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(589, 812);
@@ -314,6 +240,13 @@ namespace DangKyHocPhan
             this.DoubleBuffered = true;
             this.Name = "LapHSSV";
             this.Text = "Lập Hồ Sơ Sinh Viên";
+            this.Load += new System.EventHandler(this.LapHSSV_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tINHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dOITUONGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dOITUONGBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,11 +259,20 @@ namespace DangKyHocPhan
         private System.Windows.Forms.DateTimePicker pickNS;
         private System.Windows.Forms.ComboBox CBoxTinh;
         private System.Windows.Forms.ComboBox CBoxDT;
-        private System.Windows.Forms.ComboBox CBoxNganh;
         private System.Windows.Forms.Button btnLHS;
         private System.Windows.Forms.Button btnThoatLHS;
         private System.Windows.Forms.RadioButton rbtnNam;
         private System.Windows.Forms.RadioButton rbtnNu;
         private System.Windows.Forms.ComboBox CBoxHuyen;
+        private System.Windows.Forms.ComboBox CBoxNganh;
+        private DKHPDataSet dKHPDataSet;
+        private System.Windows.Forms.BindingSource dKHPDataSetBindingSource;
+        private System.Windows.Forms.BindingSource tINHBindingSource;
+        private DKHPDataSetTableAdapters.TINHTableAdapter tINHTableAdapter;
+        private System.Windows.Forms.BindingSource dOITUONGBindingSource;
+        private DKHPDataSetTableAdapters.DOITUONGTableAdapter dOITUONGTableAdapter;
+        private System.Windows.Forms.BindingSource nGANHBindingSource;
+        private DKHPDataSetTableAdapters.NGANHTableAdapter nGANHTableAdapter;
+        private System.Windows.Forms.BindingSource dOITUONGBindingSource1;
     }
 }

@@ -81,6 +81,9 @@
     <Compile Include="DKHP.Designer.cs">
       <DependentUpon>DKHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="DKHPDataSet.cs">
+      <DependentUpon>DKHPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DKHPDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
