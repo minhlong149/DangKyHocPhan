@@ -30,40 +30,40 @@ namespace DangKyHocPhan
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHocMo));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtMaHocKy = new System.Windows.Forms.ComboBox();
+            this.txtMaMonHoc = new System.Windows.Forms.ComboBox();
             this.button_huy = new System.Windows.Forms.Button();
-            this.button_them = new System.Windows.Forms.Button();
+            this.button_luu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // txtMaHocKy
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtMaHocKy.AutoCompleteCustomSource.AddRange(new string[] {
             "HK1"});
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.txtMaHocKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHocKy.FormattingEnabled = true;
+            this.txtMaHocKy.Items.AddRange(new object[] {
             "MaHK"});
-            this.comboBox1.Location = new System.Drawing.Point(310, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 33);
-            this.comboBox1.TabIndex = 11;
+            this.txtMaHocKy.Location = new System.Drawing.Point(310, 156);
+            this.txtMaHocKy.Name = "txtMaHocKy";
+            this.txtMaHocKy.Size = new System.Drawing.Size(165, 33);
+            this.txtMaHocKy.TabIndex = 11;
             // 
-            // comboBox2
+            // txtMaMonHoc
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtMaMonHoc.AutoCompleteCustomSource.AddRange(new string[] {
             "HK1"});
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.txtMaMonHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaMonHoc.FormattingEnabled = true;
+            this.txtMaMonHoc.Items.AddRange(new object[] {
             "MaMon",
             "IT001",
             "IT002",
             "SE334"});
-            this.comboBox2.Location = new System.Drawing.Point(310, 244);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(165, 33);
-            this.comboBox2.TabIndex = 12;
+            this.txtMaMonHoc.Location = new System.Drawing.Point(310, 244);
+            this.txtMaMonHoc.Name = "txtMaMonHoc";
+            this.txtMaMonHoc.Size = new System.Drawing.Size(165, 33);
+            this.txtMaMonHoc.TabIndex = 12;
             // 
             // button_huy
             // 
@@ -81,20 +81,20 @@ namespace DangKyHocPhan
             this.button_huy.Text = "HỦY";
             this.button_huy.UseVisualStyleBackColor = false;
             // 
-            // button_them
+            // button_luu
             // 
-            this.button_them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button_them.AutoSize = true;
-            this.button_them.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_them.Location = new System.Drawing.Point(489, 343);
-            this.button_them.Margin = new System.Windows.Forms.Padding(0);
-            this.button_them.MinimumSize = new System.Drawing.Size(180, 50);
-            this.button_them.Name = "button_them";
-            this.button_them.Size = new System.Drawing.Size(180, 50);
-            this.button_them.TabIndex = 14;
-            this.button_them.Text = "THÊM";
-            this.button_them.UseVisualStyleBackColor = false;
+            this.button_luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button_luu.AutoSize = true;
+            this.button_luu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_luu.Location = new System.Drawing.Point(489, 343);
+            this.button_luu.Margin = new System.Windows.Forms.Padding(0);
+            this.button_luu.MinimumSize = new System.Drawing.Size(180, 50);
+            this.button_luu.Name = "button_luu";
+            this.button_luu.Size = new System.Drawing.Size(180, 50);
+            this.button_luu.TabIndex = 14;
+            this.button_luu.Text = "LƯU";
+            this.button_luu.UseVisualStyleBackColor = false;
             // 
             // MonHocMo
             // 
@@ -103,10 +103,10 @@ namespace DangKyHocPhan
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button_them);
+            this.Controls.Add(this.button_luu);
             this.Controls.Add(this.button_huy);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtMaMonHoc);
+            this.Controls.Add(this.txtMaHocKy);
             this.DoubleBuffered = true;
             this.Name = "MonHocMo";
             this.Text = "MonHocMo";
@@ -117,9 +117,9 @@ namespace DangKyHocPhan
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox txtMaHocKy;
+        private System.Windows.Forms.ComboBox txtMaMonHoc;
         private System.Windows.Forms.Button button_huy;
-        private System.Windows.Forms.Button button_them;
+        private System.Windows.Forms.Button button_luu;
     }
 }

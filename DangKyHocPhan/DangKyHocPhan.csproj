@@ -103,6 +103,12 @@
     <Compile Include="DSMonHocDaDK.Designer.cs">
       <DependentUpon>DSMonHocDaDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSMonHocMo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSMonHocMo.Designer.cs">
+      <DependentUpon>DSMonHocMo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Khoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DSMonHocDaDK.resx">
       <DependentUpon>DSMonHocDaDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSMonHocMo.resx">
+      <DependentUpon>DSMonHocMo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Khoa.resx">
       <DependentUpon>Khoa.cs</DependentUpon>
