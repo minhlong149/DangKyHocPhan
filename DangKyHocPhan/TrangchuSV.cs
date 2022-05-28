@@ -11,7 +11,7 @@ namespace DangKyHocPhan
     public partial class TrangchuSV : Form
     {
         // Lưu lại MSSV của SV mỗi khi đăng nhập
-        public static String MSSV = "0001";
+        public static String MSSV;
 
         public TrangchuSV()
         {
@@ -23,9 +23,16 @@ namespace DangKyHocPhan
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDKHP_Click(object sender, EventArgs e)
         {
+            DKHP dk = new DKHP();
+            dk.Show();
+        }
 
+        private void btnXPTHP_Click(object sender, EventArgs e)
+        {
+            PhieuThuHocPhi pt = new PhieuThuHocPhi();
+            pt.Show();
         }
     }
 }

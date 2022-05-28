@@ -62,6 +62,7 @@ namespace DangKyHocPhan
             this.btnDN.TabIndex = 4;
             this.btnDN.Text = "Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = false;
+            this.btnDN.Click += new System.EventHandler(this.btnDN_Click);
             // 
             // btnThoat
             // 
@@ -72,10 +73,10 @@ namespace DangKyHocPhan
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);

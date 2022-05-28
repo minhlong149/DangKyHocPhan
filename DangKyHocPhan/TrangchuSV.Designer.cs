@@ -44,7 +44,7 @@ namespace DangKyHocPhan
             this.btnDKHP.TabIndex = 0;
             this.btnDKHP.Text = "Đăng Ký Học Phần";
             this.btnDKHP.UseVisualStyleBackColor = true;
-            this.btnDKHP.Click += new System.EventHandler(this.button1_Click);
+            this.btnDKHP.Click += new System.EventHandler(this.btnDKHP_Click);
             // 
             // btnXPTHP
             // 
@@ -55,6 +55,7 @@ namespace DangKyHocPhan
             this.btnXPTHP.TabIndex = 1;
             this.btnXPTHP.Text = "Xuất Phiếu Thu Học Phí";
             this.btnXPTHP.UseVisualStyleBackColor = true;
+            this.btnXPTHP.Click += new System.EventHandler(this.btnXPTHP_Click);
             // 
             // btnThoatSV
             // 
@@ -68,7 +69,6 @@ namespace DangKyHocPhan
             // 
             // TrangchuSV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
