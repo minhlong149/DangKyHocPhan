@@ -64,6 +64,12 @@ namespace DangKyHocPhan
                 return;
             }
 
+            if (string.IsNullOrEmpty(txtLoaiMon.Text))
+            {
+                MessageBox.Show("Loại môn không được để trống");
+                txtTenMon.Select();
+                return;
+            }
 
 
             string sql = "";
@@ -78,7 +84,7 @@ namespace DangKyHocPhan
                 });
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@mamonhoc",
+                    key = "@mamh",
                     value = txtMaMon.Text
                 });
             }
