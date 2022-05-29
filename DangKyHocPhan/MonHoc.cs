@@ -57,6 +57,13 @@ namespace DangKyHocPhan
                 return;
             }
 
+            if (string.IsNullOrEmpty(txtMaMon.Text))
+            {
+                MessageBox.Show("Mã môn học không được để trống");
+                txtMaMon.Select();
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtTenMon.Text))
             {
                 MessageBox.Show("Tên môn học không được để trống");
