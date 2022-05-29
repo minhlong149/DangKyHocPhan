@@ -15,6 +15,7 @@ namespace DangKyHocPhan
     public partial class DKHP : Form
     {
         private string _SoPhieu;
+        private string MSSV = TrangchuSV.MSSV.ToString();
         public DKHP()
         {
             InitializeComponent();
@@ -85,7 +86,7 @@ namespace DangKyHocPhan
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MSSV", TrangchuSV.MSSV.ToString());
+                command.Parameters.AddWithValue("@MSSV", MSSV);
                 command.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
                 connection.Open();
                 SqlDataReader Exist = command.ExecuteReader();
@@ -93,7 +94,7 @@ namespace DangKyHocPhan
                 connection.Close();
             }
 
-            _SoPhieu = TrangchuSV.MSSV.ToString() + cboHocKy.SelectedValue.ToString();
+            _SoPhieu = MSSV + cboHocKy.SelectedValue.ToString();
 
             if (!coPhieu)
             {
@@ -102,7 +103,7 @@ namespace DangKyHocPhan
                 {
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
-                    command.Parameters.AddWithValue("@MaSV", TrangchuSV.MSSV.ToString());
+                    command.Parameters.AddWithValue("@MaSV", MSSV);
                     command.Parameters.AddWithValue("@MaHK", cboHocKy.SelectedValue.ToString());
                     connection.Open();
                     command.ExecuteNonQuery();

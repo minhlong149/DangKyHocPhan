@@ -10,7 +10,9 @@ namespace DangKyHocPhan
 {
     public partial class TrangchuSV : Form
     {
-        // Lưu lại MSSV của SV mỗi khi đăng nhập
+        // Lưu lại MSSV của SV sau khi đăng nhập
+        // DKHP và thu học phí sẽ trỏ vào sinh viên này
+        // -> Không cần phải nhập MSSV
         public static String MSSV;
 
         public TrangchuSV()

@@ -16,7 +16,7 @@ namespace DangKyHocPhan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LapHSSV());
+            Application.Run(new DangNhap());
         }
     }
 }

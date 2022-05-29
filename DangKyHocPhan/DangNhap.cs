@@ -65,7 +65,7 @@ namespace DangKyHocPhan
             }
             else
             {
-
+                TrangchuSV.MSSV = txtTK.Text;
                 TrangchuSV f = new TrangchuSV();
                 f.Show();        
             }
