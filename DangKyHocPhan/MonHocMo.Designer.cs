@@ -29,41 +29,59 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHocMo));
-            this.txtMaHocKy = new System.Windows.Forms.ComboBox();
-            this.txtMaMonHoc = new System.Windows.Forms.ComboBox();
+            this.boxMaHK = new System.Windows.Forms.ComboBox();
+            this.dSHOCKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
+            this.boxMaMH = new System.Windows.Forms.ComboBox();
             this.button_huy = new System.Windows.Forms.Button();
             this.button_luu = new System.Windows.Forms.Button();
+            this.dSHOCKYTableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.DSHOCKYTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dSHOCKYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtMaHocKy
+            // boxMaHK
             // 
-            this.txtMaHocKy.AutoCompleteCustomSource.AddRange(new string[] {
+            this.boxMaHK.AutoCompleteCustomSource.AddRange(new string[] {
             "HK1"});
-            this.txtMaHocKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHocKy.FormattingEnabled = true;
-            this.txtMaHocKy.Items.AddRange(new object[] {
-            "MaHK"});
-            this.txtMaHocKy.Location = new System.Drawing.Point(310, 156);
-            this.txtMaHocKy.Name = "txtMaHocKy";
-            this.txtMaHocKy.Size = new System.Drawing.Size(165, 33);
-            this.txtMaHocKy.TabIndex = 11;
+            this.boxMaHK.DataSource = this.dSHOCKYBindingSource;
+            this.boxMaHK.DisplayMember = "MaHK";
+            this.boxMaHK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxMaHK.FormattingEnabled = true;
+            this.boxMaHK.Location = new System.Drawing.Point(310, 156);
+            this.boxMaHK.Name = "boxMaHK";
+            this.boxMaHK.Size = new System.Drawing.Size(249, 33);
+            this.boxMaHK.TabIndex = 11;
+            this.boxMaHK.ValueMember = "HocKy";
+            this.boxMaHK.SelectedIndexChanged += new System.EventHandler(this.boxMaHocKy_SelectedIndexChanged);
             // 
-            // txtMaMonHoc
+            // dSHOCKYBindingSource
             // 
-            this.txtMaMonHoc.AutoCompleteCustomSource.AddRange(new string[] {
+            this.dSHOCKYBindingSource.DataMember = "DSHOCKY";
+            this.dSHOCKYBindingSource.DataSource = this.dKHPDataSet;
+            // 
+            // dKHPDataSet
+            // 
+            this.dKHPDataSet.DataSetName = "DKHPDataSet";
+            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // boxMaMH
+            // 
+            this.boxMaMH.AutoCompleteCustomSource.AddRange(new string[] {
             "HK1"});
-            this.txtMaMonHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMonHoc.FormattingEnabled = true;
-            this.txtMaMonHoc.Items.AddRange(new object[] {
+            this.boxMaMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxMaMH.FormattingEnabled = true;
+            this.boxMaMH.Items.AddRange(new object[] {
             "MaMon",
             "IT001",
             "IT002",
             "SE334"});
-            this.txtMaMonHoc.Location = new System.Drawing.Point(310, 244);
-            this.txtMaMonHoc.Name = "txtMaMonHoc";
-            this.txtMaMonHoc.Size = new System.Drawing.Size(165, 33);
-            this.txtMaMonHoc.TabIndex = 12;
+            this.boxMaMH.Location = new System.Drawing.Point(310, 244);
+            this.boxMaMH.Name = "boxMaMH";
+            this.boxMaMH.Size = new System.Drawing.Size(249, 33);
+            this.boxMaMH.TabIndex = 12;
             // 
             // button_huy
             // 
@@ -72,7 +90,7 @@ namespace DangKyHocPhan
             this.button_huy.BackColor = System.Drawing.SystemColors.Control;
             this.button_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_huy.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button_huy.Location = new System.Drawing.Point(84, 343);
+            this.button_huy.Location = new System.Drawing.Point(100, 343);
             this.button_huy.Margin = new System.Windows.Forms.Padding(0);
             this.button_huy.MinimumSize = new System.Drawing.Size(180, 50);
             this.button_huy.Name = "button_huy";
@@ -80,6 +98,7 @@ namespace DangKyHocPhan
             this.button_huy.TabIndex = 13;
             this.button_huy.Text = "HỦY";
             this.button_huy.UseVisualStyleBackColor = false;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
             // 
             // button_luu
             // 
@@ -87,7 +106,7 @@ namespace DangKyHocPhan
             this.button_luu.AutoSize = true;
             this.button_luu.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_luu.Location = new System.Drawing.Point(489, 343);
+            this.button_luu.Location = new System.Drawing.Point(466, 343);
             this.button_luu.Margin = new System.Windows.Forms.Padding(0);
             this.button_luu.MinimumSize = new System.Drawing.Size(180, 50);
             this.button_luu.Name = "button_luu";
@@ -95,6 +114,11 @@ namespace DangKyHocPhan
             this.button_luu.TabIndex = 14;
             this.button_luu.Text = "LƯU";
             this.button_luu.UseVisualStyleBackColor = false;
+            this.button_luu.Click += new System.EventHandler(this.button_luu_Click);
+            // 
+            // dSHOCKYTableAdapter
+            // 
+            this.dSHOCKYTableAdapter.ClearBeforeFill = true;
             // 
             // MonHocMo
             // 
@@ -105,11 +129,14 @@ namespace DangKyHocPhan
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button_luu);
             this.Controls.Add(this.button_huy);
-            this.Controls.Add(this.txtMaMonHoc);
-            this.Controls.Add(this.txtMaHocKy);
+            this.Controls.Add(this.boxMaMH);
+            this.Controls.Add(this.boxMaHK);
             this.DoubleBuffered = true;
             this.Name = "MonHocMo";
             this.Text = "MonHocMo";
+            this.Load += new System.EventHandler(this.MonHocMo_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dSHOCKYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,9 +144,12 @@ namespace DangKyHocPhan
 
         #endregion
 
-        private System.Windows.Forms.ComboBox txtMaHocKy;
-        private System.Windows.Forms.ComboBox txtMaMonHoc;
+        private System.Windows.Forms.ComboBox boxMaHK;
+        private System.Windows.Forms.ComboBox boxMaMH;
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.Button button_luu;
+        private DKHPDataSet dKHPDataSet;
+        private System.Windows.Forms.BindingSource dSHOCKYBindingSource;
+        private DKHPDataSetTableAdapters.DSHOCKYTableAdapter dSHOCKYTableAdapter;
     }
 }

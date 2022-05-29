@@ -29,40 +29,20 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvDSMH = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThemmoi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaHocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
+            this.dgvDSMHMo = new System.Windows.Forms.DataGridView();
+            this.MaHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMHMo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvDSMH
-            // 
-            this.dgvDSMH.AllowUserToAddRows = false;
-            this.dgvDSMH.AllowUserToDeleteRows = false;
-            this.dgvDSMH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDSMH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDSMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSMH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHocKy});
-            this.dgvDSMH.Location = new System.Drawing.Point(-5, 97);
-            this.dgvDSMH.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvDSMH.MultiSelect = false;
-            this.dgvDSMH.Name = "dgvDSMH";
-            this.dgvDSMH.ReadOnly = true;
-            this.dgvDSMH.RowHeadersWidth = 51;
-            this.dgvDSMH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSMH.Size = new System.Drawing.Size(804, 357);
-            this.dgvDSMH.TabIndex = 5;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimKiem.Location = new System.Drawing.Point(305, 48);
+            this.txtTimKiem.Location = new System.Drawing.Point(259, 42);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(215, 22);
@@ -71,68 +51,103 @@ namespace DangKyHocPhan
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.Location = new System.Drawing.Point(528, 45);
+            this.btnTimKiem.Location = new System.Drawing.Point(491, 39);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiem.TabIndex = 7;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
             // 
             // btnThemmoi
             // 
             this.btnThemmoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemmoi.Location = new System.Drawing.Point(636, 45);
+            this.btnThemmoi.Location = new System.Drawing.Point(599, 39);
             this.btnThemmoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemmoi.Name = "btnThemmoi";
             this.btnThemmoi.Size = new System.Drawing.Size(100, 28);
             this.btnThemmoi.TabIndex = 8;
             this.btnThemmoi.Text = "Thêm mới";
             this.btnThemmoi.UseVisualStyleBackColor = true;
+            this.btnThemmoi.Click += new System.EventHandler(this.btnThemmoi_Click_1);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(237, 51);
+            this.label1.Location = new System.Drawing.Point(181, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Từ khóa";
             // 
-            // MaHocKy
+            // dgvDSMHMo
             // 
-            this.MaHocKy.HeaderText = "Mã học kỳ";
-            this.MaHocKy.MinimumWidth = 6;
-            this.MaHocKy.Name = "MaHocKy";
-            this.MaHocKy.ReadOnly = true;
+            this.dgvDSMHMo.AllowUserToAddRows = false;
+            this.dgvDSMHMo.AllowUserToDeleteRows = false;
+            this.dgvDSMHMo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDSMHMo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDSMHMo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSMHMo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaHK,
+            this.MonHoc});
+            this.dgvDSMHMo.Location = new System.Drawing.Point(-4, 95);
+            this.dgvDSMHMo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDSMHMo.MultiSelect = false;
+            this.dgvDSMHMo.Name = "dgvDSMHMo";
+            this.dgvDSMHMo.ReadOnly = true;
+            this.dgvDSMHMo.RowHeadersWidth = 51;
+            this.dgvDSMHMo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDSMHMo.Size = new System.Drawing.Size(849, 358);
+            this.dgvDSMHMo.TabIndex = 10;
+            this.dgvDSMHMo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMHMo_CellContentDoubleClick);
+            // 
+            // MaHK
+            // 
+            this.MaHK.DataPropertyName = "MaHK";
+            this.MaHK.HeaderText = "Mã học kỳ";
+            this.MaHK.MinimumWidth = 6;
+            this.MaHK.Name = "MaHK";
+            this.MaHK.ReadOnly = true;
+            // 
+            // MonHoc
+            // 
+            this.MonHoc.DataPropertyName = "MonHoc";
+            this.MonHoc.HeaderText = "Mã môn học";
+            this.MonHoc.MinimumWidth = 6;
+            this.MonHoc.Name = "MonHoc";
+            this.MonHoc.ReadOnly = true;
             // 
             // DSMonHocMo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 440);
+            this.ClientSize = new System.Drawing.Size(835, 440);
+            this.Controls.Add(this.dgvDSMHMo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnThemmoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.dgvDSMH);
             this.Name = "DSMonHocMo";
             this.Text = "DSMonHocMo";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).EndInit();
+            this.Load += new System.EventHandler(this.DSMonHocMo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSMHMo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvDSMH;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThemmoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHocKy;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvDSMHMo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MonHoc;
     }
 }
