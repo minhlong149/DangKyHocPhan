@@ -15,9 +15,9 @@ namespace DangKyHocPhan
             InitializeComponent();
         }
 
-        private void btnLHSSV_Click(object sender, EventArgs e)
+        private void btnQLSV_Click(object sender, EventArgs e)
         {
-            LapHSSV lhs = new LapHSSV();
+            QLSV lhs = new QLSV();
             lhs.Show();
         }
 
@@ -31,6 +31,12 @@ namespace DangKyHocPhan
         {
             ChuaHTHP hthp = new ChuaHTHP();
             hthp.Show();
+        }
+
+        private void Thoat_PDT_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang phòng đào tạo?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

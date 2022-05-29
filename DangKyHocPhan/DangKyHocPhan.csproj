@@ -115,11 +115,11 @@
     <Compile Include="Khoa.Designer.cs">
       <DependentUpon>Khoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="LapHSSV.cs">
+    <Compile Include="QLSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LapHSSV.Designer.cs">
-      <DependentUpon>LapHSSV.cs</DependentUpon>
+    <Compile Include="QLSV.Designer.cs">
+      <DependentUpon>QLSV.cs</DependentUpon>
     </Compile>
     <Compile Include="MonHoc.cs">
       <SubType>Form</SubType>
@@ -177,8 +177,8 @@
     <EmbeddedResource Include="Khoa.resx">
       <DependentUpon>Khoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LapHSSV.resx">
-      <DependentUpon>LapHSSV.cs</DependentUpon>
+    <EmbeddedResource Include="QLSV.resx">
+      <DependentUpon>QLSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonHoc.resx">
       <DependentUpon>MonHoc.cs</DependentUpon>

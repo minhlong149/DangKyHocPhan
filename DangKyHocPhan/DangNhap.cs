@@ -57,6 +57,7 @@ namespace DangKyHocPhan
             else
             {
                 MessageBox.Show("Vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu", "Tài khoản hoặc mật khẩu không hợp lệ");
+                return;
             }
             if (dt.Rows[0][2].ToString() == "admin")
             {

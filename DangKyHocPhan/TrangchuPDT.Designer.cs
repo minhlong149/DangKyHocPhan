@@ -31,7 +31,7 @@ namespace DangKyHocPhan
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangchuPDT));
             this.Thoat_PDT = new System.Windows.Forms.Button();
-            this.btnLHSSV = new System.Windows.Forms.Button();
+            this.btnQLSV = new System.Windows.Forms.Button();
             this.btnNDSMH = new System.Windows.Forms.Button();
             this.btnNCTH = new System.Windows.Forms.Button();
             this.btnNMHM = new System.Windows.Forms.Button();
@@ -49,18 +49,19 @@ namespace DangKyHocPhan
             this.Thoat_PDT.TabIndex = 7;
             this.Thoat_PDT.Text = "Thoát";
             this.Thoat_PDT.UseVisualStyleBackColor = false;
+            this.Thoat_PDT.Click += new System.EventHandler(this.Thoat_PDT_Click);
             // 
-            // btnLHSSV
+            // btnQLSV
             // 
-            this.btnLHSSV.BackColor = System.Drawing.Color.White;
-            this.btnLHSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLHSSV.Location = new System.Drawing.Point(138, 215);
-            this.btnLHSSV.Name = "btnLHSSV";
-            this.btnLHSSV.Size = new System.Drawing.Size(287, 38);
-            this.btnLHSSV.TabIndex = 11;
-            this.btnLHSSV.Text = "Lập hồ sơ sinh viên";
-            this.btnLHSSV.UseVisualStyleBackColor = false;
-            this.btnLHSSV.Click += new System.EventHandler(this.btnLHSSV_Click);
+            this.btnQLSV.BackColor = System.Drawing.Color.White;
+            this.btnQLSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLSV.Location = new System.Drawing.Point(138, 215);
+            this.btnQLSV.Name = "btnQLSV";
+            this.btnQLSV.Size = new System.Drawing.Size(287, 38);
+            this.btnQLSV.TabIndex = 11;
+            this.btnQLSV.Text = "Quản lý sinh viên";
+            this.btnQLSV.UseVisualStyleBackColor = false;
+            this.btnQLSV.Click += new System.EventHandler(this.btnQLSV_Click);
             // 
             // btnNDSMH
             // 
@@ -121,7 +122,6 @@ namespace DangKyHocPhan
             // 
             // TrangchuPDT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -130,7 +130,7 @@ namespace DangKyHocPhan
             this.Controls.Add(this.btnNMHM);
             this.Controls.Add(this.btnNCTH);
             this.Controls.Add(this.btnNDSMH);
-            this.Controls.Add(this.btnLHSSV);
+            this.Controls.Add(this.btnQLSV);
             this.Controls.Add(this.Thoat_PDT);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,7 +142,7 @@ namespace DangKyHocPhan
 
         #endregion
         private System.Windows.Forms.Button Thoat_PDT;
-        private System.Windows.Forms.Button btnLHSSV;
+        private System.Windows.Forms.Button btnQLSV;
         private System.Windows.Forms.Button btnNDSMH;
         private System.Windows.Forms.Button btnNCTH;
         private System.Windows.Forms.Button btnNMHM;

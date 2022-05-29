@@ -34,5 +34,11 @@ namespace DangKyHocPhan
             PhieuThuHocPhi pt = new PhieuThuHocPhi();
             pt.Show();
         }
+
+        private void btnThoatSV_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang sinh viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
+        }
     }
 }

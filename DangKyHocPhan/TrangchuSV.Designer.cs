@@ -66,6 +66,7 @@ namespace DangKyHocPhan
             this.btnThoatSV.TabIndex = 2;
             this.btnThoatSV.Text = "Thoát";
             this.btnThoatSV.UseVisualStyleBackColor = true;
+            this.btnThoatSV.Click += new System.EventHandler(this.btnThoatSV_Click);
             // 
             // TrangchuSV
             // 
