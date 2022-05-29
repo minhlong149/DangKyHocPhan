@@ -99,7 +99,7 @@ namespace DangKyHocPhan
             {
                 lstPara.Add(new CustomParameter()
                 {
-                    key = "@mamonhoc",
+                    key = "@mamh",
                     value = mamh
                 });
 

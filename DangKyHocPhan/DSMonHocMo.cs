@@ -55,6 +55,7 @@ namespace DangKyHocPhan
             {
                 var mahk = dgvDSMHMo.Rows[e.RowIndex].Cells["MaHK"].Value.ToString();
                 var mamh = dgvDSMHMo.Rows[e.RowIndex].Cells["MonHoc"].Value.ToString();
+                Console.WriteLine(mamh, mahk);
                 new MonHocMo(mahk, mamh).ShowDialog();
                 LoadDSMHMo();
             }

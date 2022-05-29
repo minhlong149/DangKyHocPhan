@@ -32,14 +32,14 @@ namespace DangKyHocPhan
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonHocMo));
             this.boxMaHK = new System.Windows.Forms.ComboBox();
+            this.dSHOCKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.boxMaMH = new System.Windows.Forms.ComboBox();
             this.button_huy = new System.Windows.Forms.Button();
             this.button_luu = new System.Windows.Forms.Button();
-            this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
-            this.dSHOCKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSHOCKYTableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.DSHOCKYTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSHOCKYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // boxMaHK
@@ -56,6 +56,16 @@ namespace DangKyHocPhan
             this.boxMaHK.TabIndex = 11;
             this.boxMaHK.ValueMember = "HocKy";
             this.boxMaHK.SelectedIndexChanged += new System.EventHandler(this.boxMaHocKy_SelectedIndexChanged);
+            // 
+            // dSHOCKYBindingSource
+            // 
+            this.dSHOCKYBindingSource.DataMember = "DSHOCKY";
+            this.dSHOCKYBindingSource.DataSource = this.dKHPDataSet;
+            // 
+            // dKHPDataSet
+            // 
+            this.dKHPDataSet.DataSetName = "DKHPDataSet";
+            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // boxMaMH
             // 
@@ -104,16 +114,7 @@ namespace DangKyHocPhan
             this.button_luu.TabIndex = 14;
             this.button_luu.Text = "LƯU";
             this.button_luu.UseVisualStyleBackColor = false;
-            // 
-            // dKHPDataSet
-            // 
-            this.dKHPDataSet.DataSetName = "DKHPDataSet";
-            this.dKHPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSHOCKYBindingSource
-            // 
-            this.dSHOCKYBindingSource.DataMember = "DSHOCKY";
-            this.dSHOCKYBindingSource.DataSource = this.dKHPDataSet;
+            this.button_luu.Click += new System.EventHandler(this.button_luu_Click);
             // 
             // dSHOCKYTableAdapter
             // 
@@ -134,8 +135,8 @@ namespace DangKyHocPhan
             this.Name = "MonHocMo";
             this.Text = "MonHocMo";
             this.Load += new System.EventHandler(this.MonHocMo_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSHOCKYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
