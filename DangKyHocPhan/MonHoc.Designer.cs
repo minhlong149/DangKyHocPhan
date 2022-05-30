@@ -45,51 +45,58 @@ namespace DangKyHocPhan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 168);
+            this.label1.Location = new System.Drawing.Point(105, 136);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 2;
             // 
             // txtMaMon
             // 
             this.txtMaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMon.Location = new System.Drawing.Point(286, 143);
+            this.txtMaMon.Location = new System.Drawing.Point(214, 116);
+            this.txtMaMon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaMon.Name = "txtMaMon";
-            this.txtMaMon.Size = new System.Drawing.Size(361, 34);
+            this.txtMaMon.Size = new System.Drawing.Size(272, 28);
             this.txtMaMon.TabIndex = 3;
+            this.txtMaMon.TextChanged += new System.EventHandler(this.txtMaMon_TextChanged);
             // 
             // txtTenMon
             // 
             this.txtTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenMon.Location = new System.Drawing.Point(286, 218);
+            this.txtTenMon.Location = new System.Drawing.Point(214, 177);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(361, 34);
+            this.txtTenMon.Size = new System.Drawing.Size(272, 28);
             this.txtTenMon.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 208);
+            this.label2.Location = new System.Drawing.Point(105, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 25);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 4;
             // 
             // txtSoTiet
             // 
             this.txtSoTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTiet.Location = new System.Drawing.Point(286, 292);
+            this.txtSoTiet.Location = new System.Drawing.Point(214, 237);
+            this.txtSoTiet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSoTiet.Name = "txtSoTiet";
-            this.txtSoTiet.Size = new System.Drawing.Size(107, 34);
+            this.txtSoTiet.Size = new System.Drawing.Size(81, 28);
             this.txtSoTiet.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 278);
+            this.label3.Location = new System.Drawing.Point(110, 226);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 25);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 6;
             // 
             // txtLoaiMon
@@ -99,9 +106,10 @@ namespace DangKyHocPhan
             this.txtLoaiMon.Items.AddRange(new object[] {
             "LT",
             "TH"});
-            this.txtLoaiMon.Location = new System.Drawing.Point(540, 295);
+            this.txtLoaiMon.Location = new System.Drawing.Point(405, 240);
+            this.txtLoaiMon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLoaiMon.Name = "txtLoaiMon";
-            this.txtLoaiMon.Size = new System.Drawing.Size(107, 33);
+            this.txtLoaiMon.Size = new System.Drawing.Size(81, 28);
             this.txtLoaiMon.TabIndex = 10;
             // 
             // button_them
@@ -110,11 +118,11 @@ namespace DangKyHocPhan
             this.button_them.AutoSize = true;
             this.button_them.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_them.Location = new System.Drawing.Point(587, 399);
+            this.button_them.Location = new System.Drawing.Point(440, 324);
             this.button_them.Margin = new System.Windows.Forms.Padding(0);
-            this.button_them.MinimumSize = new System.Drawing.Size(180, 50);
+            this.button_them.MinimumSize = new System.Drawing.Size(135, 41);
             this.button_them.Name = "button_them";
-            this.button_them.Size = new System.Drawing.Size(180, 50);
+            this.button_them.Size = new System.Drawing.Size(135, 41);
             this.button_them.TabIndex = 11;
             this.button_them.Text = "LƯU";
             this.button_them.UseVisualStyleBackColor = false;
@@ -127,11 +135,11 @@ namespace DangKyHocPhan
             this.button_huy.BackColor = System.Drawing.SystemColors.Control;
             this.button_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_huy.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button_huy.Location = new System.Drawing.Point(378, 399);
+            this.button_huy.Location = new System.Drawing.Point(284, 324);
             this.button_huy.Margin = new System.Windows.Forms.Padding(0);
-            this.button_huy.MinimumSize = new System.Drawing.Size(180, 50);
+            this.button_huy.MinimumSize = new System.Drawing.Size(135, 41);
             this.button_huy.Name = "button_huy";
-            this.button_huy.Size = new System.Drawing.Size(180, 50);
+            this.button_huy.Size = new System.Drawing.Size(135, 41);
             this.button_huy.TabIndex = 12;
             this.button_huy.Text = "HỦY";
             this.button_huy.UseVisualStyleBackColor = false;
@@ -139,11 +147,11 @@ namespace DangKyHocPhan
             // 
             // MonHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 470);
+            this.ClientSize = new System.Drawing.Size(600, 382);
             this.Controls.Add(this.button_huy);
             this.Controls.Add(this.button_them);
             this.Controls.Add(this.txtLoaiMon);
@@ -154,6 +162,7 @@ namespace DangKyHocPhan
             this.Controls.Add(this.txtMaMon);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MonHoc";
             this.Text = "MonHoc";
             this.Load += new System.EventHandler(this.MonHoc_Load);

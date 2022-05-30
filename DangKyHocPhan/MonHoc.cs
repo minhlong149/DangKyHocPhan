@@ -156,5 +156,10 @@ namespace DangKyHocPhan
             this.Dispose();
 
         }
+
+        private void txtMaMon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

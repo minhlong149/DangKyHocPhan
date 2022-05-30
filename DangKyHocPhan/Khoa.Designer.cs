@@ -43,53 +43,56 @@ namespace DangKyHocPhan
             this.dKHPDataSet = new DangKyHocPhan.DKHPDataSet();
             this.kHOATableAdapter = new DangKyHocPhan.DKHPDataSetTableAdapters.KHOATableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.khoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ngànhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNganh = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaKhoa
             // 
             this.lblMaKhoa.AutoSize = true;
-            this.lblMaKhoa.Location = new System.Drawing.Point(9, 31);
+            this.lblMaKhoa.Location = new System.Drawing.Point(7, 25);
+            this.lblMaKhoa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaKhoa.Name = "lblMaKhoa";
-            this.lblMaKhoa.Size = new System.Drawing.Size(66, 17);
+            this.lblMaKhoa.Size = new System.Drawing.Size(52, 13);
             this.lblMaKhoa.TabIndex = 1;
             this.lblMaKhoa.Text = "Mã khoa:";
             // 
             // txtMaKhoa
             // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(87, 28);
+            this.txtMaKhoa.Location = new System.Drawing.Point(65, 23);
+            this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(192, 22);
+            this.txtMaKhoa.Size = new System.Drawing.Size(145, 20);
             this.txtMaKhoa.TabIndex = 2;
             // 
             // txtTenKhoa
             // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(87, 56);
+            this.txtTenKhoa.Location = new System.Drawing.Point(65, 46);
+            this.txtTenKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(192, 22);
+            this.txtTenKhoa.Size = new System.Drawing.Size(145, 20);
             this.txtTenKhoa.TabIndex = 4;
             // 
             // lblTenKhoa
             // 
             this.lblTenKhoa.AutoSize = true;
-            this.lblTenKhoa.Location = new System.Drawing.Point(9, 59);
+            this.lblTenKhoa.Location = new System.Drawing.Point(7, 48);
+            this.lblTenKhoa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenKhoa.Name = "lblTenKhoa";
-            this.lblTenKhoa.Size = new System.Drawing.Size(72, 17);
+            this.lblTenKhoa.Size = new System.Drawing.Size(56, 13);
             this.lblTenKhoa.TabIndex = 3;
             this.lblTenKhoa.Text = "Tên khoa:";
             // 
             // btnThemKhoa
             // 
-            this.btnThemKhoa.Location = new System.Drawing.Point(210, 91);
+            this.btnThemKhoa.Location = new System.Drawing.Point(158, 74);
+            this.btnThemKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemKhoa.Name = "btnThemKhoa";
-            this.btnThemKhoa.Size = new System.Drawing.Size(69, 23);
+            this.btnThemKhoa.Size = new System.Drawing.Size(52, 19);
             this.btnThemKhoa.TabIndex = 5;
             this.btnThemKhoa.Text = "Thêm";
             this.btnThemKhoa.UseVisualStyleBackColor = true;
@@ -97,9 +100,10 @@ namespace DangKyHocPhan
             // 
             // btnSuaKhoa
             // 
-            this.btnSuaKhoa.Location = new System.Drawing.Point(135, 91);
+            this.btnSuaKhoa.Location = new System.Drawing.Point(101, 74);
+            this.btnSuaKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuaKhoa.Name = "btnSuaKhoa";
-            this.btnSuaKhoa.Size = new System.Drawing.Size(69, 23);
+            this.btnSuaKhoa.Size = new System.Drawing.Size(52, 19);
             this.btnSuaKhoa.TabIndex = 6;
             this.btnSuaKhoa.Text = "Sửa";
             this.btnSuaKhoa.UseVisualStyleBackColor = true;
@@ -107,9 +111,10 @@ namespace DangKyHocPhan
             // 
             // btnXoaKhoa
             // 
-            this.btnXoaKhoa.Location = new System.Drawing.Point(60, 91);
+            this.btnXoaKhoa.Location = new System.Drawing.Point(45, 74);
+            this.btnXoaKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaKhoa.Name = "btnXoaKhoa";
-            this.btnXoaKhoa.Size = new System.Drawing.Size(69, 23);
+            this.btnXoaKhoa.Size = new System.Drawing.Size(52, 19);
             this.btnXoaKhoa.TabIndex = 7;
             this.btnXoaKhoa.Text = "Xóa";
             this.btnXoaKhoa.UseVisualStyleBackColor = true;
@@ -124,9 +129,11 @@ namespace DangKyHocPhan
             this.groupBox1.Controls.Add(this.lblTenKhoa);
             this.groupBox1.Controls.Add(this.btnXoaKhoa);
             this.groupBox1.Controls.Add(this.txtTenKhoa);
-            this.groupBox1.Location = new System.Drawing.Point(251, 78);
+            this.groupBox1.Location = new System.Drawing.Point(376, 29);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(286, 129);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(214, 105);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khoa";
@@ -135,17 +142,18 @@ namespace DangKyHocPhan
             // 
             this.dgvDSKhoa.AllowUserToAddRows = false;
             this.dgvDSKhoa.AllowUserToDeleteRows = false;
-            this.dgvDSKhoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSKhoa.Location = new System.Drawing.Point(12, 213);
+            this.dgvDSKhoa.Location = new System.Drawing.Point(9, 29);
+            this.dgvDSKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDSKhoa.Name = "dgvDSKhoa";
             this.dgvDSKhoa.ReadOnly = true;
             this.dgvDSKhoa.RowHeadersWidth = 51;
             this.dgvDSKhoa.RowTemplate.Height = 24;
             this.dgvDSKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSKhoa.Size = new System.Drawing.Size(776, 225);
+            this.dgvDSKhoa.Size = new System.Drawing.Size(363, 327);
             this.dgvDSKhoa.TabIndex = 9;
             this.dgvDSKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellClick);
+            this.dgvDSKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoa_CellContentClick);
             // 
             // kHOABindingSource
             // 
@@ -165,47 +173,46 @@ namespace DangKyHocPhan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(307, 43);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 24);
+            this.label1.Size = new System.Drawing.Size(130, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "QUẢN LÝ KHOA";
             // 
-            // menuStrip1
+            // btnNganh
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.khoaToolStripMenuItem,
-            this.ngànhToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnNganh.Location = new System.Drawing.Point(505, 328);
+            this.btnNganh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNganh.Name = "btnNganh";
+            this.btnNganh.Size = new System.Drawing.Size(86, 28);
+            this.btnNganh.TabIndex = 11;
+            this.btnNganh.Text = "Quản lý ngành";
+            this.btnNganh.UseVisualStyleBackColor = true;
+            this.btnNganh.Click += new System.EventHandler(this.btnNganh_Click);
             // 
-            // khoaToolStripMenuItem
+            // btnBack
             // 
-            this.khoaToolStripMenuItem.Name = "khoaToolStripMenuItem";
-            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.khoaToolStripMenuItem.Text = "Khoa";
-            // 
-            // ngànhToolStripMenuItem
-            // 
-            this.ngànhToolStripMenuItem.Name = "ngànhToolStripMenuItem";
-            this.ngànhToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.ngànhToolStripMenuItem.Text = "Ngành";
-            this.ngànhToolStripMenuItem.Click += new System.EventHandler(this.ngànhToolStripMenuItem_Click);
+            this.btnBack.Location = new System.Drawing.Point(442, 328);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(58, 28);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Quay về";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Khoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnNganh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDSKhoa);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Khoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khoa";
@@ -215,8 +222,6 @@ namespace DangKyHocPhan
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,8 +241,7 @@ namespace DangKyHocPhan
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private DKHPDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem khoaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ngànhToolStripMenuItem;
+        private System.Windows.Forms.Button btnNganh;
+        private System.Windows.Forms.Button btnBack;
     }
 }
