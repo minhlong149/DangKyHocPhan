@@ -74,7 +74,7 @@ namespace DangKyHocPhan
             if (e.ColumnIndex == 2)
             {
                 DataGridViewRow row = dgvDSMHMo.Rows[e.RowIndex];
-                if (MessageBox.Show(string.Format("Bạn có thực sự muốn xoá?", row.Cells["MaHK"].Value), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(string.Format("Bạn có thực sự muốn xoá?", row.Cells["MaHK"].Value, row.Cells["MonHoc"].Value), "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     List<CustomParameter> lstPara = new List<CustomParameter>();
                     lstPara.Add(new CustomParameter()
