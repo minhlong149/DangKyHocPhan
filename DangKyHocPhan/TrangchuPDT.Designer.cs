@@ -119,6 +119,7 @@ namespace DangKyHocPhan
             this.btnNDSKN.TabIndex = 16;
             this.btnNDSKN.Text = "Nhập danh sách khoa và ngành";
             this.btnNDSKN.UseVisualStyleBackColor = false;
+            this.btnNDSKN.Click += new System.EventHandler(this.btnNDSKN_Click);
             // 
             // TrangchuPDT
             // 

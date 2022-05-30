@@ -174,14 +174,7 @@ namespace DangKyHocPhan
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TrangchuPDT form = new TrangchuPDT();
-            form.ShowDialog();
-        }
-
-        private void btnKhoa_Click(object sender, EventArgs e)
+        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             Khoa form = new Khoa();
