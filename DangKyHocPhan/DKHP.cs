@@ -43,6 +43,9 @@ namespace DangKyHocPhan
                     cboHocKy.DisplayMember = "HienThi";
                 }
             }
+
+            // Hiển thi thông tin SV
+            txtMSSV.Text = MSSV;
         }
 
         private void LoadDSMonHocMo()
@@ -85,13 +88,17 @@ namespace DangKyHocPhan
             bool coPhieu = false;
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MSSV", MSSV);
-                command.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
-                connection.Open();
-                SqlDataReader Exist = command.ExecuteReader();
-                coPhieu = Exist.HasRows;
-                connection.Close();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@MSSV", MSSV);
+                    adapter.SelectCommand.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
+
+                    DataTable result = new DataTable();
+                    adapter.Fill(result);
+                    coPhieu = result != null && result.Rows.Count == 1;
+                    txtNgayLap.Text = coPhieu ? result.Rows[0]["NgayLap"].ToString() : DateTime.Now.ToString();
+
+                }
             }
 
             _SoPhieu = MSSV + cboHocKy.SelectedValue.ToString();
@@ -111,6 +118,8 @@ namespace DangKyHocPhan
                 }
             }
 
+            // Hiển thị thông tin phiếu DK
+            txtSoPhieu.Text = _SoPhieu;
             LoadDSMonHocMo();
             LoadDSMonDangKy();
         }
@@ -161,6 +170,11 @@ namespace DangKyHocPhan
             this.Hide();
             PhieuThuHocPhi form = new PhieuThuHocPhi();
             form.ShowDialog();
+        }
+
+        private void dgvDSMonDK_DataSourceChanged(object sender, EventArgs e)
+        {
+            // Cập nhập số tín chỉ đăng ký
         }
     }
 }

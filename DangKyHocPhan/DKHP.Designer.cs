@@ -77,6 +77,7 @@ namespace DangKyHocPhan
             this.dgvDSMonDK.RowTemplate.Height = 24;
             this.dgvDSMonDK.Size = new System.Drawing.Size(357, 269);
             this.dgvDSMonDK.TabIndex = 0;
+            this.dgvDSMonDK.DataSourceChanged += new System.EventHandler(this.dgvDSMonDK_DataSourceChanged);
             // 
             // groupBox2
             // 
