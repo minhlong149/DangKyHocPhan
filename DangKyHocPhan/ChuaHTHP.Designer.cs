@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 51);
+            this.panel1.Size = new System.Drawing.Size(628, 51);
             this.panel1.TabIndex = 0;
             // 
             // title
@@ -84,7 +84,7 @@
             this.grBoxThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grBoxThongTin.Location = new System.Drawing.Point(0, 51);
             this.grBoxThongTin.Name = "grBoxThongTin";
-            this.grBoxThongTin.Size = new System.Drawing.Size(600, 75);
+            this.grBoxThongTin.Size = new System.Drawing.Size(628, 75);
             this.grBoxThongTin.TabIndex = 1;
             this.grBoxThongTin.TabStop = false;
             this.grBoxThongTin.Text = "Thông tin năm học";
@@ -114,11 +114,11 @@
             this.btnTruyVan.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnTruyVan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTruyVan.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTruyVan.Location = new System.Drawing.Point(510, 39);
+            this.btnTruyVan.Location = new System.Drawing.Point(530, 38);
             this.btnTruyVan.Name = "btnTruyVan";
-            this.btnTruyVan.Size = new System.Drawing.Size(84, 34);
+            this.btnTruyVan.Size = new System.Drawing.Size(75, 35);
             this.btnTruyVan.TabIndex = 4;
-            this.btnTruyVan.Text = "Truy Vấn";
+            this.btnTruyVan.Text = "Tìm";
             this.btnTruyVan.UseVisualStyleBackColor = false;
             this.btnTruyVan.Click += new System.EventHandler(this.btnTruyVan_Click);
             // 
@@ -160,7 +160,7 @@
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnThoat.Location = new System.Drawing.Point(502, 3);
+            this.btnThoat.Location = new System.Drawing.Point(530, 3);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 34);
             this.btnThoat.TabIndex = 0;
@@ -174,7 +174,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 126);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 196);
+            this.panel2.Size = new System.Drawing.Size(628, 214);
             this.panel2.TabIndex = 3;
             // 
             // dgvChuaHP
@@ -193,7 +193,7 @@
             this.dgvChuaHP.Margin = new System.Windows.Forms.Padding(100);
             this.dgvChuaHP.Name = "dgvChuaHP";
             this.dgvChuaHP.ReadOnly = true;
-            this.dgvChuaHP.Size = new System.Drawing.Size(600, 196);
+            this.dgvChuaHP.Size = new System.Drawing.Size(628, 214);
             this.dgvChuaHP.TabIndex = 0;
             // 
             // Column5
@@ -239,18 +239,18 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnThoat);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 322);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 340);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(628, 44);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // ChuaHTHP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(628, 384);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.grBoxThongTin);

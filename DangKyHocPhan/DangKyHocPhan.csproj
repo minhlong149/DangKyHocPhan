@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DKHPDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DongTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DongTien.Designer.cs">
+      <DependentUpon>DongTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DKHP.resx">
       <DependentUpon>DKHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DongTien.resx">
+      <DependentUpon>DongTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSMonHoc.resx">
       <DependentUpon>DSMonHoc.cs</DependentUpon>

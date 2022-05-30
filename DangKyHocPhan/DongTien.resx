@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="String" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>&lt;root&gt;</value>
+  </data>
+  <data name="String10" xml:space="preserve">
+    <value>... ado.net/XML headers &amp; schema ...</value>
+  </data>
+  <data name="String100" xml:space="preserve">
+    <value>&lt;value&gt;2.0&lt;/value&gt;</value>
+  </data>
+  <data name="String101" xml:space="preserve">
+    <value>&lt;/resheader&gt;</value>
+  </data>
+  <data name="String102" xml:space="preserve">
+    <value>&lt;resheader name="reader"&gt;</value>
+  </data>
+  <data name="String103" xml:space="preserve">
+    <value>&lt;value&gt;System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&lt;/value&gt;</value>
+  </data>
+  <data name="String104" xml:space="preserve">
+    <value>&lt;/resheader&gt;</value>
+  </data>
+  <data name="String105" xml:space="preserve">
+    <value>&lt;resheader name="writer"&gt;</value>
+  </data>
+  <data name="String106" xml:space="preserve">
+    <value>&lt;value&gt;System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&lt;/value&gt;</value>
+  </data>
+  <data name="String107" xml:space="preserve">
+    <value>&lt;/resheader&gt;</value>
+  </data>
+  <data name="String108" xml:space="preserve">
+    <value>&lt;/root&gt;</value>
+  </data>
+  <data name="String11" xml:space="preserve">
+    <value>&lt;resheader name="resmimetype"&gt;text/microsoft-resx&lt;/resheader&gt;</value>
+  </data>
+  <data name="String12" xml:space="preserve">
+    <value>&lt;resheader name="version"&gt;2.0&lt;/resheader&gt;</value>
+  </data>
+  <data name="String13" xml:space="preserve">
+    <value>&lt;resheader name="reader"&gt;System.Resources.ResXResourceReader, System.Windows.Forms, ...&lt;/resheader&gt;</value>
+  </data>
+  <data name="String14" xml:space="preserve">
+    <value>&lt;resheader name="writer"&gt;System.Resources.ResXResourceWriter, System.Windows.Forms, ...&lt;/resheader&gt;</value>
+  </data>
+  <data name="String15" xml:space="preserve">
+    <value>&lt;data name="Name1"&gt;&lt;value&gt;this is my long string&lt;/value&gt;&lt;comment&gt;this is a comment&lt;/comment&gt;&lt;/data&gt;</value>
+  </data>
+  <data name="String16" xml:space="preserve">
+    <value>&lt;data name="Color1" type="System.Drawing.Color, System.Drawing"&gt;Blue&lt;/data&gt;</value>
+  </data>
+  <data name="String17" xml:space="preserve">
+    <value>&lt;data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64"&gt;</value>
+  </data>
+  <data name="String18" xml:space="preserve">
+    <value>&lt;value&gt;[base64 mime encoded serialized .NET Framework object]&lt;/value&gt;</value>
+  </data>
+  <data name="String19" xml:space="preserve">
+    <value>&lt;/data&gt;</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>&lt;!--</value>
+  </data>
+  <data name="String20" xml:space="preserve">
+    <value>&lt;data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64"&gt;</value>
+  </data>
+  <data name="String21" xml:space="preserve">
+    <value>&lt;value&gt;[base64 mime encoded string representing a byte array form of the .NET Framework object]&lt;/value&gt;</value>
+  </data>
+  <data name="String22" xml:space="preserve">
+    <value>&lt;comment&gt;This is a comment&lt;/comment&gt;</value>
+  </data>
+  <data name="String23" xml:space="preserve">
+    <value>&lt;/data&gt;</value>
+  </data>
+  <data name="String24" xml:space="preserve">
+    <value>There are any number of "resheader" rows that contain simple</value>
+  </data>
+  <data name="String25" xml:space="preserve">
+    <value>name/value pairs.</value>
+  </data>
+  <data name="String26" xml:space="preserve">
+    <value>Each data row contains a name, and value. The row also contains a</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>type or mimetype. Type corresponds to a .NET class that support</value>
+  </data>
+  <data name="String28" xml:space="preserve">
+    <value>text/value conversion through the TypeConverter architecture.</value>
+  </data>
+  <data name="String29" xml:space="preserve">
+    <value>Classes that don't support this are serialized and stored with the</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Microsoft ResX Schema</value>
+  </data>
+  <data name="String30" xml:space="preserve">
+    <value>mimetype set.</value>
+  </data>
+  <data name="String31" xml:space="preserve">
+    <value>The mimetype is used for serialized objects, and tells the</value>
+  </data>
+  <data name="String32" xml:space="preserve">
+    <value>ResXResourceReader how to depersist the object. This is currently not</value>
+  </data>
+  <data name="String33" xml:space="preserve">
+    <value>extensible. For a given mimetype the value must be set accordingly:</value>
+  </data>
+  <data name="String34" xml:space="preserve">
+    <value>Note - application/x-microsoft.net.object.binary.base64 is the format</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>that the ResXResourceWriter will generate, however the reader can</value>
+  </data>
+  <data name="String36" xml:space="preserve">
+    <value>read any of the formats listed below.</value>
+  </data>
+  <data name="String37" xml:space="preserve">
+    <value>mimetype: application/x-microsoft.net.object.binary.base64</value>
+  </data>
+  <data name="String38" xml:space="preserve">
+    <value>value   : The object must be serialized with</value>
+  </data>
+  <data name="String39" xml:space="preserve">
+    <value>: System.Runtime.Serialization.Formatters.Binary.BinaryFormatter</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Version 2.0</value>
+  </data>
+  <data name="String40" xml:space="preserve">
+    <value>: and then encoded with base64 encoding.</value>
+  </data>
+  <data name="String41" xml:space="preserve">
+    <value>mimetype: application/x-microsoft.net.object.soap.base64</value>
+  </data>
+  <data name="String42" xml:space="preserve">
+    <value>value   : The object must be serialized with</value>
+  </data>
+  <data name="String43" xml:space="preserve">
+    <value>: System.Runtime.Serialization.Formatters.Soap.SoapFormatter</value>
+  </data>
+  <data name="String44" xml:space="preserve">
+    <value>: and then encoded with base64 encoding.</value>
+  </data>
+  <data name="String45" xml:space="preserve">
+    <value>mimetype: application/x-microsoft.net.object.bytearray.base64</value>
+  </data>
+  <data name="String46" xml:space="preserve">
+    <value>value   : The object must be serialized into a byte array</value>
+  </data>
+  <data name="String47" xml:space="preserve">
+    <value>: using a System.ComponentModel.TypeConverter</value>
+  </data>
+  <data name="String48" xml:space="preserve">
+    <value>: and then encoded with base64 encoding.</value>
+  </data>
+  <data name="String49" xml:space="preserve">
+    <value>--&gt;</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>The primary goals of this format is to allow a simple XML format</value>
+  </data>
+  <data name="String50" xml:space="preserve">
+    <value>&lt;xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;</value>
+  </data>
+  <data name="String51" xml:space="preserve">
+    <value>&lt;xsd:import namespace="http://www.w3.org/XML/1998/namespace" /&gt;</value>
+  </data>
+  <data name="String52" xml:space="preserve">
+    <value>&lt;xsd:element name="root" msdata:IsDataSet="true"&gt;</value>
+  </data>
+  <data name="String53" xml:space="preserve">
+    <value>&lt;xsd:complexType&gt;</value>
+  </data>
+  <data name="String54" xml:space="preserve">
+    <value>&lt;xsd:choice maxOccurs="unbounded"&gt;</value>
+  </data>
+  <data name="String55" xml:space="preserve">
+    <value>&lt;xsd:element name="metadata"&gt;</value>
+  </data>
+  <data name="String56" xml:space="preserve">
+    <value>&lt;xsd:complexType&gt;</value>
+  </data>
+  <data name="String57" xml:space="preserve">
+    <value>&lt;xsd:sequence&gt;</value>
+  </data>
+  <data name="String58" xml:space="preserve">
+    <value>&lt;xsd:element name="value" type="xsd:string" minOccurs="0" /&gt;</value>
+  </data>
+  <data name="String59" xml:space="preserve">
+    <value>&lt;/xsd:sequence&gt;</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>that is mostly human readable. The generation and parsing of the</value>
+  </data>
+  <data name="String60" xml:space="preserve">
+    <value>&lt;xsd:attribute name="name" use="required" type="xsd:string" /&gt;</value>
+  </data>
+  <data name="String61" xml:space="preserve">
+    <value>&lt;xsd:attribute name="type" type="xsd:string" /&gt;</value>
+  </data>
+  <data name="String62" xml:space="preserve">
+    <value>&lt;xsd:attribute name="mimetype" type="xsd:string" /&gt;</value>
+  </data>
+  <data name="String63" xml:space="preserve">
+    <value>&lt;xsd:attribute ref="xml:space" /&gt;</value>
+  </data>
+  <data name="String64" xml:space="preserve">
+    <value>&lt;/xsd:complexType&gt;</value>
+  </data>
+  <data name="String65" xml:space="preserve">
+    <value>&lt;/xsd:element&gt;</value>
+  </data>
+  <data name="String66" xml:space="preserve">
+    <value>&lt;xsd:element name="assembly"&gt;</value>
+  </data>
+  <data name="String67" xml:space="preserve">
+    <value>&lt;xsd:complexType&gt;</value>
+  </data>
+  <data name="String68" xml:space="preserve">
+    <value>&lt;xsd:attribute name="alias" type="xsd:string" /&gt;</value>
+  </data>
+  <data name="String69" xml:space="preserve">
+    <value>&lt;xsd:attribute name="name" type="xsd:string" /&gt;</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>various data types are done through the TypeConverter classes</value>
+  </data>
+  <data name="String70" xml:space="preserve">
+    <value>&lt;/xsd:complexType&gt;</value>
+  </data>
+  <data name="String71" xml:space="preserve">
+    <value>&lt;/xsd:element&gt;</value>
+  </data>
+  <data name="String72" xml:space="preserve">
+    <value>&lt;xsd:element name="data"&gt;</value>
+  </data>
+  <data name="String73" xml:space="preserve">
+    <value>&lt;xsd:complexType&gt;</value>
+  </data>
+  <data name="String74" xml:space="preserve">
+    <value>&lt;xsd:sequence&gt;</value>
+  </data>
+  <data name="String75" xml:space="preserve">
+    <value>&lt;xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" /&gt;</value>
+  </data>
+  <data name="String76" xml:space="preserve">
+    <value>&lt;xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" /&gt;</value>
+  </data>
+  <data name="String77" xml:space="preserve">
+    <value>&lt;/xsd:sequence&gt;</value>
+  </data>
+  <data name="String78" xml:space="preserve">
+    <value>&lt;xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" /&gt;</value>
+  </data>
+  <data name="String79" xml:space="preserve">
+    <value>&lt;xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" /&gt;</value>
+  </data>
+  <data name="String8" xml:space="preserve">
+    <value>associated with the data types.</value>
+  </data>
+  <data name="String80" xml:space="preserve">
+    <value>&lt;xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" /&gt;</value>
+  </data>
+  <data name="String81" xml:space="preserve">
+    <value>&lt;xsd:attribute ref="xml:space" /&gt;</value>
+  </data>
+  <data name="String82" xml:space="preserve">
+    <value>&lt;/xsd:complexType&gt;</value>
+  </data>
+  <data name="String83" xml:space="preserve">
+    <value>&lt;/xsd:element&gt;</value>
+  </data>
+  <data name="String84" xml:space="preserve">
+    <value>&lt;xsd:element name="resheader"&gt;</value>
+  </data>
+  <data name="String85" xml:space="preserve">
+    <value>&lt;xsd:complexType&gt;</value>
+  </data>
+  <data name="String86" xml:space="preserve">
+    <value>&lt;xsd:sequence&gt;</value>
+  </data>
+  <data name="String87" xml:space="preserve">
+    <value>&lt;xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" /&gt;</value>
+  </data>
+  <data name="String88" xml:space="preserve">
+    <value>&lt;/xsd:sequence&gt;</value>
+  </data>
+  <data name="String89" xml:space="preserve">
+    <value>&lt;xsd:attribute name="name" type="xsd:string" use="required" /&gt;</value>
+  </data>
+  <data name="String9" xml:space="preserve">
+    <value>Example:</value>
+  </data>
+  <data name="String90" xml:space="preserve">
+    <value>&lt;/xsd:complexType&gt;</value>
+  </data>
+  <data name="String91" xml:space="preserve">
+    <value>&lt;/xsd:element&gt;</value>
+  </data>
+  <data name="String92" xml:space="preserve">
+    <value>&lt;/xsd:choice&gt;</value>
+  </data>
+  <data name="String93" xml:space="preserve">
+    <value>&lt;/xsd:complexType&gt;</value>
+  </data>
+  <data name="String94" xml:space="preserve">
+    <value>&lt;/xsd:element&gt;</value>
+  </data>
+  <data name="String95" xml:space="preserve">
+    <value>&lt;/xsd:schema&gt;</value>
+  </data>
+  <data name="String96" xml:space="preserve">
+    <value>&lt;resheader name="resmimetype"&gt;</value>
+  </data>
+  <data name="String97" xml:space="preserve">
+    <value>&lt;value&gt;text/microsoft-resx&lt;/value&gt;</value>
+  </data>
+  <data name="String98" xml:space="preserve">
+    <value>&lt;/resheader&gt;</value>
+  </data>
+  <data name="String99" xml:space="preserve">
+    <value>&lt;resheader name="version"&gt;</value>
+  </data>
+</root>
