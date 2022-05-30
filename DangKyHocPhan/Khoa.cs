@@ -162,5 +162,10 @@ namespace DangKyHocPhan
             TrangchuPDT form = new TrangchuPDT();
             form.ShowDialog();
         }
+
+        private void dgvDSKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

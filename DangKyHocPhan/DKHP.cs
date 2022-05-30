@@ -162,5 +162,10 @@ namespace DangKyHocPhan
             PhieuThuHocPhi form = new PhieuThuHocPhi();
             form.ShowDialog();
         }
+
+        private void dgvDSMonDK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

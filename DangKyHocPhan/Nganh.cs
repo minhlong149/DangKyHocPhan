@@ -82,6 +82,8 @@ namespace DangKyHocPhan
                 string query = "SELECT * FROM dbo.NGANH WHERE MaNganh = @MaNganh";
                 bool trungNganh = false;
                 using (SqlCommand command = new SqlCommand(query, connection))
+
+
                 {
                     command.Parameters.AddWithValue("@MaNganh", txtMaNganh.Text);
                     connection.Open();
