@@ -92,8 +92,7 @@ namespace DangKyHocPhan
                 DataTable result = new DataTable();
                 adapter.Fill(result);
                 coPhieu = result != null && result.Rows.Count == 1;
-                txtNgayLap.Text = coPhieu ? result.Rows[0]["NgayLap"].ToString() : DateTime.Now.ToString();
-                // Ngày lập vẫn còn chưa chuẩn định dạng!
+                txtNgayLap.Text = coPhieu ? DateTime.Parse(result.Rows[0]["NgayLap"].ToString()).ToString("dd-MM-yyyy") : DateTime.Now.Date.ToString("dd-MM-yyyy");
             }
 
             _SoPhieu = MSSV + cboHocKy.SelectedValue.ToString();
@@ -121,6 +120,7 @@ namespace DangKyHocPhan
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
+            // TODO: Kiểm tra số tín chỉ đăng ký có vượt mức tối đa
             string query = "INSERT INTO dbo.DKHOCPHAN VALUES (@SoPhieu, @MonHoc)";
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
