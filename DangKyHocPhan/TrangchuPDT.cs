@@ -38,5 +38,11 @@ namespace DangKyHocPhan
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang phòng đào tạo?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
+
+        private void btnNDSKN_Click(object sender, EventArgs e)
+        {
+            Khoa formKhoa = new Khoa();
+            formKhoa.Show();
+        }
     }
 }

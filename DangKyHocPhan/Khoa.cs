@@ -149,17 +149,10 @@ namespace DangKyHocPhan
             }
         }
 
-        private void btnNganh_Click(object sender, EventArgs e)
+        private void ngànhToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             Nganh form = new Nganh();
-            form.ShowDialog();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TrangchuPDT form = new TrangchuPDT();
             form.ShowDialog();
         }
     }
