@@ -42,7 +42,7 @@ namespace DangKyHocPhan
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimKiem.Location = new System.Drawing.Point(259, 42);
+            this.txtTimKiem.Location = new System.Drawing.Point(309, 45);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(215, 22);
@@ -51,7 +51,7 @@ namespace DangKyHocPhan
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.Location = new System.Drawing.Point(491, 39);
+            this.btnTimKiem.Location = new System.Drawing.Point(548, 42);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
@@ -63,7 +63,7 @@ namespace DangKyHocPhan
             // btnThemmoi
             // 
             this.btnThemmoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemmoi.Location = new System.Drawing.Point(599, 39);
+            this.btnThemmoi.Location = new System.Drawing.Point(665, 42);
             this.btnThemmoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemmoi.Name = "btnThemmoi";
             this.btnThemmoi.Size = new System.Drawing.Size(100, 28);
@@ -76,10 +76,10 @@ namespace DangKyHocPhan
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 45);
+            this.label1.Location = new System.Drawing.Point(236, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Từ khóa";
             // 
@@ -102,8 +102,9 @@ namespace DangKyHocPhan
             this.dgvDSMHMo.ReadOnly = true;
             this.dgvDSMHMo.RowHeadersWidth = 51;
             this.dgvDSMHMo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSMHMo.Size = new System.Drawing.Size(849, 358);
+            this.dgvDSMHMo.Size = new System.Drawing.Size(723, 358);
             this.dgvDSMHMo.TabIndex = 10;
+            this.dgvDSMHMo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMHMo_CellClick);
             this.dgvDSMHMo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMHMo_CellContentDoubleClick);
             // 
             // MaHK
