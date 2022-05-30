@@ -179,5 +179,41 @@ namespace DangKyHocPhan
                 txtTinChi.Text = result.Rows[0][0].ToString();
             }
         }
+
+        private void dgvDSMonDK_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Xóa môn
+            string query = "DELETE FROM dbo.DKHOCPHAN WHERE SoPhieu = @SoPhieu AND MonHoc = @MonHoc";
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                command.Parameters.AddWithValue("@MonHoc", dgvDSMonDK.Rows[dgvDSMonDK.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            LoadDSMonHocMo();
+            LoadDSMonDangKy();
+        }
+
+        private void dgvDSMonHocMo_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Thêm môn
+            string query = "INSERT INTO dbo.DKHOCPHAN VALUES (@SoPhieu, @MonHoc)";
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                command.Parameters.AddWithValue("@MonHoc", dgvDSMonHocMo.Rows[dgvDSMonHocMo.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            LoadDSMonHocMo();
+            LoadDSMonDangKy();
+        }
     }
 }
