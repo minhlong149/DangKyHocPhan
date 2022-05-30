@@ -24,24 +24,21 @@ namespace DangKyHocPhan
         private void DKHP_Load(object sender, EventArgs e)
         {
             // Load cboHocKy
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            string query = "SELECT * FROM dbo.DSHOCKY ORDER BY NamHoc DESC, HocKy DESC";
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, new SqlConnection(Properties.Settings.Default.DKHPConnectionString)))
             {
-                string query = "SELECT * FROM dbo.DSHOCKY ORDER BY NamHoc DESC, HocKy DESC";
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
-                {
-                    DataTable data = new DataTable();
-                    adapter.Fill(data);
-                    data.Columns.Add("HienThi", typeof(String));
+                DataTable data = new DataTable();
+                adapter.Fill(data);
+                data.Columns.Add("HienThi", typeof(String));
 
-                    foreach (DataRow row in data.Rows)
-                    {
-                        row["HienThi"] = ("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
-                    }
-                    
-                    cboHocKy.DataSource = data;
-                    cboHocKy.ValueMember = "MaHK";
-                    cboHocKy.DisplayMember = "HienThi";
+                foreach (DataRow row in data.Rows)
+                {
+                    row["HienThi"] = ("Học kỳ " + (row["HocKy"].ToString() == "0" ? "hè" : row["HocKy"].ToString()) + " - Năm học " + row["NamHoc"].ToString());
                 }
+
+                cboHocKy.DataSource = data;
+                cboHocKy.ValueMember = "MaHK";
+                cboHocKy.DisplayMember = "HienThi";
             }
 
             // Hiển thi thông tin SV
@@ -84,21 +81,19 @@ namespace DangKyHocPhan
         private void cboHocKy_DropDownClosed(object sender, EventArgs e)
         {
             // Kiểm tra SV đã có phiếu DK của học kỳ này chưa
-            string query = "SELECT * FROM dbo.PHIEUDK WHERE MaSV = @MSSV AND MaHK = @HocKy";
             bool coPhieu = false;
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+
+            string query = "SELECT * FROM dbo.PHIEUDK WHERE MaSV = @MSSV AND MaHK = @HocKy";
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, new SqlConnection(Properties.Settings.Default.DKHPConnectionString)))
             {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
-                {
-                    adapter.SelectCommand.Parameters.AddWithValue("@MSSV", MSSV);
-                    adapter.SelectCommand.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
+                adapter.SelectCommand.Parameters.AddWithValue("@MSSV", MSSV);
+                adapter.SelectCommand.Parameters.AddWithValue("@HocKy", cboHocKy.SelectedValue.ToString());
 
-                    DataTable result = new DataTable();
-                    adapter.Fill(result);
-                    coPhieu = result != null && result.Rows.Count == 1;
-                    txtNgayLap.Text = coPhieu ? result.Rows[0]["NgayLap"].ToString() : DateTime.Now.ToString();
-
-                }
+                DataTable result = new DataTable();
+                adapter.Fill(result);
+                coPhieu = result != null && result.Rows.Count == 1;
+                txtNgayLap.Text = coPhieu ? result.Rows[0]["NgayLap"].ToString() : DateTime.Now.ToString();
+                // Ngày lập vẫn còn chưa chuẩn định dạng!
             }
 
             _SoPhieu = MSSV + cboHocKy.SelectedValue.ToString();
@@ -175,6 +170,14 @@ namespace DangKyHocPhan
         private void dgvDSMonDK_DataSourceChanged(object sender, EventArgs e)
         {
             // Cập nhập số tín chỉ đăng ký
+            string query = "SELECT SUM(CEILING(SoTiet * 1.0 / SoTinChi)) AS SoTinChi FROM DKHOCPHAN JOIN MONHOC ON MONHOC.MaMon = DKHOCPHAN.MonHoc JOIN LOAIMON ON LOAIMON.MaLoaiMon = MONHOC.LoaiMon WHERE SoPhieu = @SoPhieu";
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, new SqlConnection(Properties.Settings.Default.DKHPConnectionString)))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@SoPhieu", _SoPhieu);
+                DataTable result = new DataTable();
+                adapter.Fill(result);
+                txtTinChi.Text = result.Rows[0][0].ToString();
+            }
         }
     }
 }
