@@ -70,6 +70,12 @@
     <Compile Include="ChuaHTHP.Designer.cs">
       <DependentUpon>ChuaHTHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChuongTrinhHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuongTrinhHoc.Designer.cs">
+      <DependentUpon>ChuongTrinhHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomParameter.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="DongTien.Designer.cs">
       <DependentUpon>DongTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSChuongTrinhHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSChuongTrinhHoc.Designer.cs">
+      <DependentUpon>DSChuongTrinhHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="DSMonHoc.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,9 @@
     <Compile Include="TrangchuSV.Designer.cs">
       <DependentUpon>TrangchuSV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChuongTrinhHoc.resx">
+      <DependentUpon>ChuongTrinhHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DongTien.resx">
       <DependentUpon>DongTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSChuongTrinhHoc.resx">
+      <DependentUpon>DSChuongTrinhHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSMonHoc.resx">
       <DependentUpon>DSMonHoc.cs</DependentUpon>
