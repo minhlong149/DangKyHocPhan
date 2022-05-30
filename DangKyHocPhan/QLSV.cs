@@ -86,6 +86,7 @@ namespace DangKyHocPhan
         { 
             string MaSV=txtMSSV.Text;
             string sql = "";
+            string sql1 = "";
             string hoten = txtHoTen.Text;
             string ngaysinh =pickNS.Value.ToShortDateString();
             string gioitinh = rbtnNam.Checked ? "1" : "0";
@@ -119,12 +120,19 @@ namespace DangKyHocPhan
 
             //khai báo một danh sách tham sô
             List<CustomParameter> lstPara = new List<CustomParameter>();
+            List<CustomParameter> lstPara1 = new List<CustomParameter>();
             if (dt.Rows.Count==0)//nếu thêm mới sinh viên
             {
                 sql = "ThemSV";//gọi tới procedure thêm mới sinh viên
                 lstPara.Add(new CustomParameter()
                 {
                     key = "@MaSV",
+                    value = MaSV
+                });
+                sql1 = "ThemTK";
+                lstPara1.Add(new CustomParameter()
+                {
+                    key = "@TenDangNhap",
                     value = MaSV
                 });
             }
@@ -177,6 +185,7 @@ namespace DangKyHocPhan
 
             var rs = new Database().ExeCute(sql, lstPara);//truyền 2 tham số là câu lệnh sql
             //và danh sách các tham số
+            var rs1 = new Database().ExeCute(sql1, lstPara1);
             if (rs == 1)//nếu thuwcjt hi thành công
             {
                 if (dt.Rows.Count == 0)//nếu thêm mới
@@ -231,7 +240,48 @@ namespace DangKyHocPhan
 
         private void btnXoaHS_Click(object sender, EventArgs e)
         {
-            
+            string sql = "";
+            string sql1 = "";
+            SqlConnection connection2 = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+            string sqlmasv = "select * from SINHVIEN where MaSV=@MaSV";
+            SqlCommand cmd = new SqlCommand(sqlmasv, connection2);
+            connection2.Open();
+            cmd.Parameters.AddWithValue("@MaSV", txtMSSV.Text);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            List<CustomParameter> lstPara = new List<CustomParameter>();
+            List<CustomParameter> lstPara1 = new List<CustomParameter>();
+            if (dt.Rows.Count == 1)
+            {
+                sql = "XoaSV";
+                lstPara.Add(new CustomParameter()
+                {
+                    key = "@MaSV",
+                    value = txtMSSV.Text
+                });
+                sql1 = "XoaTK";
+                lstPara1.Add(new CustomParameter()
+                {
+                    key = "@TenDangNhap",
+                    value = txtMSSV.Text
+                });
+            }
+            else
+            {
+                MessageBox.Show("Mã số sinh viên không tồn tại!");
+            }
+            var rs = new Database().ExeCute(sql, lstPara);
+            var rs1 = new Database().ExeCute(sql1, lstPara1);
+            if (rs == 1)
+            {
+                MessageBox.Show("Xoá sinh viên thành công");
+                Load_DSSV();
+            }
+            else//nếu không thành công
+            {
+                MessageBox.Show("Thực thi thất bại");
+            }
         }
     }
 }
