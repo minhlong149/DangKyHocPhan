@@ -70,7 +70,7 @@ namespace DangKyHocPhan
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
-                catch (SqlException ex)
+                catch (SqlException ex) //Hiển thị ra lỗi nếu insert bị lỗi
                 {
                     for (int i = 0; i < ex.Errors.Count; i++)
                     {
@@ -82,8 +82,14 @@ namespace DangKyHocPhan
                     }
                     MessageBox.Show(errorMessages.ToString(),"Lỗi");
                 }
+                finally
+                {
+                    if (String.IsNullOrEmpty(errorMessages.ToString()))
+                    {
+                        MessageBox.Show("Phiếu thu học phí đã được ghi lại", "Thành công");
+                    }
+                }
             }
-            Console.WriteLine("Hello");
             return;
         }
 
