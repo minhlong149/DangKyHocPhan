@@ -385,3 +385,31 @@ begin
 end
 
 drop proc updateMonHocMo
+
+create procedure XoaSV
+	@MaSV varchar(8)
+as 
+begin
+	delete from SINHVIEN where MaSV=@MaSV
+	IF @@ROWCOUNT > 0 BEGIN RETURN 1 END
+		ELSE BEGIN RETURN 0 END;
+end
+
+create procedure ThemTK
+	@TenDangNhap varchar(8)
+as 
+begin
+	insert into TAIKHOAN(TenDangNhap,MatKhau,Quyen)
+	values (@TenDangNhap,'1','user');
+	if @@ROWCOUNT >0 begin return 1 end
+	else begin return 0 end
+end
+
+create procedure XoaTK
+	@TenDangNhap varchar(8)
+as 
+begin
+	delete from TAIKHOAN where TenDangNhap=@TenDangNhap
+	IF @@ROWCOUNT > 0 BEGIN RETURN 1 END
+		ELSE BEGIN RETURN 0 END;
+end
