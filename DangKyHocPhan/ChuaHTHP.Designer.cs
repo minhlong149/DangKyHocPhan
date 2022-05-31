@@ -39,12 +39,13 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvChuaHP = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.HocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienPhaiDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grBoxThongTin.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,19 +95,9 @@
             // 
             this.comboBoxNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNamHoc.FormattingEnabled = true;
-            this.comboBoxNamHoc.Items.AddRange(new object[] {
-            "2022-2023",
-            "2021-2022",
-            "2020-2021",
-            "2019-2020",
-            "2018-2019",
-            "2017-2018",
-            "2016-2017",
-            "2015-2016",
-            "2014-2015"});
             this.comboBoxNamHoc.Location = new System.Drawing.Point(99, 47);
             this.comboBoxNamHoc.Name = "comboBoxNamHoc";
-            this.comboBoxNamHoc.Size = new System.Drawing.Size(151, 26);
+            this.comboBoxNamHoc.Size = new System.Drawing.Size(118, 26);
             this.comboBoxNamHoc.TabIndex = 3;
             // 
             // btnTruyVan
@@ -141,7 +132,7 @@
             "2"});
             this.comboBox_HocKy.Location = new System.Drawing.Point(99, 18);
             this.comboBox_HocKy.Name = "comboBox_HocKy";
-            this.comboBox_HocKy.Size = new System.Drawing.Size(57, 26);
+            this.comboBox_HocKy.Size = new System.Drawing.Size(118, 26);
             this.comboBox_HocKy.TabIndex = 1;
             this.comboBox_HocKy.SelectedIndexChanged += new System.EventHandler(this.comboBox_HocKy_SelectedIndexChanged);
             // 
@@ -183,10 +174,11 @@
             this.dgvChuaHP.AllowUserToDeleteRows = false;
             this.dgvChuaHP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChuaHP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3,
+            this.HocKy,
+            this.NamHoc,
+            this.MaSV,
+            this.SoTienDangKy,
+            this.SoTienPhaiDong,
             this.Column4});
             this.dgvChuaHP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChuaHP.Location = new System.Drawing.Point(0, 0);
@@ -195,45 +187,6 @@
             this.dgvChuaHP.ReadOnly = true;
             this.dgvChuaHP.Size = new System.Drawing.Size(628, 214);
             this.dgvChuaHP.TabIndex = 0;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "STT";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Mã Số Sinh Viên";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Số tiền đăng ký";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Số tiền phải đóng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Số tiền còn lại";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // flowLayoutPanel1
             // 
@@ -246,6 +199,58 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(628, 44);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // HocKy
+            // 
+            this.HocKy.DataPropertyName = "HocKy";
+            this.HocKy.HeaderText = "HK";
+            this.HocKy.Name = "HocKy";
+            this.HocKy.ReadOnly = true;
+            this.HocKy.Visible = false;
+            // 
+            // NamHoc
+            // 
+            this.NamHoc.DataPropertyName = "NamHoc";
+            this.NamHoc.HeaderText = "Năm Học";
+            this.NamHoc.Name = "NamHoc";
+            this.NamHoc.ReadOnly = true;
+            this.NamHoc.Visible = false;
+            // 
+            // MaSV
+            // 
+            this.MaSV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã Số Sinh Viên";
+            this.MaSV.Name = "MaSV";
+            this.MaSV.ReadOnly = true;
+            this.MaSV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoTienDangKy
+            // 
+            this.SoTienDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoTienDangKy.DataPropertyName = "SoTienDangKy";
+            this.SoTienDangKy.HeaderText = "Số tiền đăng ký";
+            this.SoTienDangKy.Name = "SoTienDangKy";
+            this.SoTienDangKy.ReadOnly = true;
+            this.SoTienDangKy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoTienPhaiDong
+            // 
+            this.SoTienPhaiDong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoTienPhaiDong.DataPropertyName = "SoTienPhaiDong";
+            this.SoTienPhaiDong.HeaderText = "Số tiền phải đóng";
+            this.SoTienPhaiDong.Name = "SoTienPhaiDong";
+            this.SoTienPhaiDong.ReadOnly = true;
+            this.SoTienPhaiDong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "SoTienConLai";
+            this.Column4.HeaderText = "Số tiền còn lại";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // ChuaHTHP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +262,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChuaHTHP";
             this.Text = "DSSV chưa hoàn thành HP";
+            this.Load += new System.EventHandler(this.ChuaHTHP_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grBoxThongTin.ResumeLayout(false);
@@ -280,12 +286,13 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvChuaHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btnTruyVan;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HocKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienDangKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienPhaiDong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
