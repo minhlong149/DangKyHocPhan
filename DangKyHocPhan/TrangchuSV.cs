@@ -29,14 +29,14 @@ namespace DangKyHocPhan
         {
             DKHP dk = new DKHP();
             dk.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void btnXPTHP_Click(object sender, EventArgs e)
         {
             PhieuThuHocPhi pt = new PhieuThuHocPhi();
             pt.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void btnThoatSV_Click(object sender, EventArgs e)

@@ -94,16 +94,25 @@ namespace DangKyHocPhan
         bool coThamChieuKhoa(string maKhoa)
         {
             string query = "SELECT * FROM dbo.CHUONGTRINH WHERE Khoa = @Khoa";
-            bool trungKhoa = false;
+            bool khongTrung = true;
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Khoa", maKhoa);
                 connection.Open();
                 SqlDataReader Exist = command.ExecuteReader();
-                trungKhoa = Exist.HasRows;
+                khongTrung = khongTrung && !Exist.HasRows;
                 connection.Close();
             }
-            return trungKhoa;
+            string queryNganh = "SELECT * FROM dbo.NGANH WHERE ThuocKhoa = @Khoa";
+            using (SqlCommand command = new SqlCommand(queryNganh, connection))
+            {
+                command.Parameters.AddWithValue("@Khoa", maKhoa);
+                connection.Open();
+                SqlDataReader Exist = command.ExecuteReader();
+                khongTrung = khongTrung && !Exist.HasRows;
+                connection.Close();
+            }
+            return khongTrung;
         }
 
         private void btnSuaKhoa_Click(object sender, EventArgs e)

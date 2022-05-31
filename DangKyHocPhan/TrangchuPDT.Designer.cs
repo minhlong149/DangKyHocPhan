@@ -86,6 +86,7 @@ namespace DangKyHocPhan
             this.btnNCTH.TabIndex = 13;
             this.btnNCTH.Text = "Nhập chương trình học";
             this.btnNCTH.UseVisualStyleBackColor = false;
+            this.btnNCTH.Click += new System.EventHandler(this.btnNCTH_Click);
             // 
             // btnNMHM
             // 
@@ -97,6 +98,7 @@ namespace DangKyHocPhan
             this.btnNMHM.TabIndex = 14;
             this.btnNMHM.Text = "Nhập môn học mở trong học kì";
             this.btnNMHM.UseVisualStyleBackColor = false;
+            this.btnNMHM.Click += new System.EventHandler(this.btnNMHM_Click);
             // 
             // btnBCSV
             // 

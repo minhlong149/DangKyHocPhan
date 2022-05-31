@@ -23,8 +23,8 @@ namespace DangKyHocPhan
 
         private void btnNDSMH_Click(object sender, EventArgs e)
         {
-            PhieuThuHocPhi PhieuThuHP = new PhieuThuHocPhi();
-            PhieuThuHP.Show();
+            DSMonHoc DSMonHoc = new DSMonHoc();
+            DSMonHoc.Show();
         }
 
         private void btnBCSV_Click(object sender, EventArgs e)
@@ -49,6 +49,18 @@ namespace DangKyHocPhan
         private void btnDX_Click(object sender, EventArgs e)
         {
             DangXuat(this, new EventArgs());
+        }
+
+        private void btnNCTH_Click(object sender, EventArgs e)
+        {
+            DSChuongTrinhHoc DSChuongTrinhHoc = new DSChuongTrinhHoc();
+            DSChuongTrinhHoc.Show();
+        }
+
+        private void btnNMHM_Click(object sender, EventArgs e)
+        {
+            DSMonHocMo DSMonHocMo = new DSMonHocMo();
+            DSMonHocMo.Show();
         }
     }
 }
