@@ -175,6 +175,63 @@ CREATE TABLE THUHOCPHI(
 INSERT INTO THUHOCPHI VALUES ('0003','000112022',6000000,CURRENT_TIMESTAMP);
 GO
 
+CREATE TABLE CHUAHTHP(
+	SoPhieu INT IDENTITY(1,1) PRIMARY KEY,
+	MaSV VARCHAR(8) FOREIGN KEY REFERENCES SINHVIEN(MaSV),
+	SoTienDangKy MONEY NOT NULL,
+	SoTienPhaiDong MONEY NOT NULL,
+	SoTienConLai MONEY	
+)
+
+ALTER TABLE CHUAHTHP
+ADD CONSTRAINT ktra_sotienphaidong CHECK (SoTienPhaiDong <= SoTienDangKy)
+
+INSERT INTO CHUAHTHP VALUES ('0001', '1000000', '900000', '200000');
+INSERT INTO CHUAHTHP VALUES ('0002', '2000000', '200000', '200000');
+INSERT INTO CHUAHTHP VALUES ('0003', '1500000', '500000', '100000');
+INSERT INTO CHUAHTHP VALUES ('0022', '1700000', '1700000', '0');
+
+
+-- TRIGGER TINH TIEN MOI KHI INSERT VAO BANG DKHOCPHAN
+CREATE TRIGGER TINH_TOAN_HP_CHUAHTHP
+ON DKHOCPHAN AFTER INSERT
+AS
+BEGIN
+declare @SoPhieu VARCHAR(15), @MonHoc VARCHAR(5), @MaSV VARCHAR(8), 
+@SoTienDangKy MONEY, @SoTienPhaiDong MONEY, @SoTienConLai MONEY,
+@SoTinChi INT, @GiaTien INT, @DoiTuong VARCHAR(5)
+SELECT @SoPhieu=SoPhieu, @MonHoc=MonHoc from inserted
+SELECT @MaSV=MaSV from PHIEUDK WHERE SoPhieu=@SoPhieu
+
+	-- query tim so tin chi va gia tien 1 tin cua mon
+	SELECT @SoTinChi=SoTinChi, @GiaTien=GiaTien FROM MONHOC
+	INNER JOIN LOAIMON	
+	ON MONHOC.LoaiMon=LOAIMON.MaLoaiMon
+	WHERE MaMon='IE106'
+	-- tinh so tien dang ky
+	SET @SoTienDangKy = @SoTinChi * @GiaTien
+	SET @SoTienPhaiDong = @SoTienDangKy
+	-- kiem tra sinh vien thuoc dien nao
+	select @DoiTuong=DoiTuong from SINHVIEN where MaSV=@MaSV
+	IF @DoiTuong = 'DT03'
+	BEGIN
+		SET @SoTienPhaiDong = @SoTienDangKy * 0.6
+	END
+	IF @DoiTuong = 'DT02'
+	BEGIN
+		SET @SoTienPhaiDong = @SoTienDangKy * 0.7
+	END
+	IF @DoiTuong = 'DT01'
+	BEGIN
+		SET @SoTienPhaiDong = @SoTienDangKy * 0.9
+	END
+	-- update so tien con lai
+	SET @SoTienConLai = @SoTienDangKy
+	-- ghi vao bang
+	INSERT INTO CHUAHTHP VALUES (@MaSV, @SoTienDangKy, @SoTienPhaiDong, @SoTienConLai);
+END
+GO
+
 ALTER TABLE MONHOC
 ADD NguoiTao nvarchar(50)
 
