@@ -384,9 +384,6 @@ begin
 	if @@ROWCOUNT > 0 return 1 else return 0;
 end
 
-<<<<<<< HEAD
-drop proc updateMonHocMo
-=======
 drop proc updateMonHocMo
 
 create procedure XoaSV
@@ -567,4 +564,3 @@ begin
 	if @@ROWCOUNT > 0 return 1 else return 0;
 end
 
->>>>>>> 32ede2ecfc0822b4afcf0ccc536bcdf887290d97
