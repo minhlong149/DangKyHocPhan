@@ -174,3 +174,157 @@ CREATE TABLE THUHOCPHI(
 
 INSERT INTO THUHOCPHI VALUES ('0003','000112022',6000000,CURRENT_TIMESTAMP);
 GO
+
+ALTER TABLE MONHOC
+ADD NguoiTao nvarchar(50)
+
+ALTER TABLE MONHOC
+ADD NguoiCapNhat nvarchar(50)
+
+ALTER TABLE MONHOC
+ADD NgayTao datetime
+
+ALTER TABLE MONHOC
+ADD NgayCapNhat datetime
+
+
+GO
+create procedure selectmh
+	@mamh varchar(5)
+as
+begin
+	select 
+		MaMon,
+		TenMon,
+		SoTiet,
+		LoaiMon
+	from MONHOC
+	where MaMon = @mamh;
+end
+
+GO
+ create procedure insertMH
+	@mamh varchar(5),
+	@nguoitao nvarchar(50),
+	@tenmonhoc nvarchar(40),
+	@sotiet int,
+	@loaimon varchar(5)
+as
+begin
+	insert into MONHOC(MaMon,NguoiTao,TenMon, SoTiet, LoaiMon)
+	values(@mamh,@nguoitao,@tenmonhoc,@sotiet,@loaimon);
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
+GO
+create procedure updateMH
+	@nguoicapnhat nvarchar(50),
+	@mamh varchar(5),
+	@tenmonhoc nvarchar(50),
+	@sotiet int,
+	@loaimon varchar(5)
+as
+begin
+	update MONHOC
+	set
+		NguoiCapNhat = @nguoicapnhat,
+		NgayCapNhat = getdate(),
+		TenMon = @tenmonhoc,
+		SoTiet = @sotiet,
+		LoaiMon = @loaimon
+	where MaMon = @mamh;
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
+drop procedure updateMH
+
+
+GO
+create procedure selectAllMonHocMo
+	@tukhoa nvarchar(50)
+as
+begin
+	set @tukhoa = lower(ltrim(rtrim(@tukhoa)));
+	select 
+		MaHK,5
+		MonHoc
+	from MONHOCMO
+	where MonHoc like '%'+@tukhoa+'%'
+	or lower(MaHK) like '%'+@tukhoa+'%'
+	order by MaHK;	
+end;
+
+
+
+GO
+create procedure selectHK
+	@tukhoa nvarchar(50)
+as
+begin
+	set @tukhoa = lower(ltrim(rtrim(@tukhoa)));
+	select 
+		MaHK,
+		HocKy
+	from DSHOCKY
+	where MaHK like '%'+@tukhoa+'%'
+	or lower(HocKy) like '%'+@tukhoa+'%'
+	order by HocKy;	
+end;
+
+
+GO
+create proc selectMHMo
+	@mamonhoc varchar(5),
+	@mahocky varchar(5)
+as
+begin
+	select
+		MaHK,
+		MonHoc
+	from MONHOCMO
+	where MonHoc = @mamonhoc and MaHK = @mahocky;
+end
+
+drop procedure selectMHMo
+
+exec selectmh 'IT1001'
+exec selectMHMo '12022', 'IT001'
+
+
+ALTER TABLE MONHOCMO
+ADD NguoiTao nvarchar(50)
+
+ALTER TABLE MONHOCMO
+ADD NguoiCapNhat nvarchar(50)
+
+GO
+create proc insertMonHocMo
+	@nguoitao nvarchar(50),
+	@mahocky varchar(5),
+	@mamonhoc varchar(5)
+as
+begin
+	insert into MONHOCMO(NguoiTao,MaHK,MonHoc)
+	values(@nguoitao,@mahocky, @mamonhoc);
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
+GO
+create proc updateMonHocMo
+	@nguoicapnhat nvarchar(50),
+	@mahocky varchar(5),
+	@mamonhoc varchar(5),
+	@mahockybandau varchar(5),
+	@mamonhocbandau varchar(5)
+as
+begin
+	update MONHOCMO
+	set
+		NguoiCapNhat = @nguoicapnhat,		
+		MaHK = @mahocky,
+		MonHoc = @mamonhoc
+	where MonHoc = @mamonhocbandau and MaHK = @mahockybandau;
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
+drop proc updateMonHocMo
