@@ -68,6 +68,7 @@ CREATE TABLE SINHVIEN(
 	NganhHoc VARCHAR(4) FOREIGN KEY REFERENCES NGANH(MaNganh) NOT NULL
 )
 
+
 INSERT INTO SINHVIEN (MaSV, TenSV, NgaySinh, GioiTinh, Huyen, Tinh, NganhHoc)
 VALUES ('0001', N'Nguyễn Văn Thành', '20/4/2001', 1, 'Q1', 'SG', 'KTPM');
 INSERT INTO SINHVIEN (MaSV, TenSV, NgaySinh, GioiTinh, Huyen, Tinh, NganhHoc)
@@ -153,7 +154,9 @@ CREATE TABLE PHIEUDK(
 	NgayLap DATE NOT NULL
 )
 
+SELECT * FROM PHIEUDK
 INSERT INTO PHIEUDK VALUES ('000112022','0001', '12022', '27-5-2022');
+INSERT INTO PHIEUDK VALUES ('000112069','2038', '12022', '5-27-2022');
 
 CREATE TABLE DKHOCPHAN(
 	SoPhieu VARCHAR(15) FOREIGN KEY REFERENCES PHIEUDK (SoPhieu),
@@ -162,6 +165,7 @@ CREATE TABLE DKHOCPHAN(
 )
 
 INSERT INTO DKHOCPHAN VALUES ('000112022','IT001');
+INSERT INTO DKHOCPHAN VALUES ('000112069', 'MA005')
 GO
 
 CREATE TABLE THUHOCPHI(
@@ -186,51 +190,70 @@ CREATE TABLE CHUAHTHP(
 ALTER TABLE CHUAHTHP
 ADD CONSTRAINT ktra_sotienphaidong CHECK (SoTienPhaiDong <= SoTienDangKy)
 
-INSERT INTO CHUAHTHP VALUES ('0001', '1000000', '900000', '200000');
-INSERT INTO CHUAHTHP VALUES ('0002', '2000000', '200000', '200000');
-INSERT INTO CHUAHTHP VALUES ('0003', '1500000', '500000', '100000');
-INSERT INTO CHUAHTHP VALUES ('0022', '1700000', '1700000', '0');
-
+--INSERT INTO CHUAHTHP VALUES ('0001', '1000000', '900000', '200000');
+--INSERT INTO CHUAHTHP VALUES ('0002', '2000000', '200000', '200000');
+--INSERT INTO CHUAHTHP VALUES ('0003', '1500000', '500000', '100000');
+--INSERT INTO CHUAHTHP VALUES ('0022', '1700000', '1700000', '0');
 
 -- TRIGGER TINH TIEN MOI KHI INSERT VAO BANG DKHOCPHAN
 CREATE TRIGGER TINH_TOAN_HP_CHUAHTHP
 ON DKHOCPHAN AFTER INSERT
 AS
 BEGIN
-declare @SoPhieu VARCHAR(15), @MonHoc VARCHAR(5), @MaSV VARCHAR(8), 
+declare @SoPhieu VARCHAR(15), @MonHoc VARCHAR(5), @MaSV VARCHAR(8),
 @SoTienDangKy MONEY, @SoTienPhaiDong MONEY, @SoTienConLai MONEY,
 @SoTinChi INT, @GiaTien INT, @DoiTuong VARCHAR(5)
 SELECT @SoPhieu=SoPhieu, @MonHoc=MonHoc from inserted
 SELECT @MaSV=MaSV from PHIEUDK WHERE SoPhieu=@SoPhieu
 
-	-- query tim so tin chi va gia tien 1 tin cua mon
-	SELECT @SoTinChi=SoTinChi, @GiaTien=GiaTien FROM MONHOC
-	INNER JOIN LOAIMON	
-	ON MONHOC.LoaiMon=LOAIMON.MaLoaiMon
-	WHERE MaMon='IE106'
-	-- tinh so tien dang ky
-	SET @SoTienDangKy = @SoTinChi * @GiaTien
-	SET @SoTienPhaiDong = @SoTienDangKy
-	-- kiem tra sinh vien thuoc dien nao
-	select @DoiTuong=DoiTuong from SINHVIEN where MaSV=@MaSV
-	IF @DoiTuong = 'DT03'
-	BEGIN
-		SET @SoTienPhaiDong = @SoTienDangKy * 0.6
-	END
-	IF @DoiTuong = 'DT02'
-	BEGIN
-		SET @SoTienPhaiDong = @SoTienDangKy * 0.7
-	END
-	IF @DoiTuong = 'DT01'
-	BEGIN
-		SET @SoTienPhaiDong = @SoTienDangKy * 0.9
-	END
-	-- update so tien con lai
-	SET @SoTienConLai = @SoTienDangKy
-	-- ghi vao bang
-	INSERT INTO CHUAHTHP VALUES (@MaSV, @SoTienDangKy, @SoTienPhaiDong, @SoTienConLai);
+-- query tim so tin chi va gia tien 1 tin cua mon
+SELECT @SoTinChi=SoTinChi, @GiaTien=GiaTien FROM MONHOC
+INNER JOIN LOAIMON
+ON MONHOC.LoaiMon=LOAIMON.MaLoaiMon
+WHERE MaMon=@MonHoc
+-- tinh so tien dang ky
+SET @SoTienDangKy = @SoTinChi * @GiaTien
+SET @SoTienPhaiDong = @SoTienDangKy
+-- kiem tra sinh vien thuoc dien nao
+SELECT * FROM DOITUONG
+select @DoiTuong=DoiTuong from SINHVIEN where MaSV=@MaSV
+IF @DoiTuong = 'DT03'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.9
+END
+IF @DoiTuong = 'DT02'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.7
+END
+IF @DoiTuong = 'DT01'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.6
+END
+-- update so tien con lai
+SET @SoTienConLai = @SoTienPhaiDong-- kiem tra sinh vien thuoc dien nao
+SELECT * FROM DOITUONG
+select @DoiTuong=DoiTuong from SINHVIEN where MaSV=@MaSV
+IF @DoiTuong = 'DT03'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.9
+END
+IF @DoiTuong = 'DT02'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.7
+END
+IF @DoiTuong = 'DT01'
+BEGIN
+SET @SoTienPhaiDong = @SoTienDangKy * 0.6
+END
+-- update so tien con lai
+SET @SoTienConLai = @SoTienPhaiDong
+-- ghi vao bang
+INSERT INTO CHUAHTHP VALUES (@MaSV, @SoTienDangKy, @SoTienPhaiDong, @SoTienConLai);
 END
 GO
+
+DROP TRIGGER TINH_TOAN_HP_CHUAHTHP
+USE DKHP
 
 ALTER TABLE MONHOC
 ADD NguoiTao nvarchar(50)
@@ -563,4 +586,12 @@ begin
 	where NganhHoc = @manganhbandau and Khoa = @makhoabandau and MonHoc = @mamonbandau and HocKy = @hocky
 	if @@ROWCOUNT > 0 return 1 else return 0;
 end
+
+DELETE FROM DKHOCPHAN WHERE DKHOCPHAN.MonHoc = 'MA005' AND DKHOCPHAN.SoPhieu = '000112069'
+INSERT INTO DKHOCPHAN VALUES ('000112069','MA005');
+
+USE DKHP
+
+SELECT * FROM CHUAHTHP
+SELECT * FROM DKHOCPHAN
 
