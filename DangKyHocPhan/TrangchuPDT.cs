@@ -44,5 +44,11 @@ namespace DangKyHocPhan
             Khoa formKhoa = new Khoa();
             formKhoa.Show();
         }
+
+            public event EventHandler DangXuat;
+        private void btnDX_Click(object sender, EventArgs e)
+        {
+            DangXuat(this, new EventArgs());
+        }
     }
 }

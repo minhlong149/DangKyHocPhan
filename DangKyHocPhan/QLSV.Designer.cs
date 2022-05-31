@@ -66,6 +66,7 @@ namespace DangKyHocPhan
             this.btnXoaHS = new System.Windows.Forms.Button();
             this.btnThoatLHS = new System.Windows.Forms.Button();
             this.btnLHS = new System.Windows.Forms.Button();
+            this.btnLapHS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tINHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dKHPDataSet)).BeginInit();
@@ -374,11 +375,11 @@ namespace DangKyHocPhan
             // 
             this.btnXoaHS.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnXoaHS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnXoaHS.Location = new System.Drawing.Point(166, 501);
+            this.btnXoaHS.Location = new System.Drawing.Point(249, 492);
             this.btnXoaHS.Name = "btnXoaHS";
-            this.btnXoaHS.Size = new System.Drawing.Size(95, 29);
+            this.btnXoaHS.Size = new System.Drawing.Size(138, 29);
             this.btnXoaHS.TabIndex = 33;
-            this.btnXoaHS.Text = "Xoá";
+            this.btnXoaHS.Text = "Xoá hồ sơ";
             this.btnXoaHS.UseVisualStyleBackColor = false;
             this.btnXoaHS.Click += new System.EventHandler(this.btnXoaHS_Click);
             // 
@@ -387,9 +388,9 @@ namespace DangKyHocPhan
             this.btnThoatLHS.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThoatLHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoatLHS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThoatLHS.Location = new System.Drawing.Point(292, 501);
+            this.btnThoatLHS.Location = new System.Drawing.Point(249, 527);
             this.btnThoatLHS.Name = "btnThoatLHS";
-            this.btnThoatLHS.Size = new System.Drawing.Size(95, 29);
+            this.btnThoatLHS.Size = new System.Drawing.Size(138, 29);
             this.btnThoatLHS.TabIndex = 18;
             this.btnThoatLHS.Text = "Thoát";
             this.btnThoatLHS.UseVisualStyleBackColor = false;
@@ -400,18 +401,29 @@ namespace DangKyHocPhan
             this.btnLHS.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLHS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLHS.Location = new System.Drawing.Point(43, 501);
+            this.btnLHS.Location = new System.Drawing.Point(43, 527);
             this.btnLHS.Name = "btnLHS";
-            this.btnLHS.Size = new System.Drawing.Size(95, 29);
+            this.btnLHS.Size = new System.Drawing.Size(138, 29);
             this.btnLHS.TabIndex = 17;
             this.btnLHS.Text = "Lưu hồ sơ";
             this.btnLHS.UseVisualStyleBackColor = false;
             this.btnLHS.Click += new System.EventHandler(this.btnLHS_Click);
             // 
+            // btnLapHS
+            // 
+            this.btnLapHS.Location = new System.Drawing.Point(43, 492);
+            this.btnLapHS.Name = "btnLapHS";
+            this.btnLapHS.Size = new System.Drawing.Size(138, 29);
+            this.btnLapHS.TabIndex = 34;
+            this.btnLapHS.Text = "Nhập hồ sơ";
+            this.btnLapHS.UseVisualStyleBackColor = true;
+            this.btnLapHS.Click += new System.EventHandler(this.btnLapHS_Click);
+            // 
             // QLSV
             // 
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1472, 568);
+            this.Controls.Add(this.btnLapHS);
             this.Controls.Add(this.btnXoaHS);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -494,5 +506,6 @@ namespace DangKyHocPhan
         private System.Windows.Forms.Button btnXoaHS;
         private System.Windows.Forms.Button btnThoatLHS;
         private System.Windows.Forms.Button btnLHS;
+        private System.Windows.Forms.Button btnLapHS;
     }
 }

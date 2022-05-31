@@ -209,6 +209,7 @@ namespace DangKyHocPhan
         private void dgvSV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMSSV.Text = this.dgvSV.CurrentRow.Cells[0].Value.ToString();
+            txtMSSV.Enabled = false;
             txtHoTen.Text = this.dgvSV.CurrentRow.Cells[1].Value.ToString();
             pickNS.Text = this.dgvSV.CurrentRow.Cells[2].Value.ToString();
             if (this.dgvSV.CurrentRow.Cells[3].Value.ToString() == "Nam")
@@ -282,6 +283,17 @@ namespace DangKyHocPhan
             {
                 MessageBox.Show("Thực thi thất bại");
             }
+        }
+
+        private void btnLapHS_Click(object sender, EventArgs e)
+        {
+            txtMSSV.Enabled = true;
+            txtMSSV.Text = string.Empty;
+            txtHoTen.Text = string.Empty;
+            rbtnNam.Checked = false;
+            rbtnNu.Checked = false;
+            pickNS.Text = string.Empty;
+            CBoxDT.Text = string.Empty;
         }
     }
 }

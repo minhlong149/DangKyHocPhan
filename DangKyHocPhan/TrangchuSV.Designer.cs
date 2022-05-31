@@ -33,6 +33,7 @@ namespace DangKyHocPhan
             this.btnDKHP = new System.Windows.Forms.Button();
             this.btnXPTHP = new System.Windows.Forms.Button();
             this.btnThoatSV = new System.Windows.Forms.Button();
+            this.btnDX = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDKHP
@@ -68,11 +69,23 @@ namespace DangKyHocPhan
             this.btnThoatSV.UseVisualStyleBackColor = true;
             this.btnThoatSV.Click += new System.EventHandler(this.btnThoatSV_Click);
             // 
+            // btnDX
+            // 
+            this.btnDX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDX.Location = new System.Drawing.Point(414, 360);
+            this.btnDX.Name = "btnDX";
+            this.btnDX.Size = new System.Drawing.Size(149, 41);
+            this.btnDX.TabIndex = 3;
+            this.btnDX.Text = "Đăng xuất";
+            this.btnDX.UseVisualStyleBackColor = true;
+            this.btnDX.Click += new System.EventHandler(this.btnDX_Click);
+            // 
             // TrangchuSV
             // 
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDX);
             this.Controls.Add(this.btnThoatSV);
             this.Controls.Add(this.btnXPTHP);
             this.Controls.Add(this.btnDKHP);
@@ -89,5 +102,6 @@ namespace DangKyHocPhan
         private System.Windows.Forms.Button btnDKHP;
         private System.Windows.Forms.Button btnXPTHP;
         private System.Windows.Forms.Button btnThoatSV;
+        private System.Windows.Forms.Button btnDX;
     }
 }
