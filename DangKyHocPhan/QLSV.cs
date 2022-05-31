@@ -185,8 +185,7 @@ namespace DangKyHocPhan
 
             var rs = new Database().ExeCute(sql, lstPara);//truyền 2 tham số là câu lệnh sql
             //và danh sách các tham số
-            var rs1 = new Database().ExeCute(sql1, lstPara1);
-            if (rs == 1)//nếu thuwcjt hi thành công
+            if (rs == 1)
             {
                 if (dt.Rows.Count == 0)//nếu thêm mới
                 {
@@ -194,7 +193,6 @@ namespace DangKyHocPhan
                 }
                 else//nếu cập nhật
                 {
-
                     MessageBox.Show("Cập nhật thông tin sinh viên thành công");
                 }
                 Load_DSSV();

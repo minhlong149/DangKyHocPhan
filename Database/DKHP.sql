@@ -60,7 +60,7 @@ INSERT INTO NGANH VALUES ('KHDL', N'Khoa học dữ liệu', 'IT');
 CREATE TABLE SINHVIEN(
 	MaSV VARCHAR(8) PRIMARY KEY,
 	TenSV NVARCHAR(40) NOT NULL,
-	NgaySinh DATE NOT NULL,
+	NgaySinh VARCHAR(50) NOT NULL,
 	GioiTinh INT NOT NULL,
 	DoiTuong VARCHAR(5) FOREIGN KEY REFERENCES DOITUONG(MaDT),
 	Huyen VARCHAR(5) FOREIGN KEY REFERENCES HUYEN(MaHuyen) NOT NULL,
@@ -413,3 +413,154 @@ begin
 	IF @@ROWCOUNT > 0 BEGIN RETURN 1 END
 		ELSE BEGIN RETURN 0 END;
 end
+
+go
+CREATE procedure deleteMonHoc
+	@mamonhoc varchar(5)
+AS 
+BEGIN
+	--XOA CAC DU LIEU LIEN QUAN TOI MONHOC DANG DUOC XOA 
+	--XOA DU LIEU TUNG BANG VOI mamonhoc VUA TIM DUOC 
+	DELETE FROM CHUONGTRINH
+	WHERE MonHoc = @mamonhoc
+
+	DELETE FROM DKHOCPHAN
+	WHERE MonHoc = @mamonhoc
+
+	DELETE FROM MONHOCMO
+	WHERE MonHoc = @mamonhoc
+
+	DELETE FROM MONHOC
+	WHERE MaMon = @mamonhoc
+END
+GO
+
+go
+CREATE procedure deleteMonHocMo
+	@mahocky  varchar(5),
+	@mamonhoc varchar(5)
+AS 
+BEGIN
+	--XOA CAC DU LIEU LIEN QUAN TOI MONHOC DANG DUOC XOA 
+	--XOA DU LIEU TUNG BANG VOI mamonhoc VUA TIM DUOC 
+	DELETE FROM MONHOCMO
+	WHERE MaHK = @mahocky AND MonHoc = @mamonhoc
+END
+
+
+GO
+create procedure selectNganhHoc
+	@tukhoa nvarchar(50)
+as
+begin
+	set @tukhoa = lower(ltrim(rtrim(@tukhoa)));
+	select 
+		MaNganh,
+		TenNganh
+	from NGANH
+	where MaNganh like '%'+@tukhoa+'%'
+	or lower(TenNganh) like '%'+@tukhoa+'%'
+	order by TenNganh;	
+end;
+
+go
+create procedure selectKhoa
+	@tukhoa nvarchar(50)
+as
+begin
+	set @tukhoa = lower(ltrim(rtrim(@tukhoa)));
+	select 
+		MaKhoa,
+		TenKhoa
+	from KHOA
+	where MaKhoa like '%'+@tukhoa+'%'
+	or lower(TenKhoa) like '%'+@tukhoa+'%'
+	order by TenKhoa;	
+end;
+
+
+GO
+create proc selectChuongTrinhHoc
+	@manganh varchar(4),
+	@makhoa varchar(4),
+	@hocky int,
+	@mamonhoc varchar(5)
+as
+begin
+	select
+		NganhHoc,
+		Khoa,
+		HocKy,
+		MonHoc
+	from CHUONGTRINH
+	where NganhHoc = @manganh and Khoa = @makhoa and HocKy = @hocky and MonHoc = @mamonhoc;
+end
+
+
+GO
+create procedure selectAllChuongTrinhHoc
+	@tukhoa nvarchar(50)
+as
+begin
+	set @tukhoa = lower(ltrim(rtrim(@tukhoa)));
+	select 
+		NganhHoc,
+		Khoa,
+		HocKy,
+		MonHoc
+	from CHUONGTRINH
+	where NganhHoc like '%'+@tukhoa+'%'
+	or Khoa like '%'+@tukhoa+'%'
+	or HocKy like '%'+@tukhoa+'%'
+	or MonHoc like '%'+@tukhoa+'%'
+	order by NganhHoc;	
+end;
+
+go
+CREATE procedure deleteChuongTrinhHoc
+	@manganh varchar(4),
+	@makhoa varchar(4),
+	@hocky int,
+	@mamonhoc varchar(5)
+AS 
+BEGIN
+	DELETE FROM CHUONGTRINH
+	WHERE NganhHoc = @manganh AND Khoa = @makhoa AND HocKy = @hocky AND MonHoc = @mamonhoc
+END
+
+
+
+GO
+create proc insertChuongTrinhHoc
+	@manganh varchar(4),
+	@makhoa varchar(4),
+	@hocky int,
+	@mamonhoc varchar(5)
+as
+begin
+	insert into CHUONGTRINH(NganhHoc,Khoa,HocKy,MonHoc)
+	values(@manganh,@makhoa,@hocky, @mamonhoc);
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
+GO
+create proc updateChuongTrinhHoc
+	@manganhbandau varchar(4),
+	@makhoabandau varchar(4),
+	@mamonbandau varchar(5),
+	@manganh varchar(4),
+	@makhoa varchar(4),
+	@hocky int,
+	@mamonhoc varchar(5)
+as
+begin
+	update CHUONGTRINH
+	set
+		NganhHoc = @manganh,		
+		Khoa = @makhoa,
+		MonHoc = @mamonhoc,
+		HocKy = @hocky
+	where NganhHoc = @manganhbandau and Khoa = @makhoabandau and MonHoc = @mamonbandau and HocKy = @hocky
+	if @@ROWCOUNT > 0 return 1 else return 0;
+end
+
