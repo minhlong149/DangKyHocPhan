@@ -112,6 +112,10 @@ namespace DangKyHocPhan
                 {
                     MessageBox.Show("Mã khoa không được để trống!", "Sửa khoa");
                 }
+                else if (trungKhoa())
+                {
+                    MessageBox.Show("Bị trùng mã khoa! Vui lòng nhập lại!", "Sửa khoa");
+                }
                 else
                 {
                     string query = "UPDATE dbo.KHOA SET TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoa";
@@ -129,23 +133,55 @@ namespace DangKyHocPhan
             }
         }
 
+        bool tontai()
+        {
+            string query = "SELECT * FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
+            bool trungKhoa = false;
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
+                connection.Open();
+                SqlDataReader Exist = command.ExecuteReader();
+                trungKhoa = Exist.HasRows;
+                connection.Close();
+            }
+            return trungKhoa;
+        }
+
         private void btnXoaKhoa_Click(object sender, EventArgs e)
         {
             string maKhoa = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
-            string message = "Bạn có muốn xóa khoa " + maKhoa + " không?";
-            DialogResult result = MessageBox.Show(message, "Xóa khoa", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            string query = "SELECT * FROM dbo.CHUONGTRINH WHERE Khoa = @Khoa";
+            bool trungKhoa = false;
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                string query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                command.Parameters.AddWithValue("@Khoa", maKhoa);
+                connection.Open();
+                SqlDataReader Exist = command.ExecuteReader();
+                trungKhoa = Exist.HasRows;
+                connection.Close();
+            }
+            if (!trungKhoa)
+            {
+                string message = "Bạn có muốn xóa khoa " + maKhoa + " không?";
+                DialogResult result = MessageBox.Show(message, "Xóa khoa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    command.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                    query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    LoadDSKhoa();
+                    LoadThongTin();
                 }
-                LoadDSKhoa();
-                LoadThongTin();
+            }
+            else
+            {
+                MessageBox.Show("Không thể xóa khoa " + maKhoa + "!", "Xóa khoa");
             }
         }
 
