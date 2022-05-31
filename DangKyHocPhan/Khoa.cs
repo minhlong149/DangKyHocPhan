@@ -51,13 +51,13 @@ namespace DangKyHocPhan
             LoadThongTin();
         }
 
-        bool trungKhoa()
+        bool trungKhoa(string maKhoa)
         {
             string query = "SELECT * FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
             bool trungKhoa = false;
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
                 connection.Open();
                 SqlDataReader Exist = command.ExecuteReader();
                 trungKhoa = Exist.HasRows;
@@ -72,85 +72,27 @@ namespace DangKyHocPhan
             {
                 MessageBox.Show("Mã khoa không được để trống!", "Thêm khoa");
             }
-            else {
-                if (trungKhoa())
-                {
-                    MessageBox.Show("Bị trùng mã khoa! Vui lòng nhập lại!", "Thêm khoa");
-                }
-                else
-                {
-                    string query = "INSERT INTO dbo.KHOA VALUES (@MaKhoa, @TenKhoa)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
-                        command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                    LoadDSKhoa();
-                    LoadThongTin();
-                }
-            }
-        }
-
-        private void btnSuaKhoa_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra mã khoa trong textbox có giống với mã khoa đang được chọn hay không
-            // Không cho phép sửa mã khoa
-            string maKhoa_dgv = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
-            string maKhoa_txt = txtMaKhoa.Text;
-            if (maKhoa_dgv != maKhoa_txt)
+            else if (trungKhoa(txtMaKhoa.Text))
             {
-                MessageBox.Show("Bạn không thể sửa mã khoa. Vui lòng thử lại!", "Sửa khoa");
-                LoadThongTin();
+                MessageBox.Show("Khoa " + txtMaKhoa.Text + " đã bị trùng! Vui lòng nhập lại!", "Thêm khoa");
             }
             else
             {
-                // Kiểm tra trống mã khoa
-                if (txtMaKhoa.Text == "")
+                string query = "INSERT INTO dbo.KHOA VALUES (@MaKhoa, @TenKhoa)";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    MessageBox.Show("Mã khoa không được để trống!", "Sửa khoa");
+                    command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
+                    command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
                 }
-                else if (trungKhoa())
-                {
-                    MessageBox.Show("Bị trùng mã khoa! Vui lòng nhập lại!", "Sửa khoa");
-                }
-                else
-                {
-                    string query = "UPDATE dbo.KHOA SET TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoa";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
-                        command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                        connection.Close();
-                    }
-                    LoadDSKhoa();
-                    LoadThongTin();
-                }
+                LoadDSKhoa();
+                LoadThongTin();
             }
         }
-
-        bool tontai()
+        bool coThamChieuKhoa(string maKhoa)
         {
-            string query = "SELECT * FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
-            bool trungKhoa = false;
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@MaKhoa", txtMaKhoa.Text);
-                connection.Open();
-                SqlDataReader Exist = command.ExecuteReader();
-                trungKhoa = Exist.HasRows;
-                connection.Close();
-            }
-            return trungKhoa;
-        }
-
-        private void btnXoaKhoa_Click(object sender, EventArgs e)
-        {
-            string maKhoa = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
             string query = "SELECT * FROM dbo.CHUONGTRINH WHERE Khoa = @Khoa";
             bool trungKhoa = false;
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -161,13 +103,54 @@ namespace DangKyHocPhan
                 trungKhoa = Exist.HasRows;
                 connection.Close();
             }
-            if (!trungKhoa)
+            return trungKhoa;
+        }
+
+        private void btnSuaKhoa_Click(object sender, EventArgs e)
+        {
+            string maKhoa_dgv = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
+            string maKhoa_txt = txtMaKhoa.Text;
+            if (coThamChieuKhoa(maKhoa_dgv))
+            {
+                MessageBox.Show("Không thể thay đổi khoa " + maKhoa_dgv + " vì có dữ liệu tham chiếu đến!", "Sửa khoa");
+            }
+            else if (txtMaKhoa.Text == "")
+            {
+                MessageBox.Show("Mã khoa không được để trống!", "Sửa khoa");
+            }
+            else if (trungKhoa(maKhoa_txt))
+            {
+                MessageBox.Show("Khoa " + maKhoa_txt + " đã tồn tại! Vui lòng nhập lại!", "Sửa khoa");
+                LoadThongTin();
+            }
+            else
+            {
+                string query = "UPDATE dbo.KHOA SET MaKhoa = @MaKhoaMoi, TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoaCu";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaKhoaCu", maKhoa_dgv);
+                    command.Parameters.AddWithValue("@MaKhoaMoi", maKhoa_txt);
+                    command.Parameters.AddWithValue("@TenKhoa", txtTenKhoa.Text);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                LoadDSKhoa();
+                LoadThongTin();
+            }
+
+        }
+
+        private void btnXoaKhoa_Click(object sender, EventArgs e)
+        {
+            string maKhoa = dgvDSKhoa.Rows[dgvDSKhoa.SelectedRows[0].Index].Cells[0].Value.ToString();
+            if (!coThamChieuKhoa(maKhoa))
             {
                 string message = "Bạn có muốn xóa khoa " + maKhoa + " không?";
                 DialogResult result = MessageBox.Show(message, "Xóa khoa", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
+                    string query = "DELETE FROM dbo.KHOA WHERE MaKhoa = @MaKhoa";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@MaKhoa", maKhoa);
@@ -181,7 +164,7 @@ namespace DangKyHocPhan
             }
             else
             {
-                MessageBox.Show("Không thể xóa khoa " + maKhoa + "!", "Xóa khoa");
+                MessageBox.Show("Không thể xóa khoa " + maKhoa + " vì có dữ liệu tham chiếu đến!", "Xóa khoa");
             }
         }
 
