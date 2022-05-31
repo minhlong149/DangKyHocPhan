@@ -172,6 +172,9 @@
     <Compile Include="TrangchuSV.Designer.cs">
       <DependentUpon>TrangchuSV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChuaHTHP.resx">
+      <DependentUpon>ChuaHTHP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChuongTrinhHoc.resx">
       <DependentUpon>ChuongTrinhHoc.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,12 +40,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvChuaHP = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.HocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTienPhaiDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTienConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grBoxThongTin.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -174,12 +175,13 @@
             this.dgvChuaHP.AllowUserToDeleteRows = false;
             this.dgvChuaHP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChuaHP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.HocKy,
-            this.NamHoc,
             this.MaSV,
+            this.SoPhieu,
             this.SoTienDangKy,
             this.SoTienPhaiDong,
-            this.Column4});
+            this.SoTienConLai,
+            this.HocKy,
+            this.NamHoc});
             this.dgvChuaHP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChuaHP.Location = new System.Drawing.Point(0, 0);
             this.dgvChuaHP.Margin = new System.Windows.Forms.Padding(100);
@@ -199,36 +201,28 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(628, 44);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // HocKy
-            // 
-            this.HocKy.DataPropertyName = "HocKy";
-            this.HocKy.HeaderText = "HK";
-            this.HocKy.Name = "HocKy";
-            this.HocKy.ReadOnly = true;
-            this.HocKy.Visible = false;
-            // 
-            // NamHoc
-            // 
-            this.NamHoc.DataPropertyName = "NamHoc";
-            this.NamHoc.HeaderText = "Năm Học";
-            this.NamHoc.Name = "NamHoc";
-            this.NamHoc.ReadOnly = true;
-            this.NamHoc.Visible = false;
-            // 
             // MaSV
             // 
             this.MaSV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "Mã Số Sinh Viên";
+            this.MaSV.HeaderText = "Mã số sinh viên";
             this.MaSV.Name = "MaSV";
             this.MaSV.ReadOnly = true;
             this.MaSV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoPhieu
+            // 
+            this.SoPhieu.DataPropertyName = "SoPhieu";
+            this.SoPhieu.HeaderText = "Số Phiếu";
+            this.SoPhieu.Name = "SoPhieu";
+            this.SoPhieu.ReadOnly = true;
+            this.SoPhieu.Visible = false;
             // 
             // SoTienDangKy
             // 
             this.SoTienDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SoTienDangKy.DataPropertyName = "SoTienDangKy";
-            this.SoTienDangKy.HeaderText = "Số tiền đăng ký";
+            this.SoTienDangKy.HeaderText = "Số Tiền Đăng Ký";
             this.SoTienDangKy.Name = "SoTienDangKy";
             this.SoTienDangKy.ReadOnly = true;
             this.SoTienDangKy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -237,19 +231,35 @@
             // 
             this.SoTienPhaiDong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SoTienPhaiDong.DataPropertyName = "SoTienPhaiDong";
-            this.SoTienPhaiDong.HeaderText = "Số tiền phải đóng";
+            this.SoTienPhaiDong.HeaderText = "Số Tiền Phải Đóng";
             this.SoTienPhaiDong.Name = "SoTienPhaiDong";
             this.SoTienPhaiDong.ReadOnly = true;
             this.SoTienPhaiDong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // Column4
+            // SoTienConLai
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "SoTienConLai";
-            this.Column4.HeaderText = "Số tiền còn lại";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SoTienConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoTienConLai.DataPropertyName = "SoTienConLai";
+            this.SoTienConLai.HeaderText = "Số Tiền Còn Lại";
+            this.SoTienConLai.Name = "SoTienConLai";
+            this.SoTienConLai.ReadOnly = true;
+            this.SoTienConLai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // HocKy
+            // 
+            this.HocKy.DataPropertyName = "HocKy";
+            this.HocKy.HeaderText = "Học Kỳ";
+            this.HocKy.Name = "HocKy";
+            this.HocKy.ReadOnly = true;
+            this.HocKy.Visible = false;
+            // 
+            // NamHoc
+            // 
+            this.NamHoc.DataPropertyName = "NamHoc";
+            this.NamHoc.HeaderText = "Năm học";
+            this.NamHoc.Name = "NamHoc";
+            this.NamHoc.ReadOnly = true;
+            this.NamHoc.Visible = false;
             // 
             // ChuaHTHP
             // 
@@ -288,11 +298,12 @@
         private System.Windows.Forms.DataGridView dgvChuaHP;
         private System.Windows.Forms.Button btnTruyVan;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HocKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NamHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoPhieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienDangKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTienPhaiDong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienConLai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HocKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamHoc;
     }
 }
