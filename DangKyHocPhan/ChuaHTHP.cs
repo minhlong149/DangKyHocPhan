@@ -35,7 +35,7 @@ namespace DangKyHocPhan
 
         private void btnTruyVan_Click(object sender, EventArgs e)
         {
-            string query = "USE DKHP SELECT dbo.CHUAHTHP.SoPhieu, HocKy, NamHoc, dbo.CHUAHTHP.MaSV, SoTienDangKy, SoTienPhaiDong, SoTienConLai " +
+            string query = "SELECT dbo.CHUAHTHP.SoPhieu, HocKy, NamHoc, dbo.CHUAHTHP.MaSV, SoTienDangKy, SoTienPhaiDong, SoTienConLai " +
                 "FROM dbo.DSHOCKY, dbo.PHIEUDK, dbo.CHUAHTHP " +
                 "WHERE dbo.DSHOCKY.MaHK = dbo.PHIEUDK.MaHK " +
                 "AND dbo.PHIEUDK.SoPhieu = dbo.CHUAHTHP.SoPhieu " +
@@ -49,6 +49,7 @@ namespace DangKyHocPhan
                 sqlDa.Fill(dataTable);
 
                 dgvChuaHP.DataSource = dataTable;
+                connection.Close();
             }
         }
 

@@ -40,6 +40,8 @@
             this.thongTin = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_Mon_PTHP = new System.Windows.Forms.DataGridView();
+            this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grBox_soTien = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,8 +49,7 @@
             this.grbox_mssv = new System.Windows.Forms.GroupBox();
             this.txtbox_mssv = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_quay_lai = new System.Windows.Forms.Button();
             this.grbox_nlp.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grbox_soPhieu.SuspendLayout();
@@ -143,11 +144,11 @@
             this.grbox_soPhieu.Controls.Add(this.ComboBox_SoPhieu);
             this.grbox_soPhieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbox_soPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbox_soPhieu.Location = new System.Drawing.Point(54, 4);
+            this.grbox_soPhieu.Location = new System.Drawing.Point(53, 4);
             this.grbox_soPhieu.Margin = new System.Windows.Forms.Padding(4);
             this.grbox_soPhieu.Name = "grbox_soPhieu";
             this.grbox_soPhieu.Padding = new System.Windows.Forms.Padding(4);
-            this.grbox_soPhieu.Size = new System.Drawing.Size(430, 78);
+            this.grbox_soPhieu.Size = new System.Drawing.Size(431, 78);
             this.grbox_soPhieu.TabIndex = 3;
             this.grbox_soPhieu.TabStop = false;
             this.grbox_soPhieu.Text = "Số phiếu";
@@ -159,7 +160,7 @@
             this.ComboBox_SoPhieu.FormattingEnabled = true;
             this.ComboBox_SoPhieu.Location = new System.Drawing.Point(4, 27);
             this.ComboBox_SoPhieu.Name = "ComboBox_SoPhieu";
-            this.ComboBox_SoPhieu.Size = new System.Drawing.Size(422, 33);
+            this.ComboBox_SoPhieu.Size = new System.Drawing.Size(423, 33);
             this.ComboBox_SoPhieu.TabIndex = 1;
             this.ComboBox_SoPhieu.SelectedIndexChanged += new System.EventHandler(this.process_event_combobox);
             // 
@@ -210,14 +211,33 @@
             this.MaMon,
             this.TenMon});
             this.dgv_Mon_PTHP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Mon_PTHP.Location = new System.Drawing.Point(53, 89);
+            this.dgv_Mon_PTHP.Location = new System.Drawing.Point(52, 89);
             this.dgv_Mon_PTHP.Name = "dgv_Mon_PTHP";
             this.dgv_Mon_PTHP.ReadOnly = true;
             this.dgv_Mon_PTHP.RowHeadersWidth = 51;
             this.dgv_Mon_PTHP.RowTemplate.Height = 24;
-            this.dgv_Mon_PTHP.Size = new System.Drawing.Size(432, 253);
+            this.dgv_Mon_PTHP.Size = new System.Drawing.Size(433, 253);
             this.dgv_Mon_PTHP.TabIndex = 4;
             this.dgv_Mon_PTHP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Mon_PTHP_CellContentClick);
+            // 
+            // MaMon
+            // 
+            this.MaMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaMon.DataPropertyName = "MaMon";
+            this.MaMon.HeaderText = "Mã Môn";
+            this.MaMon.MinimumWidth = 6;
+            this.MaMon.Name = "MaMon";
+            this.MaMon.ReadOnly = true;
+            this.MaMon.Width = 84;
+            // 
+            // TenMon
+            // 
+            this.TenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenMon.DataPropertyName = "TenMon";
+            this.TenMon.HeaderText = "Tên Môn";
+            this.TenMon.MinimumWidth = 6;
+            this.TenMon.Name = "TenMon";
+            this.TenMon.ReadOnly = true;
             // 
             // tableLayoutPanel2
             // 
@@ -279,7 +299,7 @@
             this.sotienPhaiDong.Name = "sotienPhaiDong";
             this.sotienPhaiDong.Size = new System.Drawing.Size(338, 74);
             this.sotienPhaiDong.TabIndex = 0;
-            this.sotienPhaiDong.Text = "Số tiền";
+            this.sotienPhaiDong.Text = "Đã hoàn thành";
             this.sotienPhaiDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.sotienPhaiDong.Click += new System.EventHandler(this.sotienPhaiDong_Click);
             // 
@@ -309,6 +329,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_quay_lai);
             this.panel2.Controls.Add(this.btn_dhp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 421);
@@ -317,24 +338,19 @@
             this.panel2.Size = new System.Drawing.Size(988, 53);
             this.panel2.TabIndex = 4;
             // 
-            // MaMon
+            // btn_quay_lai
             // 
-            this.MaMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.MaMon.DataPropertyName = "MaMon";
-            this.MaMon.HeaderText = "Mã Môn";
-            this.MaMon.MinimumWidth = 6;
-            this.MaMon.Name = "MaMon";
-            this.MaMon.ReadOnly = true;
-            this.MaMon.Width = 84;
-            // 
-            // TenMon
-            // 
-            this.TenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenMon.DataPropertyName = "TenMon";
-            this.TenMon.HeaderText = "Tên Môn";
-            this.TenMon.MinimumWidth = 6;
-            this.TenMon.Name = "TenMon";
-            this.TenMon.ReadOnly = true;
+            this.btn_quay_lai.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_quay_lai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_quay_lai.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_quay_lai.Location = new System.Drawing.Point(525, 4);
+            this.btn_quay_lai.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_quay_lai.Name = "btn_quay_lai";
+            this.btn_quay_lai.Size = new System.Drawing.Size(209, 50);
+            this.btn_quay_lai.TabIndex = 1;
+            this.btn_quay_lai.Text = "Quay lại";
+            this.btn_quay_lai.UseVisualStyleBackColor = false;
+            this.btn_quay_lai.Click += new System.EventHandler(this.button1_Click);
             // 
             // PhieuThuHocPhi
             // 
@@ -386,5 +402,6 @@
         private System.Windows.Forms.DataGridView dgv_Mon_PTHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMon;
+        private System.Windows.Forms.Button btn_quay_lai;
     }
 }
