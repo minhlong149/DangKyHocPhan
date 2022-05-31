@@ -29,18 +29,25 @@ namespace DangKyHocPhan
         {
             DKHP dk = new DKHP();
             dk.Show();
+            this.Hide();
         }
 
         private void btnXPTHP_Click(object sender, EventArgs e)
         {
             PhieuThuHocPhi pt = new PhieuThuHocPhi();
             pt.Show();
+            this.Hide();
         }
 
         private void btnThoatSV_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang sinh viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
+        }
+        public event EventHandler DangXuat;
+        private void btnDX_Click(object sender, EventArgs e)
+        {
+            DangXuat(this, new EventArgs());
         }
     }
 }

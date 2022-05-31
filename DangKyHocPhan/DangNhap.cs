@@ -63,13 +63,28 @@ namespace DangKyHocPhan
             {
                 TrangchuPDT f = new TrangchuPDT();
                 f.Show();
+                this.Hide();
+                f.DangXuat += F_DangXuatPDT;
             }
             else
             {
                 TrangchuSV.MSSV = txtTK.Text;
                 TrangchuSV f = new TrangchuSV();
-                f.Show();        
-            }
+                f.Show();
+                f.DangXuat += F_DangXuatSV;
+            };
+        }
+
+        private void F_DangXuatPDT(object sender, EventArgs e)
+        {
+            (sender as TrangchuPDT).Close();
+            this.Show();
+        }
+
+        private void F_DangXuatSV(object sender, EventArgs e)
+        {
+            (sender as TrangchuSV).Close();
+            this.Show();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
