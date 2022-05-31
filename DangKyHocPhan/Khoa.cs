@@ -103,6 +103,7 @@ namespace DangKyHocPhan
                 khongTrung = khongTrung && !Exist.HasRows;
                 connection.Close();
             }
+            Console.WriteLine("CT: "+khongTrung);
             string queryNganh = "SELECT * FROM dbo.NGANH WHERE ThuocKhoa = @Khoa";
             using (SqlCommand command = new SqlCommand(queryNganh, connection))
             {
@@ -112,7 +113,8 @@ namespace DangKyHocPhan
                 khongTrung = khongTrung && !Exist.HasRows;
                 connection.Close();
             }
-            return khongTrung;
+            Console.WriteLine("N: " + khongTrung);
+            return !khongTrung;
         }
 
         private void btnSuaKhoa_Click(object sender, EventArgs e)

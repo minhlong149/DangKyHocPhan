@@ -34,6 +34,16 @@ namespace DangKyHocPhan
             }
         }
 
+        void LoadThongTin()
+        {
+            DataGridViewRow row = dgvDSNganh.CurrentRow;
+            if (row != null)
+            {
+                txtMaNganh.Text = row.Cells[0].Value.ToString();
+                txtTenNganh.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
         private void Nganh_Load(object sender, EventArgs e)
         {
             // Combo box
@@ -53,9 +63,7 @@ namespace DangKyHocPhan
                 }
             }
             LoadDSNganh();
-            DataGridViewRow row = dgvDSNganh.CurrentRow;
-            txtMaNganh.Text = row.Cells[0].Value.ToString();
-            txtTenNganh.Text = row.Cells[1].Value.ToString();
+            LoadThongTin();
         }
 
         private void dgvDSNganh_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -68,6 +76,7 @@ namespace DangKyHocPhan
         private void cboThuocKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDSNganh();
+            LoadThongTin();
         }
 
         bool trungNganh(string MaNganh)
@@ -108,9 +117,7 @@ namespace DangKyHocPhan
                     connection.Close();
                 }
                 LoadDSNganh();
-                DataGridViewRow row = dgvDSNganh.CurrentRow;
-                txtMaNganh.Text = row.Cells[0].Value.ToString();
-                txtTenNganh.Text = row.Cells[1].Value.ToString();
+                LoadThongTin();
             }
             
         }
@@ -173,9 +180,7 @@ namespace DangKyHocPhan
                     connection.Close();
                 }
                 LoadDSNganh();
-                DataGridViewRow row = dgvDSNganh.CurrentRow;
-                txtMaNganh.Text = row.Cells[0].Value.ToString();
-                txtTenNganh.Text = row.Cells[1].Value.ToString();
+                LoadThongTin();
             }
             
         }
@@ -199,9 +204,7 @@ namespace DangKyHocPhan
                         connection.Close();
                     }
                     LoadDSNganh();
-                    DataGridViewRow row = dgvDSNganh.CurrentRow;
-                    txtMaNganh.Text = row.Cells[0].Value.ToString();
-                    txtTenNganh.Text = row.Cells[1].Value.ToString();
+                    LoadThongTin();
                 }
             }
             else
