@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace DangKyHocPhan
 {
     public partial class PhieuThuHocPhi : Form
     {
+        SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
+        string mssv = "0003";
         public PhieuThuHocPhi()
         {
             InitializeComponent();
@@ -19,7 +22,83 @@ namespace DangKyHocPhan
 
         private void PhieuThuHocPhi_Load(object sender, EventArgs e)
         {
+            txtbox_mssv.Text = mssv;
+            fillComboBox();
+            ComboBox_SoPhieu.SelectedIndex = 0;
+            findSoTienThieu();
+            return;
+        }
 
+        private void findSoTienThieu()
+        {
+            string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV";
+            StringBuilder errorMessages = new StringBuilder();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    command.Parameters.AddWithValue("@MaSV", mssv);
+                    connection.Open();
+
+                    SqlDataReader dr;
+                    dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        sotienPhaiDong.Text = dr["SoTienConLai"].ToString().Split('.')[0] + "vnđ";
+                    }
+                    connection.Close();
+                }
+                catch (SqlException ex) //Hiển thị ra lỗi nếu query bị lỗi
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Lỗi");
+                }
+            }
+        }
+
+        private void fillComboBox()
+        {
+            string queryString = "SELECT SoPhieu FROM dbo.THUHOCPHI where MaSV=@MaSV";
+            StringBuilder errorMessages = new StringBuilder();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    command.Parameters.AddWithValue("@MaSV", mssv);
+                    connection.Open();
+
+                    SqlDataReader dr;
+                    dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        ComboBox_SoPhieu.Items.Add(dr["SoPhieu"]);
+                    }
+                    connection.Close();
+                }
+                catch (SqlException ex) //Hiển thị ra lỗi nếu query bị lỗi
+                {
+                    for (int i = 0; i < ex.Errors.Count; i++)
+                    {
+                        errorMessages.Append("Index #" + i + "\n" +
+                            "Message: " + ex.Errors[i].Message + "\n" +
+                            "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                            "Source: " + ex.Errors[i].Source + "\n" +
+                            "Procedure: " + ex.Errors[i].Procedure + "\n");
+                    }
+                    MessageBox.Show(errorMessages.ToString(), "Lỗi");
+                }
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -111,6 +190,42 @@ namespace DangKyHocPhan
         {
             DongTien dt = new DongTien();
             dt.Show();
+        }
+
+        private void txtBox_soPhieu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sotienPhaiDong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Mon_PTHP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void process_event_combobox(object sender, EventArgs e)
+        {
+            string query = "SELECT MaMon, TenMon " +
+                "FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc " +
+                "WHERE SoPhieu = " + ComboBox_SoPhieu.SelectedItem.ToString();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
+            {
+                connection.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                sqlDa.Fill(dataTable);
+
+                dgv_Mon_PTHP.DataSource = dataTable;
+            }
         }
     }
 }
