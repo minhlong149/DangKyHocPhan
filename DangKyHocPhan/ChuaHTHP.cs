@@ -35,12 +35,12 @@ namespace DangKyHocPhan
 
         private void btnTruyVan_Click(object sender, EventArgs e)
         {
-            string query = "SELECT HocKy, NamHoc, CHUAHTHP.MaSV, SoTienDangKy, SoTienPhaiDong, SoTienConLai " +
-                "FROM DSHOCKY, PHIEUDK, CHUAHTHP " +
-                "WHERE DSHOCKY.MaHK = PHIEUDK.MaHK " +
-                "AND PHIEUDK.SoPhieu = CHUAHTHP.SoPhieu " +
-                "AND NamHoc = " + comboBoxNamHoc.Text.ToString()+ 
-                " AND HocKy = " + (comboBox_HocKy.Text.ToString() == "Hè" ? "0" : comboBox_HocKy.Text.ToString());
+            string query = "SELECT dbo.CHUAHTHP.SoPhieu, HocKy, NamHoc, dbo.CHUAHTHP.MaSV, SoTienDangKy, SoTienPhaiDong, SoTienConLai " +
+                "FROM dbo.DSHOCKY, dbo.PHIEUDK, dbo.CHUAHTHP " +
+                "WHERE dbo.DSHOCKY.MaHK = dbo.PHIEUDK.MaHK " +
+                "AND dbo.PHIEUDK.SoPhieu = dbo.CHUAHTHP.SoPhieu " +
+                "AND NamHoc = " + comboBoxNamHoc.Text.ToString() +
+                 " AND HocKy = " + (comboBox_HocKy.Text.ToString() == "Hè" ? "0" : comboBox_HocKy.Text);
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
                 connection.Open();
@@ -49,7 +49,6 @@ namespace DangKyHocPhan
                 sqlDa.Fill(dataTable);
 
                 dgvChuaHP.DataSource = dataTable;
-
                 connection.Close();
             }
         }

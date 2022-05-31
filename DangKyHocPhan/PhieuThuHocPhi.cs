@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,8 +14,12 @@ namespace DangKyHocPhan
 {
     public partial class PhieuThuHocPhi : Form
     {
+        public static System.DateTime NgayThu;
+        public static string SoPhieu = "";
+        public static decimal SoTienThu;
+        public static string mssv = TrangchuSV.MSSV.ToString();
         SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
-        string mssv = "0003";
+   
         public PhieuThuHocPhi()
         {
             InitializeComponent();
@@ -24,12 +29,13 @@ namespace DangKyHocPhan
         {
             txtbox_mssv.Text = mssv;
             fillComboBox();
-            ComboBox_SoPhieu.SelectedIndex = 0;
+            ComboBox_SoPhieu.DropDownStyle = ComboBoxStyle.DropDownList;
+            //ComboBox_SoPhieu.SelectedIndex = 0;
             findSoTienThieu();
             return;
         }
 
-        private void findSoTienThieu()
+        public void findSoTienThieu()
         {
             string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV";
             StringBuilder errorMessages = new StringBuilder();
@@ -46,7 +52,14 @@ namespace DangKyHocPhan
                     dr = command.ExecuteReader();
                     while (dr.Read())
                     {
-                        sotienPhaiDong.Text = dr["SoTienConLai"].ToString().Split('.')[0] + "vnđ";
+                        SoTienThu = decimal.Parse(dr["SoTienConLai"].ToString());
+                        if (SoTienThu==0)
+                        {
+                            sotienPhaiDong.Text = "Đã Hoàn Thành";
+                            btn_dhp.Enabled = false;
+                            return;
+                        }
+                        sotienPhaiDong.Text = dr["SoTienConLai"].ToString().Split('.')[0] + " VNĐ";
                     }
                     connection.Close();
                 }
@@ -185,9 +198,17 @@ namespace DangKyHocPhan
         {
 
         }
+        private void ComboBox_SoPhieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
 
         private void btn_dhp_Click(object sender, EventArgs e)
         {
+            NgayThu = date_picker_ngay_lap.Value;
+            SoPhieu = ComboBox_SoPhieu.Text.ToString();
+            
+
             DongTien dt = new DongTien();
             dt.Show();
         }
@@ -226,6 +247,11 @@ namespace DangKyHocPhan
 
                 dgv_Mon_PTHP.DataSource = dataTable;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
