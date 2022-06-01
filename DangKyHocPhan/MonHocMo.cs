@@ -41,9 +41,9 @@ namespace DangKyHocPhan
             boxMaMH.ValueMember = "MonHoc";//giá trị (key) của combobox
             boxMaMH.SelectedIndex = -1;
 
-            boxMaHK.DataSource = db.SelectData("selectAllChuongTrinhHoc", lst);
-            boxMaHK.DisplayMember = "HocKy";
-            boxMaHK.ValueMember = "HocKy";
+            boxMaHK.DataSource = db.SelectData("selectHK", lst);
+            boxMaHK.DisplayMember = "MaHK";
+            boxMaHK.ValueMember = "MaHK";
             boxMaHK.SelectedIndex = -1;//set combobox không chọn giá trị nào
 
 
