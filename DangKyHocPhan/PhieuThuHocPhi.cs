@@ -37,7 +37,7 @@ namespace DangKyHocPhan
 
         public void findSoTienThieu()
         {
-            string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV";
+            string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV and SoPhieu = @SoPhieu";
             StringBuilder errorMessages = new StringBuilder();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
@@ -46,6 +46,8 @@ namespace DangKyHocPhan
                 try
                 {
                     command.Parameters.AddWithValue("@MaSV", mssv);
+                    command.Parameters.AddWithValue("@SoPhieu", SoPhieu);
+
                     connection.Open();
 
                     SqlDataReader dr;
@@ -80,7 +82,7 @@ namespace DangKyHocPhan
 
         private void fillComboBox()
         {
-            string queryString = "SELECT SoPhieu FROM dbo.THUHOCPHI where MaSV=@MaSV";
+            string queryString = "SELECT SoPhieu FROM dbo.PHIEUDK where MaSV=@MaSV";
             StringBuilder errorMessages = new StringBuilder();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
@@ -252,6 +254,12 @@ namespace DangKyHocPhan
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ComboBox_SoPhieu_DropDownClosed(object sender, EventArgs e)
+        {
+            SoPhieu = ComboBox_SoPhieu.Text.ToString();
+            findSoTienThieu();
         }
     }
 }

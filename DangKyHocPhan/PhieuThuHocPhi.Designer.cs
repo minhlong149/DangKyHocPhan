@@ -163,6 +163,7 @@
             this.ComboBox_SoPhieu.Size = new System.Drawing.Size(423, 33);
             this.ComboBox_SoPhieu.TabIndex = 1;
             this.ComboBox_SoPhieu.SelectedIndexChanged += new System.EventHandler(this.process_event_combobox);
+            this.ComboBox_SoPhieu.DropDownClosed += new System.EventHandler(this.ComboBox_SoPhieu_DropDownClosed);
             // 
             // thongTin
             // 
