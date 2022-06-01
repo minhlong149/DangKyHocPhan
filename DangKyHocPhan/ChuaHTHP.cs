@@ -35,7 +35,7 @@ namespace DangKyHocPhan
 
         private void btnTruyVan_Click(object sender, EventArgs e)
         {
-            string query = "select PHIEUDK.MaSV, sum(THUHOCPHI.SoTienThu) as [TienDaDong], Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) as [TienPhaiDong] from PHIEUDK full join THUHOCPHI on THUHOCPHI.SoPhieu = PHIEUDK.SoPhieu join DKHOCPHAN on DKHOCPHAN.SoPhieu = PHIEUDK.SoPhieu join MONHOC on MONHOC.MaMon = DKHOCPHAN.MonHoc join LOAIMON on LOAIMON.MaLoaiMon = MONHOC.LoaiMon join DSHOCKY on DSHOCKY.MaHK = PHIEUDK.MaHK where DSHOCKY.HocKy = @HocKy and DSHOCKY.NamHoc = @NamHoc group by PHIEUDK.MaSV";
+            string query = "select PHIEUDK.MaSV, THUHOCPHI.SoTienThu as [TienDaDong], Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) as [TienPhaiDong] from PHIEUDK full join THUHOCPHI on THUHOCPHI.SoPhieu = PHIEUDK.SoPhieu join DKHOCPHAN on DKHOCPHAN.SoPhieu = PHIEUDK.SoPhieu join MONHOC on MONHOC.MaMon = DKHOCPHAN.MonHoc join LOAIMON on LOAIMON.MaLoaiMon = MONHOC.LoaiMon join DSHOCKY on DSHOCKY.MaHK = PHIEUDK.MaHK  where DSHOCKY.HocKy = @HocKy and DSHOCKY.NamHoc = @NamHoc group by PHIEUDK.MaSV, THUHOCPHI.SoTienThu having Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) > THUHOCPHI.SoTienThu";
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
                 connection.Open();

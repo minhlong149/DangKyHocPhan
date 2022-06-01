@@ -40,13 +40,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvChuaHP = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTienDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTienPhaiDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTienConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grBoxThongTin.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,17 +52,19 @@
             this.panel1.Controls.Add(this.title);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(628, 51);
+            this.panel1.Size = new System.Drawing.Size(837, 63);
             this.panel1.TabIndex = 0;
             // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(42, 19);
+            this.title.Location = new System.Drawing.Point(56, 23);
+            this.title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(519, 19);
+            this.title.Size = new System.Drawing.Size(637, 24);
             this.title.TabIndex = 0;
             this.title.Text = "DANH SÁCH SINH VIÊN CHƯA HOÀN THÀNH VIỆC ĐÓNG HỌC PHÍ";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,9 +79,11 @@
             this.grBoxThongTin.Controls.Add(this.label1);
             this.grBoxThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.grBoxThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grBoxThongTin.Location = new System.Drawing.Point(0, 51);
+            this.grBoxThongTin.Location = new System.Drawing.Point(0, 63);
+            this.grBoxThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grBoxThongTin.Name = "grBoxThongTin";
-            this.grBoxThongTin.Size = new System.Drawing.Size(628, 75);
+            this.grBoxThongTin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grBoxThongTin.Size = new System.Drawing.Size(837, 92);
             this.grBoxThongTin.TabIndex = 1;
             this.grBoxThongTin.TabStop = false;
             this.grBoxThongTin.Text = "Thông tin năm học";
@@ -96,9 +93,10 @@
             // 
             this.comboBoxNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNamHoc.FormattingEnabled = true;
-            this.comboBoxNamHoc.Location = new System.Drawing.Point(99, 47);
+            this.comboBoxNamHoc.Location = new System.Drawing.Point(132, 58);
+            this.comboBoxNamHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxNamHoc.Name = "comboBoxNamHoc";
-            this.comboBoxNamHoc.Size = new System.Drawing.Size(118, 26);
+            this.comboBoxNamHoc.Size = new System.Drawing.Size(156, 32);
             this.comboBoxNamHoc.TabIndex = 3;
             // 
             // btnTruyVan
@@ -106,9 +104,10 @@
             this.btnTruyVan.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnTruyVan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTruyVan.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTruyVan.Location = new System.Drawing.Point(530, 38);
+            this.btnTruyVan.Location = new System.Drawing.Point(707, 47);
+            this.btnTruyVan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTruyVan.Name = "btnTruyVan";
-            this.btnTruyVan.Size = new System.Drawing.Size(75, 35);
+            this.btnTruyVan.Size = new System.Drawing.Size(100, 43);
             this.btnTruyVan.TabIndex = 4;
             this.btnTruyVan.Text = "Tìm";
             this.btnTruyVan.UseVisualStyleBackColor = false;
@@ -118,9 +117,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 47);
+            this.label2.Location = new System.Drawing.Point(32, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 18);
+            this.label2.Size = new System.Drawing.Size(87, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Năm học";
             // 
@@ -131,9 +131,10 @@
             this.comboBox_HocKy.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox_HocKy.Location = new System.Drawing.Point(99, 18);
+            this.comboBox_HocKy.Location = new System.Drawing.Point(132, 22);
+            this.comboBox_HocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_HocKy.Name = "comboBox_HocKy";
-            this.comboBox_HocKy.Size = new System.Drawing.Size(118, 26);
+            this.comboBox_HocKy.Size = new System.Drawing.Size(156, 32);
             this.comboBox_HocKy.TabIndex = 1;
             this.comboBox_HocKy.SelectedIndexChanged += new System.EventHandler(this.comboBox_HocKy_SelectedIndexChanged);
             // 
@@ -141,9 +142,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Location = new System.Drawing.Point(32, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 18);
+            this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Học kỳ";
             // 
@@ -152,9 +154,10 @@
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnThoat.Location = new System.Drawing.Point(530, 3);
+            this.btnThoat.Location = new System.Drawing.Point(706, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 34);
+            this.btnThoat.Size = new System.Drawing.Size(100, 42);
             this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -164,9 +167,10 @@
             // 
             this.panel2.Controls.Add(this.dgvChuaHP);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 126);
+            this.panel2.Location = new System.Drawing.Point(0, 155);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(628, 214);
+            this.panel2.Size = new System.Drawing.Size(837, 264);
             this.panel2.TabIndex = 3;
             // 
             // dgvChuaHP
@@ -174,102 +178,37 @@
             this.dgvChuaHP.AllowUserToAddRows = false;
             this.dgvChuaHP.AllowUserToDeleteRows = false;
             this.dgvChuaHP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChuaHP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSV,
-            this.SoPhieu,
-            this.SoTienDangKy,
-            this.SoTienPhaiDong,
-            this.SoTienConLai,
-            this.HocKy,
-            this.NamHoc});
             this.dgvChuaHP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChuaHP.Location = new System.Drawing.Point(0, 0);
-            this.dgvChuaHP.Margin = new System.Windows.Forms.Padding(100);
+            this.dgvChuaHP.Margin = new System.Windows.Forms.Padding(133, 123, 133, 123);
             this.dgvChuaHP.Name = "dgvChuaHP";
             this.dgvChuaHP.ReadOnly = true;
-            this.dgvChuaHP.Size = new System.Drawing.Size(628, 214);
+            this.dgvChuaHP.RowHeadersWidth = 51;
+            this.dgvChuaHP.Size = new System.Drawing.Size(837, 264);
             this.dgvChuaHP.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnThoat);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 340);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 419);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(628, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(837, 54);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // MaSV
-            // 
-            this.MaSV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "Mã số sinh viên";
-            this.MaSV.Name = "MaSV";
-            this.MaSV.ReadOnly = true;
-            this.MaSV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SoPhieu
-            // 
-            this.SoPhieu.DataPropertyName = "SoPhieu";
-            this.SoPhieu.HeaderText = "Số Phiếu";
-            this.SoPhieu.Name = "SoPhieu";
-            this.SoPhieu.ReadOnly = true;
-            this.SoPhieu.Visible = false;
-            // 
-            // SoTienDangKy
-            // 
-            this.SoTienDangKy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoTienDangKy.DataPropertyName = "SoTienDangKy";
-            this.SoTienDangKy.HeaderText = "Số Tiền Đăng Ký";
-            this.SoTienDangKy.Name = "SoTienDangKy";
-            this.SoTienDangKy.ReadOnly = true;
-            this.SoTienDangKy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SoTienPhaiDong
-            // 
-            this.SoTienPhaiDong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoTienPhaiDong.DataPropertyName = "SoTienPhaiDong";
-            this.SoTienPhaiDong.HeaderText = "Số Tiền Phải Đóng";
-            this.SoTienPhaiDong.Name = "SoTienPhaiDong";
-            this.SoTienPhaiDong.ReadOnly = true;
-            this.SoTienPhaiDong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SoTienConLai
-            // 
-            this.SoTienConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoTienConLai.DataPropertyName = "SoTienConLai";
-            this.SoTienConLai.HeaderText = "Số Tiền Còn Lại";
-            this.SoTienConLai.Name = "SoTienConLai";
-            this.SoTienConLai.ReadOnly = true;
-            this.SoTienConLai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // HocKy
-            // 
-            this.HocKy.DataPropertyName = "HocKy";
-            this.HocKy.HeaderText = "Học Kỳ";
-            this.HocKy.Name = "HocKy";
-            this.HocKy.ReadOnly = true;
-            this.HocKy.Visible = false;
-            // 
-            // NamHoc
-            // 
-            this.NamHoc.DataPropertyName = "NamHoc";
-            this.NamHoc.HeaderText = "Năm học";
-            this.NamHoc.Name = "NamHoc";
-            this.NamHoc.ReadOnly = true;
-            this.NamHoc.Visible = false;
             // 
             // ChuaHTHP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 384);
+            this.ClientSize = new System.Drawing.Size(837, 473);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.grBoxThongTin);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChuaHTHP";
             this.Text = "DSSV chưa hoàn thành HP";
             this.Load += new System.EventHandler(this.ChuaHTHP_Load);
@@ -298,12 +237,5 @@
         private System.Windows.Forms.DataGridView dgvChuaHP;
         private System.Windows.Forms.Button btnTruyVan;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoPhieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienDangKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienPhaiDong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTienConLai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HocKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NamHoc;
     }
 }

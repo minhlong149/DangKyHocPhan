@@ -31,12 +31,13 @@ namespace DangKyHocPhan
             fillComboBox();
             ComboBox_SoPhieu.DropDownStyle = ComboBoxStyle.DropDownList;
             //ComboBox_SoPhieu.SelectedIndex = 0;
-            findSoTienThieu();
+            //findSoTienThieu();
             return;
         }
 
         public void findSoTienThieu()
         {
+            if (ComboBox_SoPhieu.SelectedIndex == -1) return;
             string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV and SoPhieu = @SoPhieu";
             StringBuilder errorMessages = new StringBuilder();
 
