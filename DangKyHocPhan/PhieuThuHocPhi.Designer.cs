@@ -163,7 +163,7 @@
             this.ComboBox_SoPhieu.Size = new System.Drawing.Size(423, 33);
             this.ComboBox_SoPhieu.TabIndex = 1;
             this.ComboBox_SoPhieu.SelectedIndexChanged += new System.EventHandler(this.process_event_combobox);
-            this.ComboBox_SoPhieu.DropDownClosed += new System.EventHandler(this.ComboBox_SoPhieu_DropDownClosed);
+            this.ComboBox_SoPhieu.SelectedValueChanged += new System.EventHandler(this.chon_gia_tri);
             // 
             // thongTin
             // 
@@ -300,7 +300,6 @@
             this.sotienPhaiDong.Name = "sotienPhaiDong";
             this.sotienPhaiDong.Size = new System.Drawing.Size(338, 74);
             this.sotienPhaiDong.TabIndex = 0;
-            this.sotienPhaiDong.Text = "Đã hoàn thành";
             this.sotienPhaiDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.sotienPhaiDong.Click += new System.EventHandler(this.sotienPhaiDong_Click);
             // 

@@ -17,7 +17,7 @@ namespace DangKyHocPhan
         public static System.DateTime NgayThu;
         public static string SoPhieu = "";
         public static decimal SoTienThu;
-        public static string mssv = TrangchuSV.MSSV.ToString();
+        public static string mssv = "2038";
         SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString);
    
         public PhieuThuHocPhi()
@@ -28,16 +28,17 @@ namespace DangKyHocPhan
         private void PhieuThuHocPhi_Load(object sender, EventArgs e)
         {
             txtbox_mssv.Text = mssv;
+
             fillComboBox();
             ComboBox_SoPhieu.DropDownStyle = ComboBoxStyle.DropDownList;
-            //ComboBox_SoPhieu.SelectedIndex = 0;
-            findSoTienThieu();
             return;
         }
 
         public void findSoTienThieu()
         {
-            string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV and SoPhieu = @SoPhieu";
+            if (ComboBox_SoPhieu.SelectedIndex == -1)
+                return;
+            string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV";
             StringBuilder errorMessages = new StringBuilder();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
@@ -46,8 +47,6 @@ namespace DangKyHocPhan
                 try
                 {
                     command.Parameters.AddWithValue("@MaSV", mssv);
-                    command.Parameters.AddWithValue("@SoPhieu", SoPhieu);
-
                     connection.Open();
 
                     SqlDataReader dr;
@@ -82,7 +81,7 @@ namespace DangKyHocPhan
 
         private void fillComboBox()
         {
-            string queryString = "SELECT DISTINCT SoPhieu FROM dbo.CHUAHTHP where MaSV=@MaSV";
+            string queryString = "SELECT SoPhieu FROM dbo.CHUAHTHP where MaSV=@MaSV";
             StringBuilder errorMessages = new StringBuilder();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
@@ -209,7 +208,8 @@ namespace DangKyHocPhan
         {
             NgayThu = date_picker_ngay_lap.Value;
             SoPhieu = ComboBox_SoPhieu.Text.ToString();
-            
+            if (ComboBox_SoPhieu.SelectedIndex == -1)
+                return;
 
             DongTien dt = new DongTien();
             dt.Show();
@@ -237,7 +237,8 @@ namespace DangKyHocPhan
 
         private void process_event_combobox(object sender, EventArgs e)
         {
-            string query = "SELECT MaMon, TenMon " +
+            findSoTienThieu();
+            string query = "SELECT MaMon, TenMon  " +
                 "FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc " +
                 "WHERE SoPhieu = " + ComboBox_SoPhieu.SelectedItem.ToString();
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
@@ -257,9 +258,9 @@ namespace DangKyHocPhan
             this.Close();
         }
 
-        private void ComboBox_SoPhieu_DropDownClosed(object sender, EventArgs e)
+        private void chon_gia_tri(object sender, EventArgs e)
         {
-            SoPhieu = ComboBox_SoPhieu.Text.ToString();
+            findSoTienThieu();
         }
     }
 }
