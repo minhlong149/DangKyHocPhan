@@ -35,16 +35,14 @@ namespace DangKyHocPhan
 
         private void btnTruyVan_Click(object sender, EventArgs e)
         {
-            string query = "SELECT dbo.CHUAHTHP.SoPhieu, HocKy, NamHoc, dbo.CHUAHTHP.MaSV, SoTienDangKy, SoTienPhaiDong, SoTienConLai " +
-                "FROM dbo.DSHOCKY, dbo.PHIEUDK, dbo.CHUAHTHP " +
-                "WHERE dbo.DSHOCKY.MaHK = dbo.PHIEUDK.MaHK " +
-                "AND dbo.PHIEUDK.SoPhieu = dbo.CHUAHTHP.SoPhieu " +
-                "AND NamHoc = " + comboBoxNamHoc.Text.ToString() +
-                 " AND HocKy = " + (comboBox_HocKy.Text.ToString() == "Hè" ? "0" : comboBox_HocKy.Text);
+            string query = "select PHIEUDK.MaSV, sum(THUHOCPHI.SoTienThu) as [TienDaDong], Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) as [TienPhaiDong] from PHIEUDK full join THUHOCPHI on THUHOCPHI.SoPhieu = PHIEUDK.SoPhieu join DKHOCPHAN on DKHOCPHAN.SoPhieu = PHIEUDK.SoPhieu join MONHOC on MONHOC.MaMon = DKHOCPHAN.MonHoc join LOAIMON on LOAIMON.MaLoaiMon = MONHOC.LoaiMon join DSHOCKY on DSHOCKY.MaHK = PHIEUDK.MaHK where DSHOCKY.HocKy = @HocKy and DSHOCKY.NamHoc = @NamHoc group by PHIEUDK.MaSV";
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
             {
                 connection.Open();
                 SqlDataAdapter sqlDa = new SqlDataAdapter(query, connection);
+                sqlDa.SelectCommand.Parameters.AddWithValue("@HocKy", (comboBox_HocKy.Text.ToString() == "Hè" ? "0" : comboBox_HocKy.Text));
+                sqlDa.SelectCommand.Parameters.AddWithValue("@NamHoc", comboBoxNamHoc.Text.ToString());
+
                 DataTable dataTable = new DataTable();
                 sqlDa.Fill(dataTable);
 

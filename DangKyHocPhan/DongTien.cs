@@ -89,7 +89,7 @@ namespace DangKyHocPhan
                 try
                 {
                     command.Parameters.AddWithValue("@SoTienConLai", (PhieuThuHocPhi.SoTienThu - decimal.Parse(txtBox_soTien.Text)));
-                    command.Parameters.AddWithValue("@SoPhieu", 3);
+                    command.Parameters.AddWithValue("@SoPhieu", PhieuThuHocPhi.SoPhieu);
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();

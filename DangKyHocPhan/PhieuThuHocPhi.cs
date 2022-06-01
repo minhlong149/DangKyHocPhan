@@ -248,6 +248,7 @@ namespace DangKyHocPhan
                 sqlDa.Fill(dataTable);
 
                 dgv_Mon_PTHP.DataSource = dataTable;
+                connection.Close();
             }
         }
 
@@ -259,7 +260,6 @@ namespace DangKyHocPhan
         private void ComboBox_SoPhieu_DropDownClosed(object sender, EventArgs e)
         {
             SoPhieu = ComboBox_SoPhieu.Text.ToString();
-            findSoTienThieu();
         }
     }
 }
