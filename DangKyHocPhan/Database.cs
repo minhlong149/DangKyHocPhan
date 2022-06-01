@@ -92,7 +92,7 @@ namespace DangKyHocPhan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi thực thi câu lệnh: " + ex.Message);
+               // MessageBox.Show("Lỗi thực thi câu lệnh: " + ex.Message);
                 return -100;
             }
             finally
