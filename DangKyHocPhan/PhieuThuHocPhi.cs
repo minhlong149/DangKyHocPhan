@@ -82,7 +82,7 @@ namespace DangKyHocPhan
 
         private void fillComboBox()
         {
-            string queryString = "SELECT SoPhieu FROM dbo.PHIEUDK where MaSV=@MaSV";
+            string queryString = "SELECT DISTINCT SoPhieu FROM dbo.CHUAHTHP where MaSV=@MaSV";
             StringBuilder errorMessages = new StringBuilder();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.DKHPConnectionString))
