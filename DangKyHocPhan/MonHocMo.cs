@@ -36,14 +36,14 @@ namespace DangKyHocPhan
                 }
             };
             //load dữ liệu cho 2 combobox học kỳ và môn học
-            boxMaMH.DataSource = db.SelectData("selectAllMonHoc", lst);
-            boxMaMH.DisplayMember = "TenMon";//thuộc tính hiển thị của combobox
-            boxMaMH.ValueMember = "MaMon";//giá trị (key) của combobox
+            boxMaMH.DataSource = db.SelectData("selectAllChuongTrinhHoc", lst);
+            boxMaMH.DisplayMember = "MonHoc";//thuộc tính hiển thị của combobox
+            boxMaMH.ValueMember = "MonHoc";//giá trị (key) của combobox
             boxMaMH.SelectedIndex = -1;
 
-            boxMaHK.DataSource = db.SelectData("selectHK", lst);
-            boxMaHK.DisplayMember = "MaHK";
-            boxMaHK.ValueMember = "MaHK";
+            boxMaHK.DataSource = db.SelectData("selectAllChuongTrinhHoc", lst);
+            boxMaHK.DisplayMember = "HocKy";
+            boxMaHK.ValueMember = "HocKy";
             boxMaHK.SelectedIndex = -1;//set combobox không chọn giá trị nào
 
 
