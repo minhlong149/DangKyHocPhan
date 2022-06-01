@@ -37,7 +37,8 @@ namespace DangKyHocPhan
 
         public void findSoTienThieu()
         {
-            if (ComboBox_SoPhieu.SelectedIndex == -1) return;
+            if (ComboBox_SoPhieu.SelectedIndex == -1)
+                return;
             string queryString = "SELECT SoTienConLai FROM dbo.CHUAHTHP where MaSV=@MaSV and SoPhieu = @SoPhieu";
             StringBuilder errorMessages = new StringBuilder();
 
@@ -210,7 +211,8 @@ namespace DangKyHocPhan
         {
             NgayThu = date_picker_ngay_lap.Value;
             SoPhieu = ComboBox_SoPhieu.Text.ToString();
-            
+            if (ComboBox_SoPhieu.SelectedIndex == -1)
+                return;
 
             DongTien dt = new DongTien();
             dt.Show();
@@ -238,6 +240,7 @@ namespace DangKyHocPhan
 
         private void process_event_combobox(object sender, EventArgs e)
         {
+            findSoTienThieu();
             string query = "SELECT MaMon, TenMon " +
                 "FROM dbo.DKHocPhan JOIN dbo.MONHOC ON dbo.MONHOC.MaMon = dbo.DKHocPhan.MonHoc " +
                 "WHERE SoPhieu = " + ComboBox_SoPhieu.SelectedItem.ToString();
@@ -261,6 +264,7 @@ namespace DangKyHocPhan
         private void ComboBox_SoPhieu_DropDownClosed(object sender, EventArgs e)
         {
             SoPhieu = ComboBox_SoPhieu.Text.ToString();
+            //findSoTienThieu();
         }
     }
 }
