@@ -13,11 +13,32 @@ SELECT *
 FROM INFORMATION_SCHEMA.TABLES;
 GO
 
+Select * from DKHOCPHAN
+Select * from MONHOC
+Select * from LOAIMON
+Select * from DKHOCPHAN
+
+select sum(SoTinChi), sum(GiaTien) from (
+SELECT MaMon, SoTinChi, GiaTien 
+from MONHOC join LOAIMON on MONHOC.LoaiMon=LOAIMON.MaLoaiMon
+join DKHOCPHAN on DKHOCPHAN.MonHoc = MONHOC.MaMon
+Where SoPhieu = 023512022
+) TEMP
+
+select PHIEUDK.MaSV, Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) - THUHOCPHI.SoTienThu as [TienPhaiDong] 
+from PHIEUDK
+full join THUHOCPHI on THUHOCPHI.SoPhieu = PHIEUDK.SoPhieu 
+join DKHOCPHAN on DKHOCPHAN.SoPhieu = PHIEUDK.SoPhieu 
+join MONHOC on MONHOC.MaMon = DKHOCPHAN.MonHoc 
+join LOAIMON on LOAIMON.MaLoaiMon = MONHOC.LoaiMon 
+group by PHIEUDK.MaSV, THUHOCPHI.SoTienThu 
+having Sum(CEILING(SoTiet * 1.0 / SoTinChi) * GiaTien) > THUHOCPHI.SoTienThu
+
 -- DÙNG DATABASE NHÓM
 use "D:\DANGKYHOCPHAN\DATABASE\DKHP.MDF"
 GO
 -- TEST APP
-use "E:\TEMP\DANGKYHOCPHAN\DANGKYHOCPHAN\BIN\DEBUG\DKHP.MDF"
+use "E:\DANGKYHOCPHAN\DANGKYHOCPHAN\BIN\DEBUG\DKHP.MDF"
 GO
 
 -- TEST

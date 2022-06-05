@@ -29,10 +29,20 @@ namespace DangKyHocPhan
         {
             txtbox_mssv.Text = mssv;
             fillComboBox();
-            ComboBox_SoPhieu.DropDownStyle = ComboBoxStyle.DropDownList;
-            //ComboBox_SoPhieu.SelectedIndex = 0;
-            //findSoTienThieu();
+            checkIfComboBoxHasAnyItem();
+            findSoTienThieu();
             return;
+        }
+
+        private void checkIfComboBoxHasAnyItem()
+        {
+            if (ComboBox_SoPhieu.Items.Count == 0)
+            {
+                btn_dhp.Enabled = false;
+                return;
+            }
+            ComboBox_SoPhieu.SelectedIndex = 0;
+            SoPhieu = ComboBox_SoPhieu.Items[0].ToString();
         }
 
         public void findSoTienThieu()

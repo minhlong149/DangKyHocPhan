@@ -154,7 +154,6 @@ CREATE TABLE PHIEUDK(
 	NgayLap DATE NOT NULL
 )
 
-SELECT * FROM PHIEUDK
 INSERT INTO PHIEUDK VALUES ('000112022','0001', '12022', '27-5-2022');
 INSERT INTO PHIEUDK VALUES ('000112069','2038', '12022', '5-27-2022');
 
@@ -197,7 +196,6 @@ ADD CONSTRAINT ktra_sotienphaidong CHECK (SoTienPhaiDong <= SoTienDangKy)
 --INSERT INTO CHUAHTHP VALUES ('0022', '1700000', '1700000', '0');
 
 -- TRIGGER TINH TIEN MOI KHI INSERT VAO BANG DKHOCPHAN
-SELECT * FROM PHIEUDK
 
 CREATE TRIGGER TINH_TOAN_HP_CHUAHTHP
 ON DKHOCPHAN AFTER INSERT
@@ -205,18 +203,23 @@ AS
 BEGIN
 declare @SoPhieu VARCHAR(15), @MonHoc VARCHAR(5), @MaSV VARCHAR(8),
 @SoTienDangKy MONEY, @SoTienPhaiDong MONEY, @SoTienConLai MONEY,
-@SoTinChi INT, @GiaTien INT, @DoiTuong VARCHAR(5)
+@SoTinChi INT, @GiaTien INT, @DoiTuong VARCHAR(5), @SoTiet INT
+
 SELECT @SoPhieu=SoPhieu, @MonHoc=MonHoc from inserted
 SELECT @MaSV=MaSV from PHIEUDK WHERE SoPhieu=@SoPhieu
 
--- query tim so tin chi va gia tien 1 tin cua mon
-SELECT @SoTinChi=SoTinChi, @GiaTien=GiaTien FROM MONHOC
-INNER JOIN LOAIMON
-ON MONHOC.LoaiMon=LOAIMON.MaLoaiMon
-WHERE MaMon=@MonHoc
+-- query tim so tin chi va gia tien cua tat ca mon dang ky
+select @SoTinChi=sum(SoTinChi), @GiaTien=sum(GiaTien), @SoTiet=sum(SoTiet) from (
+SELECT MaMon, SoTinChi, GiaTien, SoTiet
+from MONHOC join LOAIMON on MONHOC.LoaiMon=LOAIMON.MaLoaiMon
+join DKHOCPHAN on DKHOCPHAN.MonHoc = MONHOC.MaMon
+Where SoPhieu = @SoPhieu
+) TEMP
+
 -- tinh so tien dang ky
-SET @SoTienDangKy = @SoTinChi * @GiaTien
+SET @SoTienDangKy = @SoTiet / @SoTinChi * @GiaTien
 SET @SoTienPhaiDong = @SoTienDangKy
+
 -- kiem tra sinh vien thuoc dien nao
 SELECT * FROM DOITUONG
 select @DoiTuong=DoiTuong from SINHVIEN where MaSV=@MaSV
@@ -254,9 +257,6 @@ SET @SoTienConLai = @SoTienPhaiDong
 INSERT INTO CHUAHTHP VALUES (@SoPhieu, @MaSV, @SoTienDangKy, @SoTienPhaiDong, @SoTienConLai);
 END
 GO
-
-DROP TRIGGER TINH_TOAN_HP_CHUAHTHP
-USE DKHP
 
 ALTER TABLE MONHOC
 ADD NguoiTao nvarchar(50)

@@ -72,6 +72,7 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
             this.title.Padding = new System.Windows.Forms.Padding(5);
+            this.title.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.title.Size = new System.Drawing.Size(986, 68);
             this.title.TabIndex = 0;
             this.title.Text = "PHIẾU THU HỌC PHÍ";
@@ -157,6 +158,7 @@
             // ComboBox_SoPhieu
             // 
             this.ComboBox_SoPhieu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComboBox_SoPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_SoPhieu.FormattingEnabled = true;
             this.ComboBox_SoPhieu.Location = new System.Drawing.Point(4, 27);
             this.ComboBox_SoPhieu.Name = "ComboBox_SoPhieu";
