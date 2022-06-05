@@ -42,7 +42,7 @@ namespace DangKyHocPhan
         private void btnThoatSV_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang sinh viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+                Application.Exit();
         }
         public event EventHandler DangXuat;
         private void btnDX_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace DangKyHocPhan
         private void Thoat_PDT_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang phòng đào tạo?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+                Application.Exit();
         }
 
         private void btnNDSKN_Click(object sender, EventArgs e)

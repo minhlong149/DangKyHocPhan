@@ -90,7 +90,7 @@ namespace DangKyHocPhan
         private void btnThoat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn huỷ bỏ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+                Application.Exit();
         }
     }
 }
