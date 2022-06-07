@@ -29,6 +29,7 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSMonHoc));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvDSMH = new System.Windows.Forms.DataGridView();
@@ -45,20 +46,20 @@ namespace DangKyHocPhan
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 57);
+            this.label1.Location = new System.Drawing.Point(442, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Từ khóa";
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimKiem.Location = new System.Drawing.Point(489, 54);
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(450, 41);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(215, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(258, 24);
             this.txtTimKiem.TabIndex = 3;
             // 
             // dgvDSMH
@@ -119,7 +120,7 @@ namespace DangKyHocPhan
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.Location = new System.Drawing.Point(712, 51);
+            this.btnTimKiem.Location = new System.Drawing.Point(716, 41);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
@@ -131,7 +132,7 @@ namespace DangKyHocPhan
             // btnThemmoi
             // 
             this.btnThemmoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemmoi.Location = new System.Drawing.Point(820, 51);
+            this.btnThemmoi.Location = new System.Drawing.Point(824, 41);
             this.btnThemmoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemmoi.Name = "btnThemmoi";
             this.btnThemmoi.Size = new System.Drawing.Size(100, 28);
@@ -144,12 +145,15 @@ namespace DangKyHocPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(970, 503);
             this.Controls.Add(this.btnThemmoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dgvDSMH);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "DSMonHoc";
             this.Text = "DSMonHoc";
             this.Load += new System.EventHandler(this.DSMonHoc_Load);

@@ -29,6 +29,7 @@ namespace DangKyHocPhan
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSMonHocMo));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThemmoi = new System.Windows.Forms.Button();
@@ -42,16 +43,17 @@ namespace DangKyHocPhan
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimKiem.Location = new System.Drawing.Point(309, 45);
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(324, 71);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(215, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(215, 24);
             this.txtTimKiem.TabIndex = 6;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.Location = new System.Drawing.Point(548, 42);
+            this.btnTimKiem.Location = new System.Drawing.Point(547, 71);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
@@ -63,7 +65,7 @@ namespace DangKyHocPhan
             // btnThemmoi
             // 
             this.btnThemmoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemmoi.Location = new System.Drawing.Point(665, 42);
+            this.btnThemmoi.Location = new System.Drawing.Point(655, 71);
             this.btnThemmoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemmoi.Name = "btnThemmoi";
             this.btnThemmoi.Size = new System.Drawing.Size(100, 28);
@@ -79,9 +81,8 @@ namespace DangKyHocPhan
             this.label1.Location = new System.Drawing.Point(236, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Từ khóa";
             // 
             // dgvDSMHMo
             // 
@@ -95,14 +96,14 @@ namespace DangKyHocPhan
             this.dgvDSMHMo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHK,
             this.MonHoc});
-            this.dgvDSMHMo.Location = new System.Drawing.Point(-4, 95);
+            this.dgvDSMHMo.Location = new System.Drawing.Point(-4, 120);
             this.dgvDSMHMo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSMHMo.MultiSelect = false;
             this.dgvDSMHMo.Name = "dgvDSMHMo";
             this.dgvDSMHMo.ReadOnly = true;
             this.dgvDSMHMo.RowHeadersWidth = 51;
             this.dgvDSMHMo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSMHMo.Size = new System.Drawing.Size(723, 358);
+            this.dgvDSMHMo.Size = new System.Drawing.Size(723, 333);
             this.dgvDSMHMo.TabIndex = 10;
             this.dgvDSMHMo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMHMo_CellClick);
             this.dgvDSMHMo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMHMo_CellContentDoubleClick);
@@ -127,12 +128,15 @@ namespace DangKyHocPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 440);
             this.Controls.Add(this.dgvDSMHMo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnThemmoi);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
+            this.DoubleBuffered = true;
             this.Name = "DSMonHocMo";
             this.Text = "DSMonHocMo";
             this.Load += new System.EventHandler(this.DSMonHocMo_Load);
